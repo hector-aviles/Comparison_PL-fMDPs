@@ -1,3 +1,5 @@
+# Execute the following instructions:
+
 tar -xvzf D_humans.tar.gz
 
 Rscript create_datasets.R 01
