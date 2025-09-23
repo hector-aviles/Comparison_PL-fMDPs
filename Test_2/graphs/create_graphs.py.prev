@@ -1,0 +1,397 @@
+import os
+import re
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from matplotlib.patches import Rectangle
+
+# Define the file paths
+file_paths = [
+    # Test_01 files
+    "../Test_01/models/RF/Results/testing_numeralia.txt",
+    "../Test_01/models/XGBoost/Results/testing_numeralia.txt",
+    "../Test_01/models/PL-fMDP/Results/testing_numeralia.txt",
+    "../Test_01/models/CART/Results/testing_numeralia.txt",
+    "../Test_01/models/NB/Results/testing_numeralia.txt",
+    "../Test_01/models/MLP/Results/testing_numeralia.txt",
+    "../Test_01/models/LR/Results/testing_numeralia.txt",
+    
+    # Test_50 files
+    "../Test_50/models/RF/Results/testing_numeralia.txt",
+    "../Test_50/models/XGBoost/Results/testing_numeralia.txt",
+    "../Test_50/models/PL-fMDP/Results/testing_numeralia.txt",
+    "../Test_50/models/CART/Results/testing_numeralia.txt",
+    "../Test_50/models/NB/Results/testing_numeralia.txt",
+    "../Test_50/models/MLP/Results/testing_numeralia.txt",
+    "../Test_50/models/LR/Results/testing_numeralia.txt",
+    
+    # Test_100 files
+    "../Test_100/models/RF/Results/testing_numeralia.txt",
+    "../Test_100/models/XGBoost/Results/testing_numeralia.txt",
+    "../Test_100/models/PL-fMDP/Results/testing_numeralia.txt",
+    "../Test_100/models/CART/Results/testing_numeralia.txt",
+    "../Test_100/models/NB/Results/testing_numeralia.txt",
+    "../Test_100/models/MLP/Results/testing_numeralia.txt",
+    "../Test_100/models/LR/Results/testing_numeralia.txt"
+]
+
+# Define models and percentages
+models = ["PL-fMDP", "LR", "CART", "NB", "RF", "XGBoost", "MLP"]
+percentages = ["01", "50", "100"]
+drivers = [1, 2, 3, 4]
+
+# Initialize data structures to store results
+mean_f1_scores = {driver: {model: {perc: None for perc in percentages} for model in models} for driver in drivers}
+std_f1_scores = {driver: {model: {perc: None for perc in percentages} for model in models} for driver in drivers}
+
+def parse_regular_file(content, driver, model, perc):
+    """Parse regular files (non-PL-fMDP) with multiple possible formats"""
+    # Try different patterns for driver section
+    driver_patterns = [
+        f"Metrics for Driver {driver}:",
+        f"Driver {driver} Metrics:",
+        f"Driver {driver}:"
+    ]
+    
+    # Try different patterns for F1 score
+    f1_patterns = [
+        r"Average f1: ([\d.]+), Std Dev f1: ([\d.]+)",
+        r"F1: ([\d.]+), Std Dev: ([\d.]+)",
+        r"Average F1: ([\d.]+), Std Dev F1: ([\d.]+)",
+        r"F1 score: ([\d.]+), Std Dev: ([\d.]+)"
+    ]
+    
+    lines = content.split('\n')
+    in_driver_section = False
+    
+    for line in lines:
+        # Check if we're entering a driver section
+        if not in_driver_section:
+            for pattern in driver_patterns:
+                if pattern in line:
+                    in_driver_section = True
+                    break
+            continue
+        
+        # If we're in a driver section, look for F1 score
+        if in_driver_section:
+            for pattern in f1_patterns:
+                match = re.search(pattern, line)
+                if match:
+                    mean_f1 = float(match.group(1))
+                    std_f1 = float(match.group(2))
+                    mean_f1_scores[driver][model][perc] = mean_f1
+                    std_f1_scores[driver][model][perc] = std_f1
+                    return True
+            
+            # Check if we're entering a new driver section (end of current section)
+            if line.strip() and any(f"Driver {d}" in line for d in drivers if d != driver):
+                return False
+    
+    return False
+
+def parse_pl_fmdp_file(content, driver, model, perc):
+    """Parse PL-fMDP files"""
+    driver_pattern = f"Performance for Driver {driver}:"
+    f1_pattern = r"Average F1_scores: ([\d.]+)"
+    std_pattern = r"Std Dev F1_scores: ([\d.]+)"
+    
+    lines = content.split('\n')
+    in_driver_section = False
+    found_f1 = False
+    
+    for line in lines:
+        if driver_pattern in line:
+            in_driver_section = True
+            continue
+        
+        if in_driver_section:
+            if not found_f1:
+                match = re.search(f1_pattern, line)
+                if match:
+                    mean_f1 = float(match.group(1))
+                    mean_f1_scores[driver][model][perc] = mean_f1
+                    found_f1 = True
+                    continue
+            
+            if found_f1:
+                match = re.search(std_pattern, line)
+                if match:
+                    std_f1 = float(match.group(1))
+                    std_f1_scores[driver][model][perc] = std_f1
+                    return True
+            
+            if line.strip() and "Performance for Driver" in line:
+                # Found next driver section
+                return False
+    
+    return False
+
+# Read and parse all files
+print("Reading and parsing files...")
+for file_path in file_paths:
+    # Extract model and percentage from file path
+    path_parts = file_path.split('/')
+    perc = path_parts[1].replace('Test_', '')
+    model = path_parts[3]
+    
+    if not os.path.exists(file_path):
+        print(f"Warning: File not found: {file_path}")
+        continue
+    
+    with open(file_path, 'r') as f:
+        content = f.read()
+    
+    print(f"\nProcessing: {file_path}")
+    
+    # Parse for each driver
+    for driver in drivers:
+        if model == "PL-fMDP":
+            success = parse_pl_fmdp_file(content, driver, model, perc)
+        else:
+            success = parse_regular_file(content, driver, model, perc)
+        
+        if success:
+            print(f"  Driver {driver}: F1 = {mean_f1_scores[driver][model][perc]:.4f} ± {std_f1_scores[driver][model][perc]:.4f}")
+        else:
+            print(f"  Driver {driver}: Data not found")
+
+# Print the extracted data for verification
+print("\n" + "="*80)
+print("EXTRACTED DATA VERIFICATION")
+print("="*80)
+
+for driver in drivers:
+    print(f"\nDriver {driver}:")
+    print("-" * 50)
+    for model in models:
+        print(f"{model:10}", end=" ")
+        for perc in percentages:
+            mean_val = mean_f1_scores[driver][model][perc]
+            std_val = std_f1_scores[driver][model][perc]
+            if mean_val is not None and std_val is not None:
+                print(f"{perc}%: {mean_val:.4f}±{std_val:.4f}  ", end="")
+            else:
+                print(f"{perc}%: {'N/A':12}  ", end="")
+        print()
+
+# Create comparison plots for each driver
+print("\n" + "="*80)
+print("GENERATING PLOTS")
+print("="*80)
+
+# Define colors with high saturation for better contrast
+colors = ['#E41A1C', '#377EB8', '#4DAF4A', '#984EA3', '#FF7F00', '#FFFF33', '#A65628']
+model_labels = ["PL-fMDPs", "LR", "CART", "NB", "RFs", "XGBoost", "MLPs"]
+percentage_labels = ["1%", "50%", "100%"]
+
+# MODIFIED: Create separate plots for each percentage to better distinguish them
+for perc_idx, percentage in enumerate(percentages):
+    # Create a figure with subplots for each driver for this percentage
+    fig, axes = plt.subplots(2, 2, figsize=(16, 12))
+    fig.suptitle(f'F1 score Comparison Across Models - {percentage_labels[perc_idx]} Data', fontsize=20, fontweight='bold')
+
+    for i, driver in enumerate(drivers):
+        ax = axes[i//2, i%2]
+        
+        # Prepare data for plotting - only for this percentage
+        x_pos = np.arange(len(models))
+        width = 0.7  # Wider bars for better visibility
+        
+        # Plot each model for this percentage
+        means = []
+        stds = []
+        valid_models = []
+        
+        for j, model in enumerate(models):
+            mean_val = mean_f1_scores[driver][model][percentage]
+            std_val = std_f1_scores[driver][model][percentage]
+            
+            if mean_val is not None and std_val is not None:
+                means.append(mean_val)
+                stds.append(std_val)
+                valid_models.append(model)
+            else:
+                means.append(0)
+                stds.append(0)
+        
+        # Plot bars with error bars
+        bars = ax.bar(x_pos, means, width, yerr=stds, 
+                     color=colors, alpha=0.8, ecolor='black', capsize=5)
+        
+        # Add value labels on top of bars
+        for k, (mean_val, std_val) in enumerate(zip(means, stds)):
+            if mean_val > 0:  # Only label if we have valid data
+                ax.text(x_pos[k], mean_val + std_val + 0.02, f'{mean_val:.3f}', 
+                       ha='center', va='bottom', fontsize=10, rotation=0)
+        
+        # Customize the subplot
+        ax.set_title(f'Driver {driver}', fontsize=18, fontweight='bold')
+        ax.set_xlabel('Models', fontsize=16)
+        ax.set_ylabel('F1 Score', fontsize=16)
+        ax.set_xticks(x_pos)
+        ax.set_xticklabels(model_labels, rotation=45, ha='right', fontsize=12)
+        ax.set_ylim(0, 1.1)
+        ax.grid(True, alpha=0.3, axis='y')
+        
+        # Add a nice frame
+        for spine in ax.spines.values():
+            spine.set_linewidth(1.5)
+    
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.92)
+    
+    # Save the plot for this percentage
+    plt.savefig(f'driver_comparison_{percentage}_plot.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'driver_comparison_{percentage}_plot.pdf', bbox_inches='tight')
+    plt.close()
+    
+    print(f"Plot for {percentage_labels[perc_idx]} data saved")
+
+# Also create individual plots for each driver with all percentages
+print("\nCreating individual plots for each driver...")
+for driver in drivers:
+    fig, ax = plt.subplots(figsize=(16, 10))  # Increased figure size for better readability
+    
+    # Prepare data
+    x_pos = np.arange(len(percentage_labels))
+    width = 0.12
+    spacing = 0.02
+    
+    # Plot each model
+    for j, model in enumerate(models):
+        means = [mean_f1_scores[driver][model][perc] for perc in percentages]
+        stds = [std_f1_scores[driver][model][perc] for perc in percentages]
+        
+        # Skip if no data for this model
+        if all(m is None for m in means):
+            continue
+            
+        # Calculate position for this model
+        position = x_pos + j * (width + spacing) - (len(models) * (width + spacing) / 2) + (width + spacing) / 2
+        
+        # Replace None values with 0 for plotting
+        plot_means = [m if m is not None else 0 for m in means]
+        plot_stds = [s if s is not None else 0 for s in stds]
+        
+        # Plot bars with error bars
+        bars = ax.bar(position, plot_means, width, yerr=plot_stds, 
+                     color=colors[j], alpha=0.8, ecolor='black', capsize=5,
+                     label=model)
+        
+        # MODIFIED: Add both mean and stddev labels above each bar
+        for k, (mean_val, std_val) in enumerate(zip(means, stds)):
+            if mean_val is not None:
+                # Create the label text with both mean and stddev
+                label_text = f'{mean_val:.3f} ± {std_val:.3f}'
+                # Position the label above the bar
+                ax.text(position[k], mean_val + (std_val if std_val is not None else 0) + 0.03, 
+                       label_text, ha='center', va='bottom', fontsize=9, 
+                       bbox=dict(boxstyle="round,pad=0.3", facecolor="white", alpha=0.8))
+    
+    # Customize the plot with increased font sizes
+    ax.set_title(f'F1 Score Comparison - Driver {driver}', fontsize=22, fontweight='bold', pad=20)
+    ax.set_xlabel('Data Percentage', fontsize=18, labelpad=15)
+    ax.set_ylabel('F1 Score', fontsize=18, labelpad=15)
+    ax.set_xticks(x_pos)
+    ax.set_xticklabels(percentage_labels, fontsize=16)
+    ax.set_ylim(0, 1.2)  # Increased y-limit to accommodate the new labels
+    
+    # Add horizontal grid lines for better readability
+    ax.grid(True, alpha=0.3, axis='y')
+    ax.set_axisbelow(True)  # Grid lines behind bars
+    
+    # MODIFIED: Increase legend font size to 16 with better positioning
+    ax.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0., 
+              fontsize=16, framealpha=0.9, shadow=True)
+    
+    # Increase tick label sizes
+    ax.tick_params(axis='both', which='major', labelsize=14)
+    
+    # Add a nice frame
+    for spine in ax.spines.values():
+        spine.set_linewidth(2)
+    
+    # Add a subtle background color to make the plot more readable
+    ax.set_facecolor('#f8f9fa')
+    
+    plt.tight_layout()
+    
+    # Save individual plot
+    plt.savefig(f'driver_{driver}_f1_comparison.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'driver_{driver}_f1_comparison.pdf', bbox_inches='tight')
+    plt.close()
+    
+    print(f"  Driver {driver} plot saved")
+
+# Also update the percentage-specific plots to show both values
+for perc_idx, percentage in enumerate(percentages):
+    fig, axes = plt.subplots(2, 2, figsize=(18, 14))  # Increased size
+    fig.suptitle(f'F1 Score Comparison Across Models - {percentage_labels[perc_idx]} Data', 
+                 fontsize=24, fontweight='bold', y=0.95)
+
+    for i, driver in enumerate(drivers):
+        ax = axes[i//2, i%2]
+        
+        # Prepare data for plotting - only for this percentage
+        x_pos = np.arange(len(models))
+        width = 0.7
+        
+        # Plot each model for this percentage
+        means = []
+        stds = []
+        
+        for j, model in enumerate(models):
+            mean_val = mean_f1_scores[driver][model][percentage]
+            std_val = std_f1_scores[driver][model][percentage]
+            
+            if mean_val is not None and std_val is not None:
+                means.append(mean_val)
+                stds.append(std_val)
+            else:
+                means.append(0)
+                stds.append(0)
+        
+        # Plot bars with error bars
+        bars = ax.bar(x_pos, means, width, yerr=stds, 
+                     color=colors, alpha=0.8, ecolor='black', capsize=8)  # Increased capsize
+        
+        # MODIFIED: Add both mean and stddev labels above each bar
+        for k, (mean_val, std_val) in enumerate(zip(means, stds)):
+            if mean_val > 0:
+                label_text = f'{mean_val:.3f} ± {std_val:.3f}'
+                ax.text(x_pos[k], mean_val + std_val + 0.04, label_text, 
+                       ha='center', va='bottom', fontsize=10, 
+                       bbox=dict(boxstyle="round,pad=0.3", facecolor="white", alpha=0.8))
+        
+        # Customize the subplot
+        ax.set_title(f'Driver {driver}', fontsize=20, fontweight='bold', pad=15)
+        ax.set_xlabel('Models', fontsize=16, labelpad=12)
+        ax.set_ylabel('F1 Score', fontsize=16, labelpad=12)
+        ax.set_xticks(x_pos)
+        ax.set_xticklabels(model_labels, rotation=45, ha='right', fontsize=14)
+        ax.set_ylim(0, 1.2)
+        ax.grid(True, alpha=0.3, axis='y')
+        ax.set_axisbelow(True)
+        ax.set_facecolor('#f8f9fa')
+        
+        # Increase tick label sizes
+        ax.tick_params(axis='both', which='major', labelsize=12)
+        
+        # Add a nice frame
+        for spine in ax.spines.values():
+            spine.set_linewidth(1.5)
+    
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.92)
+    
+    # Save the plot for this percentage
+    plt.savefig(f'driver_comparison_{percentage}_plot.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'driver_comparison_{percentage}_plot.pdf', bbox_inches='tight')
+    plt.close()
+    
+    print(f"Plot for {percentage_labels[perc_idx]} data saved")
+    
+    print(f"  Driver {driver} plot saved")
+
+print("\nAll plots generated successfully!")

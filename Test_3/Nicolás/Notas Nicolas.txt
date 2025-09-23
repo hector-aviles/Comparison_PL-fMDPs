@@ -1,0 +1,103 @@
+ roslaunch airj2024  transversal_right.launch
+ rosrun airj2024 test_CART.py -7 7
+
+	1 cayo de la carretera
+	2 cayo de la carretera
+	3 no hubo choque
+	4 cayo de la carretera
+	5 cayo de la carretera
+	6 cayo de la carretera
+	7 cayo de la carretera
+	8 cayo de la carretera
+	9 cayo de la carretera
+	10 cayo de la carretera
+	11 cayo de la carretera
+	12 cayo de la carretera
+	13 cayo de la carretera
+	14 cayo de la carretera
+	15 cayo de la carretera
+	16 cayo de la carretera
+	17 cayo de la carretera
+	18 cayo de la carretera
+	19 cayo de la carretera
+	20 cayo de la carretera
+	21 cayo de la carretera
+	22 no hubo choque
+	23 cayo de la carretera
+	24 cayo de la carretera
+	25 cayo de la carretera
+	26 cayo de la carretera
+	27 cayo de la carretera
+	28 cayo de la carretera
+	29 cayo de la carretera
+	30 cayo de la carretera 
+
+ roslaunch airj2024 straight_road_right.launch
+ rosrun airj2024 test_CART.py -7 4
+                 
+        1 choco con el coche amarillo y cayo de la carretera
+	2 choco con el coche gris y cayo de la carretera
+	3 no hubo choque pero no pudo rebasar al coche gris
+	4 choco con el coche amarillo
+	5 choco con el coche gris y cayo de la carretera
+	6 choco con el coche amarillo
+	7 choco con el coche gris y cayo de la carretera
+	8 choco con el coche gris y cayo de la carretera
+	9 choco con el coche gris y cayo de la carretera
+	10 no hubo choque pero no pudo rebasar al coche gris
+	11 no hubo choque, rebaso al coche gris pero no pudo rebasar al coche azul
+	12 choco con el coche gris y cayo de la carretera
+	13 choco con el coche gris y cayo de la carretera
+	14 choco con el coche gris y cayo de la carretera
+	15 choco con el coche amarillo y cayo de la carretera
+	16 choco con el coche gris y cayo de la carretera
+	17 choco con el coche amarillo y cayo de la carretera
+	18 choco con el coche gris y cayo de la carretera
+	19 no hubo choque pero no pudo rebasar al coche gris
+	20 choco con el coche amarillo y cayo de la carretera
+	21 choco con el coche gris y cayo de la carretera
+	22 choco con el coche gris y cayo de la carretera
+	23 choco con el coche gris y cayo de la carretera
+	24 no hubo choque, rebaso al coche gris pero no pudo rebasar al coche azul
+	25 choco con el coche amarillo 
+	26 no hubo choque pero no pudo rebasar al coche gris
+	27 no hubo choque pero no pudo rebasar al coche gris
+	28 choco con el coche amarillo y cayo de la carretera
+	29 choco con el coche amarillo y cayo de la carretera
+	30 choco con el coche amarillo y cayo de la carretera
+	
+ roslaunch airj2024 turn_to_left.launch
+ rosrun airj2024 test_CART.py -7 4
+                 
+        1 choco con el coche azul y cayo de la carretera
+	2 choco con el coche azul y cayo de la carretera
+	3 choco con el coche gris y cayo de la carretera
+	4 choco con el coche azul y cayo de la carretera
+	5 choco con el coche azul y cayo de la carretera
+	6 choco con el coche azul y cayo de la carretera
+	7 choco con el coche negro y cayo de la carretera
+	8 choco con el coche azul y cayo de la carretera
+	9 choco con el coche azul y cayo de la carretera
+	10 choco con el coche negro y cayo de la carretera
+	11 choco con el coche azul y cayo de la carretera
+	12 choco con el coche azul y cayo de la carretera
+	13 choco con el coche azul y cayo de la carretera
+	14 choco con el coche gris
+	15 choco con el coche azul
+	16 choco con el coche azul
+	17 choco con el coche azul y cayo de la carretera
+	18 choco con el coche azul y cayo de la carretera
+	19 choco con el coche azul y cayo de la carretera
+	20 choco con el coche azul y cayo de la carretera
+	21 choco con el coche gris y cayo de la carretera
+	22 choco con el coche azul y cayo de la carretera
+	23 choco con el coche azul y cayo de la carretera
+	24 choco con el coche azul y cayo de la carretera
+	25 choco con el coche azul y cayo de la carretera
+	26 choco con el coche azul y cayo de la carretera
+	27 choco con el coche azul y cayo de la carretera
+	28 choco con el coche azul y cayo de la carretera
+	29 choco con el coche negro y cayo de la carretera
+	30 choco con el coche negro y cayo de la carretera
+	
+	

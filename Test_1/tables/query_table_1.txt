@@ -1,0 +1,73 @@
+Ok, I need a python program to read files:
+
+../Train_01/models/RF/Results/testing_numeralia.txt
+../Train_01/models/XGBoost/Results/testing_numeralia.txt
+../Train_01/models/PL-fMDP/Results/testing_numeralia.txt
+../Train_01/models/CART/Results/testing_numeralia.txt
+../Train_01/models/NB/Results/testing_numeralia.txt
+../Train_01/models/MLP/Results/testing_numeralia.txt
+../Train_01/models/LR/Results/testing_numeralia.txt
+
+../Train_50/models/RF/Results/testing_numeralia.txt
+../Train_50/models/XGBoost/Results/testing_numeralia.txt
+../Train_50/models/PL-fMDP/Results/testing_numeralia.txt
+../Train_50/models/CART/Results/testing_numeralia.txt
+../Train_50/models/NB/Results/testing_numeralia.txt
+../Train_50/models/MLP/Results/testing_numeralia.txt
+../Train_50/models/LR/Results/testing_numeralia.txt
+
+At the end of each file there is a block like the next one:
+
+Average Precision: 0.9719549770491052
+std dev Precision: 0.015138407020897814
+Average Recall: 0.9723479704501167
+std dev recall: 0.01452381347720667
+Average F1-score: 0.9703017597251137
+std dev F1-score:0.015852636034045527
+Average Accuracy: 0.9723479704501167
+std dev Accuracy: 0.01452381347720667
+Avg. testing time: 0.02462204694747925
+Stdev. testing time: 0.015774463564000238
+
+For each group Train_01, Train_50, and Train_100, extract the data and construct a single latex table with the next outline:
+
+--------------------------------------------------------------------
+       |                    Training percentage 1%
+--------------------------------------------------------------------
+Models |   Precision (Avg/stddev)  |   Recall(Avg/stddev)   |    F1-score (Avg/stddev)
+--------------------------------------------------------------------
+PL-fMDPs
+LR
+CART
+NB
+RFs
+XGBoost
+MLP
+--------------------------------------------------------------------
+       |                    Training percentage 50%
+--------------------------------------------------------------------
+Models |   Precision (Avg/stddev)  |   Recall(Avg/stddev)   |    F1-score (Avg/stddev)
+--------------------------------------------------------------------
+PL-fMDPs
+LR
+CART
+NB
+RFs
+XGBoost
+MLP
+--------------------------------------------------------------------
+       |                    Training percentage 100%
+--------------------------------------------------------------------
+Models |   Precision (Avg/stddev)  |   Recall(Avg/stddev)   |    F1-score (Avg/stddev)
+--------------------------------------------------------------------
+PL-fMDPs
+LR
+CART
+NB
+RFs
+XGBoost
+MLP
+
+or if you have a better design please suggest it using a single table.
+
+Print the readings to confirm correct parsing of the data. 

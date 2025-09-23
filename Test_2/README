@@ -1,0 +1,31 @@
+tar -xvzf D_humans.tar.gz
+
+Rscript create_datasets.R 01
+Rscript create_datasets.R 50
+Rscript create_datasets.R 100
+
+python3 test_APs.py 01
+python3 test_CART.py 01
+python3 test_NB.py 01
+python3 test_MLP.py 01
+python3 test_RF.py 01
+python3 test_LR.py 01
+python3 test_XGBoost.py 01
+
+python3 test_APs.py 50
+python3 test_CART.py 50
+python3 test_NB.py 50
+python3 test_MLP.py 50
+python3 test_RF.py 50
+python3 test_LR.py 50
+python3 test_XGBoost.py 50
+
+python3 test_APs.py 100
+python3 test_CART.py 100
+python3 test_NB.py 100
+python3 test_MLP.py 100
+python3 test_RF.py 100
+python3 test_LR.py 100
+python3 test_XGBoost.py 100
+
+

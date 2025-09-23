@@ -1,0 +1,21 @@
+\begin{table}[htbp!]
+\caption{Mean and standard deviation of testing time for each model and set of data in Test 1.}
+\label{tab:testing_exp1}
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{6}{c}{Testing time statistics (in s) per data sample} \\
+\cmidrule(lr){2-7}
+& \multicolumn{2}{c}{1\%} & \multicolumn{2}{c}{50\%} & \multicolumn{2}{c}{100\%} \\
+\cmidrule(lr){2-7}
+Model & Mean & SD & Mean & SD & Mean & SD \\
+\midrule
+APs & 0.96 & 0.05 & 1.98 & 0.10 & 2.33 & 0.16 \\
+CART & 0.0039 & 0.0013 & 0.0038 & 0.0014 & 0.0042 & 0.0013 \\
+MLP & 0.0703 & 0.0463 & 0.0737 & 0.0601 & 0.0720 & 0.0521 \\
+LR & 0.0092 & 0.0032 & 0.0089 & 0.0026 & 0.0102 & 0.0038 \\
+NB & 0.0069 & 0.0030 & 0.0069 & 0.0030 & 0.0069 & 0.0030 \\
+RFs & 0.4647 & 0.3256 & 0.5571 & 0.3590 & 0.6902 & 0.4311 \\
+XGBoost & 0.0369 & 0.0139 & 0.0400 & 0.0187 & 0.0450 & 0.0222 \\
+\bottomrule
+\end{tabular}
+\end{table}

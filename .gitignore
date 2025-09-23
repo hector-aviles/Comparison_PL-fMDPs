@@ -1,0 +1,30 @@
+train_fold_*.csv
+test_fold_*.csv
+validation_fold_*.csv
+
+*.mlp
+*.nb
+*.cart
+*.xgboost
+*.rf
+*.lr
+*.pl
+*.ps
+*.dot
+*.ap
+*.net
+
+
+# APClassifier-related files
+APClassifier_*.py
+ap*.csv
+
+# LaTeX intermediates
+*.aux
+*.log
+*.out
+
+# Python bytecode and cache
+*.pyc
+__pycache__/
+

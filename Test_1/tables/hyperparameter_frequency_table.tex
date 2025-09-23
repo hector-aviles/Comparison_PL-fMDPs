@@ -1,0 +1,40 @@
+\begin{sidewaystable}[!tb]
+\centering
+\caption{Most frequent hyperparameter combinations for each model across different training set percentages.}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+ & \makecell{Training \\ percentage} & \makecell{Most frequent \\ hyperparameter combination} & \makecell{Frequency \\(out of 20 folds)} \\
+\midrule
+\multirow{3}{*}{PL-fMDP} & 1\% & Discount factor=0.1, Maximum error bound=0.0001 & 16/20 \\
+ & 50\% & Discount factor=0.1, Maximum error bound=0.0001 & 15/20 \\
+ & 100\% & Discount factor=0.1, Maximum error bound=0.0001 & 14/20 \\
+\midrule
+\multirow{3}{*}{CART} & 1\% & Maximum depth=2, Minimum samples to split=2, Minimum samples in leaf=1 & 7/20 \\
+ & 50\% & Maximum depth=2, Minimum samples to split=2, Minimum samples in leaf=1 & 11/20 \\
+ & 100\% & Maximum depth=4, Minimum samples to split=2, Minimum samples in leaf=1 & 10/20 \\
+\midrule
+\multirow{3}{*}{XGBoost} & 1\% & Maximum depth=5, Learning rate=0.01, Number of estimators=100, Subsample ratio=1, Subsample ratio of columns=0.8 & 4/20 \\
+ & 50\% & Maximum depth=3, Learning rate=0.01, Number of estimators=100, Subsample ratio=1, Subsample ratio of columns=1 & 7/20 \\
+ & 100\% & Maximum depth=3, Learning rate=0.01, Number of estimators=100, Subsample ratio=1, Subsample ratio of columns=1 & 6/20 \\
+\midrule
+\multirow{3}{*}{RF} & 1\% & Number of estimators=50, Maximum depth=5, Minimum samples to split=10, Maximum features for split=sqrt & 4/20 \\
+ & 50\% & Number of estimators=50, Maximum depth=5, Minimum samples to split=2, Maximum features for split=sqrt & 7/20 \\
+ & 100\% & Number of estimators=200, Maximum depth=5, Minimum samples to split=2, Maximum features for split=sqrt & 6/20 \\
+\midrule
+\multirow{3}{*}{NB} & 1\% & Additive smoothing=0.01, Learning of priors=True & 19/20 \\
+ & 50\% & Additive smoothing=0.01, Learning of priors=True & 20/20 \\
+ & 100\% & Additive smoothing=0.01, Learning of priors=True & 20/20 \\
+\midrule
+\multirow{3}{*}{MLP} & 1\% & Size of hidden layers=8×, Activation function=relu, Solver=adam, Maximum iterations=1000 & 3/20 \\
+ & 50\% & Size of hidden layers=8×, Activation function=relu, Solver=sgd, Maximum iterations=1000 & 5/20 \\
+ & 100\% & Size of hidden layers=8×, Activation function=relu, Solver=sgd, Maximum iterations=1000 & 6/20 \\
+\midrule
+\multirow{3}{*}{LR} & 1\% & Fold=1, Inverse regularization strength=1, Penalty=l2, Class weight=balanced & 1/20 \\
+ & 50\% & Fold=1, Inverse regularization strength=0.01, Penalty=l1, Class weight=balanced & 1/20 \\
+ & 100\% & Fold=1, Inverse regularization strength=0.01, Penalty=l2, Class weight=balanced & 1/20 \\
+\midrule
+\bottomrule
+\end{tabular}}
+\label{tab:hyperparameter_frequency}
+\end{sidewaystable}

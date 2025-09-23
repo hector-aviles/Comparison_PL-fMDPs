@@ -1,0 +1,8 @@
+Rscript count_sample_space.R # Count how many ocurrences are there for each possible example in the dataset and saveto file
+
+Rscript count_unique_examples.R # Count how many examples there are stratified per action
+
+# Esta es la instrucción que se utiliza para calcular la gráfica de comparación: 14/sep/2025
+python3 create_compare_humans_distributions.py ./complete_sample_space.csv ./count_sample_space_auto.csv ../../Test_2/D_humans.csv
+
+python3 heatmap_best_hyperparameters.py

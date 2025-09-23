@@ -1,0 +1,76 @@
+MUNDO 2 "straight_road_right"
+
+repetición 1.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, sin embargo al girar a la izquierda se topo con el coche amarillo que venía en sentido contrario y chocaron.
+
+repetición 2.
+El coche realizó la acción keep para evitar chocar con el coche gris de adelante y después cambió de carril a la izquierda, cuando se acercó el coche amarillo realizó un change_to_left y logró esquivar el coche. Al final el coche fue cambiando de carril izquierdo al derecho y viceversa.
+
+repetición 3.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, después giró a la izquierda topandose con el coche amarillo que venía en sentido contrario y para evitar chocarlo giró a la derecha chocando con el coche gris.
+
+repetición 4.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, sin embargo al girar a la izquierda se topo con el coche amarillo que venía en sentido contrario y chocaron.
+
+repetición 5.
+El coche realizó la acción de cruise y quiso hacer keep pero no alcanzó chocando así con el coche gris de enfrente.
+
+repetición 6.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, sin embargo al girar a la izquierda se topo con el coche amarillo que venía en sentido contrario y chocaron.
+
+repetición 7.
+El coche realizó la acción keep para evitar chocar con el coche gris de adelante y después cambió de carril a la izquierda, cuando se acercó el coche amarillo realizó un change_to_left y logró esquivar el coche. Al final el coche fue cambiando de carril izquierdo al derecho y viceversa.
+
+repetición 8.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, sin embargo al girar a la izquierda se topo con el coche amarillo que venía en sentido contrario y chocaron.
+
+repetición 9-11.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, después giró a la izquierda topandose con el coche amarillo que venía en sentido contrario y para evitar chocarlo giró a la derecha chocando con el coche gris.
+
+repetición 12.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, sin embargo al girar a la izquierda se topo con el coche amarillo que venía en sentido contrario y chocaron.
+
+repetición 13-15.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, después giró a la izquierda topandose con el coche amarillo que venía en sentido contrario y para evitar chocarlo giró a la derecha chocando con el coche gris.
+
+repetición 15.
+El coche realizó la acción keep para evitar chocar con el coche gris de adelante y después cambió de carril a la izquierda, cuando se acercó el coche amarillo realizó un change_to_left y logró esquivar el coche.
+
+repetición 16.
+El coche giro al carril izquierdo pero rápidamente regresó al carril derecho chocando con el coche gris.
+
+repetición 17-18.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, después giró a la izquierda topandose con el coche amarillo que venía en sentido contrario y para evitar chocarlo giró a la derecha chocando con el coche gris.
+
+repetición 19.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, sin embargo al girar a la izquierda se topo con el coche amarillo que venía en sentido contrario y chocaron.
+
+repetición 20.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, después giró a la izquierda topandose con el coche amarillo que venía en sentido contrario y para evitar chocarlo giró a la derecha chocando con el coche gris.
+
+repetición 21.
+El coche giro al carril izquierdo pero rápidamente regresó al carril derecho chocando con el coche gris.
+
+repetición 22.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, después giró a la izquierda topandose con el coche amarillo que venía en sentido contrario y para evitar chocarlo giró a la derecha chocando con el coche gris.
+
+repetición 23.
+El coche realizó la acción keep para evitar chocar con el coche gris de adelante y después cambió de carril a la izquierda, cuando se acercó el coche amarillo realizó un change_to_left y logró esquivar el coche.
+
+repetición 24.
+El coche giró al carril izquierdo para arrebasar al coche gris de enfrente, al acercarse el coche amarillo en sentido contrario en el carril izquierdo el coche regresó al carril derecho evitando el choque.
+
+repetición 25.
+El coche giro al carril izquierdo pero rápidamente regresó al carril derecho chocando con el coche gris.
+
+repetición 26.
+El coche realizó la acción keep para evitar chocar con el coche gris de adelante y después cambió de carril a la izquierda, cuando se acercó el coche amarillo realizó un change_to_left y logró esquivar el coche.
+
+repetición 27-28.
+El coche giro al carril izquierdo pero rápidamente regresó al carril derecho chocando con el coche gris.
+
+repetición 29.
+El coche realizó la acción de keep para evitar chocar con el coche gris de adelante, después giró a la izquierda topandose con el coche amarillo que venía en sentido contrario y para evitar chocarlo giró a la derecha chocando con el coche gris.
+
+repetición 30.
+El coche giró al carril izquierdo para arrebasar al coche gris de enfrente, al acercarse el coche amarillo en sentido contrario en el carril izquierdo el coche regresó al carril derecho evitando el choque.

@@ -1,0 +1,240 @@
+Ok, I need a python program to read files:
+
+../Test_01/models/RF/Results/testing_numeralia.txt
+../Test_01/models/XGBoost/Results/testing_numeralia.txt
+../Test_01/models/PL-fMDP/Results/testing_numeralia.txt
+../Test_01/models/CART/Results/testing_numeralia.txt
+../Test_01/models/NB/Results/testing_numeralia.txt
+../Test_01/models/MLP/Results/testing_numeralia.txt
+../Test_01/models/LR/Results/testing_numeralia.txt
+
+../Test_50/models/RF/Results/testing_numeralia.txt
+../Test_50/models/XGBoost/Results/testing_numeralia.txt
+../Test_50/models/PL-fMDP/Results/testing_numeralia.txt
+../Test_50/models/CART/Results/testing_numeralia.txt
+../Test_50/models/NB/Results/testing_numeralia.txt
+../Test_50/models/MLP/Results/testing_numeralia.txt
+../Test_50/models/LR/Results/testing_numeralia.txt
+
+../Test_100/models/RF/Results/testing_numeralia.txt
+../Test_100/models/XGBoost/Results/testing_numeralia.txt
+../Test_100/models/PL-fMDP/Results/testing_numeralia.txt
+../Test_100/models/CART/Results/testing_numeralia.txt
+../Test_100/models/NB/Results/testing_numeralia.txt
+../Test_100/models/MLP/Results/testing_numeralia.txt
+../Test_100/models/LR/Results/testing_numeralia.txt
+
+For all subdirectories except PL-fMDPs at the end of each file there is a block for each driver like:
+
+Driver-specific Performance:
+
+Metrics for Driver 1:
+Average precision: 0.8910666758734339, Std Dev precision: 0.034372093462219616
+Average recall: 0.6988937556154537, Std Dev recall: 0.1331153017180353
+Average f1: 0.7560746948745795, Std Dev f1: 0.10533472838437578
+Average accuracy: 0.6988937556154537, Std Dev accuracy: 0.1331153017180353
+
+Metrics for Driver 2:
+Average precision: 0.8882980338464934, Std Dev precision: 0.03228625088670638
+Average recall: 0.7244359354413702, Std Dev recall: 0.13728045728090432
+Average f1: 0.7723377224008807, Std Dev f1: 0.1058242401384947
+Average accuracy: 0.7244359354413702, Std Dev accuracy: 0.13728045728090432
+
+Metrics for Driver 3:
+Average precision: 0.8773610857954911, Std Dev precision: 0.08839823122183131
+Average recall: 0.6782745154513419, Std Dev recall: 0.11520277295612524
+Average f1: 0.7420233698049511, Std Dev f1: 0.10473525553058138
+Average accuracy: 0.6782745154513419, Std Dev accuracy: 0.11520277295612524
+
+Metrics for Driver 4:
+Average precision: 0.4517162311031274, Std Dev precision: 0.09358025324678203
+Average recall: 0.48589583965348704, Std Dev recall: 0.10790060625491464
+Average f1: 0.4518025779770927, Std Dev f1: 0.07800820817669982
+Average accuracy: 0.48589583965348704, Std Dev accuracy: 0.10790060625491464
+
+For PL-fMDPs subdirectories the blocks of text have this form:
+
+Performance for Driver 1:
+Average Precisions: 0.9113
+Std Dev Precisions: 0.0233
+Average Recalls: 0.7484
+Std Dev Recalls: 0.0623
+Average F1_scores: 0.8015
+Std Dev F1_scores: 0.0499
+Average Accuracies: 0.7484
+Std Dev Accuracies: 0.0623
+
+Performance for Driver 2:
+Average Precisions: 0.9025
+Std Dev Precisions: 0.0294
+Average Recalls: 0.7637
+Std Dev Recalls: 0.0535
+Average F1_scores: 0.8117
+Std Dev F1_scores: 0.0409
+Average Accuracies: 0.7637
+Std Dev Accuracies: 0.0535
+
+Performance for Driver 3:
+Average Precisions: 0.9198
+Std Dev Precisions: 0.0524
+Average Recalls: 0.7157
+Std Dev Recalls: 0.0774
+Average F1_scores: 0.7952
+Std Dev F1_scores: 0.0685
+Average Accuracies: 0.7157
+Std Dev Accuracies: 0.0774
+
+Performance for Driver 4:
+Average Precisions: 0.4740
+Std Dev Precisions: 0.1100
+Average Recalls: 0.5156
+Std Dev Recalls: 0.0698
+Average F1_scores: 0.4762
+Std Dev F1_scores: 0.0702
+Average Accuracies: 0.5156
+Std Dev Accuracies: 0.0698
+
+Please construct a python program to extract average and stddev for F1 score, to construct comparison subimages, one for each driver, using a style with saturated colors that improve contrast. You can use the following code to extract legends and labels (colors must be modified):
+
+# Load necessary libraries
+library(ggplot2)
+
+# Read the command-line argument for the file index
+args <- commandArgs(trailingOnly = TRUE)
+if (length(args) < 1) {
+  stop("Please provide the file index (i) as a command-line argument.")
+}
+file_index <- args[1]  # Get the file index (i)
+
+# Construct the input filename
+input_filename <- paste0("driver_", file_index, ".txt")
+
+# Check if the file exists
+if (!file.exists(input_filename)) {
+  stop(paste("File", input_filename, "does not exist."))
+}
+
+# Read the data from the file
+data <- readLines(input_filename)
+
+# Initialize variables to store the extracted data
+models <- c("PL-fMDPs", "CART", "NB", "MLP", "RFs", "LR", "XGBoost")
+percentages <- c("01", "50", "100")
+
+mean_f1_scores <- matrix(NA, nrow = length(models), ncol = length(percentages))
+std_dev_f1_scores <- matrix(NA, nrow = length(models), ncol = length(percentages))
+colnames(mean_f1_scores) <- percentages
+colnames(std_dev_f1_scores) <- percentages
+rownames(mean_f1_scores) <- models
+rownames(std_dev_f1_scores) <- models
+
+# Extract mean F1 scores and standard deviations for each model and percentage
+current_percentage <- NULL
+current_model <- NULL
+
+for (line in data) {
+  line <- trimws(line)  # Remove leading/trailing whitespace
+
+  # Check if the line contains a percentage
+  if (grepl("^Percentage:", line)) {
+    current_percentage <- gsub(".*: ", "", line)
+    current_percentage <- trimws(current_percentage)
+
+    if (!current_percentage %in% percentages) {
+      stop(paste("Invalid percentage:", current_percentage))
+    }
+    cat("Current Percentage:", current_percentage, "\n")  # Debugging statement
+  }
+  # Check if the line contains a model name
+  else if (grepl("^[A-Za-z0-9-]+:$", line)) {
+    current_model <- gsub(":", "", line)
+    current_model <- trimws(current_model)
+
+    if (!current_model %in% models) {
+      stop(paste("Invalid model:", current_model))
+    }
+    cat("Current Model:", current_model, "\n")  # Debugging statement
+  }
+  # Check if the line contains the mean F1 score
+  else if (grepl("Mean F1 Score:", line)) {
+    mean_f1 <- as.numeric(gsub(".*: ", "", line))
+
+    if (!is.na(mean_f1) && !is.null(current_model) && !is.null(current_percentage)) {
+      mean_f1_scores[current_model, current_percentage] <- mean_f1
+    }
+    cat("Mean F1 Score:", mean_f1, "\n")  # Debugging statement
+  }
+  # Check if the line contains the standard deviation of the F1 score
+  else if (grepl("F1 Score Std Dev:", line)) {
+    std_dev <- as.numeric(gsub(".*: ", "", line))
+    if (std_dev > mean_f1) {
+       std_dev = mean_f1 - .01 # Patch for display
+    }
+
+    if (!is.na(std_dev) && !is.null(current_model) && !is.null(current_percentage)) {
+      std_dev_f1_scores[current_model, current_percentage] <- std_dev
+    }
+    cat("Std Dev F1 Score:", std_dev, "\n")  # Debugging statement
+  }
+}
+
+# Print the extracted data for debugging
+print("Mean F1 Scores:")
+print(mean_f1_scores)
+print("Standard Deviation F1 Scores:")
+print(std_dev_f1_scores)
+
+# Convert the matrices to a data frame for ggplot
+f1_df <- data.frame(
+  Model = rep(rownames(mean_f1_scores), times = ncol(mean_f1_scores)),  # Replicate by rows
+  Percentage = rep(colnames(mean_f1_scores), each = nrow(mean_f1_scores)),  # Replicate by columns
+  Mean_F1_Score = as.vector(mean_f1_scores),
+  Std_Dev_F1_Score = as.vector(std_dev_f1_scores)
+)
+
+# Print the data frame for debugging
+print("Data Frame for Plotting:")
+print(f1_df)
+
+# Adjust the percentage labels for better readability
+f1_df$Percentage <- factor(f1_df$Percentage, levels = c("01", "50", "100"), labels = c("1%", "50%", "100%"))
+
+# Create the grouped bar plot with error bars
+p <- ggplot(f1_df, aes(x = Percentage, y = Mean_F1_Score, fill = Model)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.8)) +
+  geom_errorbar(
+    aes(ymin = Mean_F1_Score - Std_Dev_F1_Score, ymax = Mean_F1_Score + Std_Dev_F1_Score),
+    width = 0.2, position = position_dodge(width = 0.8)
+  ) +
+  labs(
+    title = paste("Driver", file_index),
+    x = "Data Percentage",
+    y = "Mean F1 Score",
+    fill = "Model"
+  ) +
+  scale_y_continuous(limits = c(0, 1)) +  # Fix y-axis range
+  theme_bw() +  # Add frame around the plot
+  theme(
+    axis.text.x = element_text(size = 12),  # Adjust x-axis text
+    axis.text.y = element_text(size = 12),  # Adjust y-axis text
+    axis.title.x = element_text(size = 14),  # Adjust x-axis title
+    axis.title.y = element_text(size = 14),  # Adjust y-axis title
+    plot.title = element_text(size = 20),  # Adjust plot title
+    legend.title = element_text(size = 14),  # Adjust legend title
+    legend.text = element_text(size = 12)  # Adjust legend text
+  )
+
+# Save the plot as PDF
+pdf_filename <- paste0("driver_", file_index, "_f1_scores_barplot.pdf")
+ggsave(pdf_filename, plot = p, width = 10, height = 6)
+
+# Save the plot as PNG
+png_filename <- paste0("driver_", file_index, "_f1_scores_barplot.png")
+ggsave(png_filename, plot = p, width = 10, height = 6)
+
+cat("Bar plot saved as:\n")
+cat("- PDF:", pdf_filename, "\n")
+cat("- PNG:", png_filename, "\n")
+
+
+Print the readings to confirm correct parsing of the data. 

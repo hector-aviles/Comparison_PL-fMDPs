@@ -1,0 +1,83 @@
+Training time:
+Fold: 1, time: 2.0553
+Fold: 2, time: 1.8288
+Fold: 3, time: 1.8396
+Fold: 4, time: 1.8379
+Fold: 5, time: 1.8264
+Fold: 6, time: 1.8433
+Fold: 7, time: 1.8068
+Fold: 8, time: 1.8278
+Fold: 9, time: 1.8322
+Fold: 10, time: 1.8377
+Fold: 11, time: 1.8560
+Fold: 12, time: 1.8308
+Fold: 13, time: 1.8191
+Fold: 14, time: 1.8859
+Fold: 15, time: 1.8162
+Fold: 16, time: 1.8180
+Fold: 17, time: 1.8893
+Fold: 18, time: 1.8596
+Fold: 19, time: 1.8225
+Fold: 20, time: 1.8275
+Avg. training time: 1.8480
+Stdev. training time: 0.0533
+Fold 1:
+Avg. AP calculation time: 1.0369
+Stdev. AP calculation time: 0.4961
+Fold 2:
+Avg. AP calculation time: 0.9737
+Stdev. AP calculation time: 0.4302
+Fold 3:
+Avg. AP calculation time: 0.9371
+Stdev. AP calculation time: 0.4022
+Fold 4:
+Avg. AP calculation time: 0.9962
+Stdev. AP calculation time: 0.4761
+Fold 5:
+Avg. AP calculation time: 0.9485
+Stdev. AP calculation time: 0.3772
+Fold 6:
+Avg. AP calculation time: 1.0019
+Stdev. AP calculation time: 0.3965
+Fold 7:
+Avg. AP calculation time: 0.9696
+Stdev. AP calculation time: 0.4413
+Fold 8:
+Avg. AP calculation time: 0.9705
+Stdev. AP calculation time: 0.4509
+Fold 9:
+Avg. AP calculation time: 1.0136
+Stdev. AP calculation time: 0.4700
+Fold 10:
+Avg. AP calculation time: 0.9391
+Stdev. AP calculation time: 0.3332
+Fold 11:
+Avg. AP calculation time: 1.0466
+Stdev. AP calculation time: 0.5100
+Fold 12:
+Avg. AP calculation time: 0.9185
+Stdev. AP calculation time: 0.4135
+Fold 13:
+Avg. AP calculation time: 0.9254
+Stdev. AP calculation time: 0.3368
+Fold 14:
+Avg. AP calculation time: 0.9139
+Stdev. AP calculation time: 0.3959
+Fold 15:
+Avg. AP calculation time: 1.0493
+Stdev. AP calculation time: 0.4898
+Fold 16:
+Avg. AP calculation time: 0.9195
+Stdev. AP calculation time: 0.3677
+Fold 17:
+Avg. AP calculation time: 0.9793
+Stdev. AP calculation time: 0.4675
+Fold 18:
+Avg. AP calculation time: 0.9005
+Stdev. AP calculation time: 0.3533
+Fold 19:
+Avg. AP calculation time: 0.8430
+Stdev. AP calculation time: 0.2857
+Fold 20:
+Avg. AP calculation time: 0.9583
+Stdev. AP calculation time: 0.3824

@@ -1,0 +1,173 @@
+Ok, I need a python program to read files:
+
+../Train_01/models/RF/training_numeralia.txt
+../Train_01/models/XGBoost/training_numeralia.txt
+../Train_01/models/PL-fMDP/training_numeralia.txt
+../Train_01/models/CART/training_numeralia.txt
+../Train_01/models/NB/training_numeralia.txt
+../Train_01/models/MLP/training_numeralia.txt
+../Train_01/models/LR/training_numeralia.txt
+
+../Train_50/models/RF/training_numeralia.txt
+../Train_50/models/XGBoost/training_numeralia.txt
+../Train_50/models/PL-fMDP/training_numeralia.txt
+../Train_50/models/CART/training_numeralia.txt
+../Train_50/models/NB/training_numeralia.txt
+../Train_50/models/MLP/training_numeralia.txt
+../Train_50/models/LR/training_numeralia.txt
+
+Except the files below PL-fMDP we have the next data format:
+
+Avg. training time: 0.0015
+Stdev. training time: 0.0001
+
+For files below subdirectories PL-fMDP, we have two segments of data: 
+
+Avg. training time: 1.8480
+Stdev. training time: 0.0533
+
+similar to the previous one and that should be reported in a row "PL-fMDPs" in the latex table that we have to construct. The second segment is:  
+
+Fold 1:
+Avg. AP calculation time: 1.0369
+Stdev. AP calculation time: 0.4961
+Fold 2:
+Avg. AP calculation time: 0.9737
+Stdev. AP calculation time: 0.4302
+Fold 3:
+Avg. AP calculation time: 0.9371
+Stdev. AP calculation time: 0.4022
+Fold 4:
+Avg. AP calculation time: 0.9962
+Stdev. AP calculation time: 0.4761
+Fold 5:
+Avg. AP calculation time: 0.9485
+Stdev. AP calculation time: 0.3772
+Fold 6:
+Avg. AP calculation time: 1.0019
+Stdev. AP calculation time: 0.3965
+Fold 7:
+Avg. AP calculation time: 0.9696
+Stdev. AP calculation time: 0.4413
+Fold 8:
+Avg. AP calculation time: 0.9705
+Stdev. AP calculation time: 0.4509
+Fold 9:
+Avg. AP calculation time: 1.0136
+Stdev. AP calculation time: 0.4700
+Fold 10:
+Avg. AP calculation time: 0.9391
+Stdev. AP calculation time: 0.3332
+Fold 11:
+Avg. AP calculation time: 1.0466
+Stdev. AP calculation time: 0.5100
+Fold 12:
+Avg. AP calculation time: 0.9185
+Stdev. AP calculation time: 0.4135
+Fold 13:
+Avg. AP calculation time: 0.9254
+Stdev. AP calculation time: 0.3368
+Fold 14:
+Avg. AP calculation time: 0.9139
+Stdev. AP calculation time: 0.3959
+Fold 15:
+Avg. AP calculation time: 1.0493
+Stdev. AP calculation time: 0.4898
+Fold 16:
+Avg. AP calculation time: 0.9195
+Stdev. AP calculation time: 0.3677
+Fold 17:
+Avg. AP calculation time: 0.9793
+Stdev. AP calculation time: 0.4675
+Fold 18:
+Avg. AP calculation time: 0.9005
+Stdev. AP calculation time: 0.3533
+Fold 19:
+Avg. AP calculation time: 0.8430
+Stdev. AP calculation time: 0.2857
+Fold 20:
+Avg. AP calculation time: 0.9583
+Stdev. AP calculation time: 0.3824
+
+for which we need to extract "Avg. AP calculation time" and compute stddev for them. This results should be reported in row "APs" updating the values of the next table:
+
+\begin{table}[htbp!]
+	\caption{Mean and standard deviation of training time for each model instance relative to the data percentage used in Test 1 (PL-fMDPs refers to the creation of PL-fMDPs programs, and APs denotes the calculation of their action policies).}
+	\label{tab:training_exp1}
+ 	%		\begin{tabular*}{\textwidth}{@{\extracolsep\fill}ccccccc} 
+	\begin{tabular}{lcccccc}
+		\toprule
+		&
+		\multicolumn{6}{c}{Training time statistics (in s) per data sample} 
+		\\ \cmidrule(lr){2-7} 
+		& \multicolumn{2}{c}{1\%} & \multicolumn{2}{c}{50\%} & \multicolumn{2}{c}{100\%} \\ 
+		\cmidrule(lr){2-7} 
+		Model & Mean & SD & Mean & SD & Mean & SD \\ 
+		\midrule
+		PL-fMDPs & 2.27  & 1.30 & 4.19 & 0.34 & 6.36 &  0.31 \\
+		
+		APs & 1.5 & 1.46 & 3.42 & 0.18 & 4.2 & 0.22 \\
+		
+		CART  & 0.0013 & 0.0002 & 0.04 & 0.012 & 0.1 & 0.02 \\
+		MLP  & 2.71 & 1.21 & 19.33 & 7.5 & 28.7 & 10.2 \\ 
+		LR  & 0.015 & 0.005 & 1.1 & 0.23 & 2.4 & 0.33 \\
+		NB  & 0.001 & 0.0001 & 0.04 & 0.009 & 0.1 & 0.02 \\
+		RFs  & 0.12 & 0.07 & 3.35 & 1.9 & 7.2 & 3.9 \\
+		XGBoost  & 0.2 & 0.06 & 1.9 & 0.7 & 3.75 & 1.43 \\
+		\bottomrule
+	\end{tabular}
+% \end{tabular*}
+\end{table}
+
+Moreover, construct a second table from files: 
+
+../Train_01/models/RF/Results/testing_numeralia.txt
+../Train_01/models/XGBoost/Results/testing_numeralia.txt
+../Train_01/models/PL-fMDP/Results/testing_numeralia.txt
+../Train_01/models/CART/Results/testing_numeralia.txt
+../Train_01/models/NB/Results/testing_numeralia.txt
+../Train_01/models/MLP/Results/testing_numeralia.txt
+../Train_01/models/LR/Results/testing_numeralia.txt
+
+../Train_50/models/RF/Results/testing_numeralia.txt
+../Train_50/models/XGBoost/Results/testing_numeralia.txt
+../Train_50/models/PL-fMDP/Results/testing_numeralia.txt
+../Train_50/models/CART/Results/testing_numeralia.txt
+../Train_50/models/NB/Results/testing_numeralia.txt
+../Train_50/models/MLP/Results/testing_numeralia.txt
+../Train_50/models/LR/Results/testing_numeralia.txt
+
+which have text segments of the type:
+
+Avg. testing time: 0.006928455829620361
+Stdev. testing time: 0.0029736946130328283
+
+Extract them and update the values of the next table for each model:
+
+\begin{table}[htbp!]
+	\caption{Mean and standard deviation of testing time for each model and set of data in Test 1.}
+	\label{tab:testing_exp1}
+ %\begin{tabular*}{\textwidth}{@{\extracolsep\fill}ccccccc} 
+	\begin{tabular}{lcccccc}
+		\toprule
+		&
+		\multicolumn{6}{c}{Testing time statistics (in s) per data sample} 
+		\\ \cmidrule(lr){2-7} 
+		& \multicolumn{2}{c}{1\%} & \multicolumn{2}{c}{50\%} & \multicolumn{2}{c}{100\%} \\ 
+		\cmidrule(lr){2-7}
+		Model & Mean & SD & Mean & SD & Mean & SD \\ 
+		\midrule
+		APs & 0.05 & 0.02 & 2.5 & 0.72 & 5.15 & 0.91 \\
+		
+		CART  & 0.0006  & 0.0001 & 0.003 & 0.001 & 0.0055 & 0.0015 \\
+		MLP  & 0.001 & 0.0009 & 0.045 & 0.03 & 0.11 & 0.07 \\ 
+		LR  & 0.0007 & 0.0004 & 0.005 & 0.002 & 0.01 & 0.003 \\
+		NB  & 0.0005 & 0.00003 & 0.004 & 0.0013 & 0.0084 & 0.003 \\
+		RFs  & 0.01 & 0.009 & 0.24 & 0.2 & 0.37 & 0.052 \\
+		XGBoost  & 0.005 & 0.0035 & 0.03 & 0.011 & 0.07 & 0.024 \\
+		
+		\bottomrule
+	\end{tabular}
+ %\end{tabular*}
+\end{table}
+

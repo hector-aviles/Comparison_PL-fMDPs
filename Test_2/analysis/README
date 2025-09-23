@@ -1,0 +1,15 @@
+Rscript count_samples.R
+
+
+python3 create_PL-fMDPs.py 100 
+python3 calculate_AP.py 100 
+python3 pickle_AP.py 100 
+python3 test_APs.py 100
+
+# Correr 
+cd  ./analysis
+python3 compare_policies.py 100
+
+Rscript count_sample_space.R
+Rscript plot.R
+

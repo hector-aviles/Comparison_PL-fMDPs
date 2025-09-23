@@ -1,0 +1,22 @@
+Fold 1, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.9544
+Fold 2, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.8881
+Fold 3, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.8078
+Fold 4, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.9486
+Fold 5, Best gamma: 0.5, Best epsilon: 0.0001, F1-score: 0.8078
+Fold 6, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.9544
+Fold 7, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.9768
+Fold 8, Best gamma: 0.75, Best epsilon: 0.0001, F1-score: 0.9486
+Fold 9, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.9768
+Fold 10, Best gamma: 0.75, Best epsilon: 0.0001, F1-score: 0.9544
+Fold 11, Best gamma: 0.25, Best epsilon: 0.0001, F1-score: 0.9768
+Fold 12, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.8078
+Fold 13, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.9720
+Fold 14, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.9486
+Fold 15, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.9720
+Fold 16, Best gamma: 0.9, Best epsilon: 0.0001, F1-score: 0.9544
+Fold 17, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.9720
+Fold 18, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.8037
+Fold 19, Best gamma: 0.1, Best epsilon: 0.0001, F1-score: 0.9720
+Fold 20, Best gamma: 0.5, Best epsilon: 0.0001, F1-score: 0.9768
+Avg. validation time: 8.7993
+Stdev. validation time: 2.5895

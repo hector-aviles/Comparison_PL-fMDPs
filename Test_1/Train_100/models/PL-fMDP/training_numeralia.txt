@@ -1,0 +1,24 @@
+Training time:
+Fold: 1, time: 6.2117
+Fold: 2, time: 6.2175
+Fold: 3, time: 6.3594
+Fold: 4, time: 6.4057
+Fold: 5, time: 6.5067
+Fold: 6, time: 6.5520
+Fold: 7, time: 5.4470
+Fold: 8, time: 5.5083
+Fold: 9, time: 5.7934
+Fold: 10, time: 5.7713
+Fold: 11, time: 5.9496
+Fold: 12, time: 5.8701
+Fold: 13, time: 5.5530
+Fold: 14, time: 5.5346
+Fold: 15, time: 5.8630
+Fold: 16, time: 5.8045
+Fold: 17, time: 6.0151
+Fold: 18, time: 6.1364
+Fold: 19, time: 5.2464
+Fold: 20, time: 5.1541
+Avg. training time: 5.8950
+Stdev. training time: 0.4081
+

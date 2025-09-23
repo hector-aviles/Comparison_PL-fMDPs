@@ -1,0 +1,16 @@
+MUNDO 1 "transversal_right"
+
+repetición 1-16.
+El coche se salió del mundo, la acción esperada era un change_to_right pero realizó el giro hacia la izquierda.
+
+repetición 17. 
+El coche rojo avanzó derecho esquivando el coche gris.
+
+repetición 18-20.
+El coche se salió del mundo, la acción esperada era un change_to_right pero realizó el giro hacia la izquierda.
+
+repetición 21-22. 
+El coche rojo avanzó derecho esquivando el coche gris.
+
+repetición 23-30.
+El coche se salió del mundo, la acción esperada era un change_to_right pero realizó el giro hacia la izquierda.

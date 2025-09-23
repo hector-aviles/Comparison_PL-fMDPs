@@ -1,0 +1,177 @@
+#! /usr/bin/env python3
+
+# This file is part of MDP-ProbLog.
+
+# MDP-ProbLog is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# MDP-ProbLog is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with MDP-ProbLog.  If not, see <http://www.gnu.org/licenses/>.
+
+import argparse
+import os
+import sys
+import time
+
+import mdpproblog
+from mdpproblog.mdp import MDP
+from mdpproblog.value_iteration import ValueIteration
+from mdpproblog.simulator import Simulator
+from mdpproblog.fluent import StateSpace
+
+MODELS = {
+    'sysadmin1' : ['sysadmin',       'domain.pl',  'star2.pl'],
+    'sysadmin2' : ['sysadmin',       'domain2.pl', 'star2.pl'],
+    'vm1'       : ['viralmarketing', 'domain1.pl', 'network1.pl'],
+    'vm2'       : ['viralmarketing', 'domain2.pl', 'network1.pl'],
+    'vm3'       : ['viralmarketing', 'domain3.pl', 'network2.pl'],
+    'vm4'       : ['viralmarketing', 'domain4.pl', 'network2.pl']
+}
+
+
+def parse():
+    usage = "mdp-problog {list, show, simulate, solve} [-m DOMAIN INSTANCE] [OPTIONS]"
+    description = """
+        MDP-ProbLog is a Python3 framework to represent and solve
+        Markovian Decision Processes by Probabilistic Logic Programming.
+
+        This project is free software.
+
+        Please check the documentation at http://pythonhosted.org/mdpproblog/.
+        """.strip()
+
+    help_commands = """
+        available commands: list examples, show and solve models or simulate optimal policy
+        """.strip()
+
+    parser = argparse.ArgumentParser(usage=usage, description=description)
+    parser.add_argument("command", choices=['list', 'show', 'solve', 'simulate'], help=help_commands)
+    parser.add_argument("-m", "--model", nargs=2, help="list of domain and instance files")
+    parser.add_argument("-x", "--example", type=str, help="select model from examples")
+    parser.add_argument("-g", "--gamma",   type=float, default=0.9, help="discount factor    (default=0.9)")
+    parser.add_argument("-e", "--epsilon", type=float, default=0.1, help="maximum error      (default=0.1)")
+    parser.add_argument("-t", "--trials",  type=int,   default=100, help="number of trials   (default=100)")
+    parser.add_argument("-z", "--horizon", type=int,   default=50,  help="simulation horizon (default=50)")
+    return parser.parse_args()
+
+
+def load_model(domain, instance):
+    with open(domain, 'r') as domain:
+        domain_model = domain.read()
+    with open(instance, 'r') as instance:
+        instance_model = instance.read()
+    return domain_model, instance_model
+
+
+def print_list_examples():
+    examples = ', '.join(sorted(MODELS.keys()))
+    print('>> Available examples: [{}]'.format(examples))
+
+
+def show_model(domain, instance):
+    domain, instance = load_model(domain, instance)
+    print(":: DOMAIN ::")
+    print(domain)
+    print()
+    print(":: INSTANCE ::")
+    print(instance)
+    print()
+
+
+def solve_model(mdp, gamma, epsilon):
+    vi = ValueIteration(mdp)
+    return vi.run(gamma, epsilon)
+
+
+def print_solution(V, policy, iterations, uptime):
+    import numpy as np
+    
+    text = """from sklearn.base import BaseEstimator, ClassifierMixin
+import numpy as np
+
+class ActionPolicy(BaseEstimator, ClassifierMixin):
+    def __init__(self):
+        # Precomputed lookup table of size 128
+        self.actions = [None] * 128
+"""
+    print(text, sep="", end="", flush=True)
+
+    # Construimos la tabla según la política aprendida
+    for state, action in policy.items():
+        # state es un conjunto de tuplas (fluent, value)
+        # Creamos un vector de 7 bits en el orden correcto
+        features = ["curr_lane", "free_E", "free_NE", "free_NW", "free_SE", "free_SW", "free_W"]
+        bits = np.zeros(len(features), dtype=int)
+        for f, v in state:
+            fname = str(f).replace("(0)", "")
+            if fname in features:
+                idx = features.index(fname)
+                bits[idx] = int(v)
+
+        # Índice binario → entero
+        powers = 2 ** np.arange(len(features))
+        idx = int(bits @ powers)
+
+        # Guardamos la acción
+        print(f"        self.actions[{idx}] = \"{action}\"")
+
+    predict_code = """
+    def fit(self, X, y=None):
+        return self
+
+    def predict(self, X):
+        cols = ['curr_lane', 'free_E', 'free_NE', 'free_NW', 'free_SE', 'free_SW', 'free_W']
+        data = X[cols].to_numpy().astype(bool).astype(int)
+        powers = 2 ** np.arange(7)
+        indices = data @ powers
+        return np.array(self.actions)[indices]
+"""
+    print(predict_code, sep="", end="", flush=True)
+
+    
+    
+if __name__ == '__main__':
+    args = parse()
+
+    if args.command == 'list':
+        print_list_examples()
+        exit(0)
+
+    if args.example:
+        model_dir, domain, instance = MODELS[args.example]
+        model_dir = os.path.join(os.path.dirname(mdpproblog.__file__), 'models/', model_dir)
+        domain    = os.path.join(model_dir, domain)
+        instance  = os.path.join(model_dir, instance)
+    else:
+        domain   = args.model[0]
+        instance = args.model[1]
+
+    if args.command == 'show':
+        show_model(domain, instance)
+
+    if args.command in ['solve', 'simulate']:
+        domain, instance = load_model(domain, instance)
+        model = domain + instance
+        mdp = MDP(model)
+        start = time.perf_counter()  # HHAA
+        V, policy, iterations = solve_model(mdp, args.gamma, args.epsilon)
+        end = time.perf_counter() # HHAA
+        uptime = end - start
+
+        print_solution(V, policy, iterations, uptime)
+
+        if args.command == 'simulate':
+            simulator = Simulator(mdp, policy)
+            states  = StateSpace(mdp.current_state_fluents())
+            print()
+            for i, state in enumerate(states):
+                avg, _, _ = simulator.run(args.trials, args.horizon, states[i], args.gamma)
+                state = ', '.join(["{f}={v}".format(f=f, v=v) for f, v in states[i]])
+                print("Expectation({state}) = {value:.3f}".format(state=state, value=avg))

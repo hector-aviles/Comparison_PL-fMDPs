@@ -1,0 +1,194 @@
+PL-fMDP Testing Results:
+==================================================
+
+Fold 1:
+  Test size: 177162 rows
+  Precision: 0.9519
+  Recall: 0.9499
+  F1-score: 0.9486
+  Accuracy: 0.9499
+  Test time: 0.0106s
+  Time per row: 0.000000s
+
+Fold 2:
+  Test size: 155014 rows
+  Precision: 0.9673
+  Recall: 0.9564
+  F1-score: 0.9544
+  Accuracy: 0.9564
+  Test time: 0.0075s
+  Time per row: 0.000000s
+
+Fold 3:
+  Test size: 177162 rows
+  Precision: 0.9520
+  Recall: 0.9499
+  F1-score: 0.9486
+  Accuracy: 0.9499
+  Test time: 0.0081s
+  Time per row: 0.000000s
+
+Fold 4:
+  Test size: 116251 rows
+  Precision: 0.8335
+  Recall: 0.8662
+  F1-score: 0.8078
+  Accuracy: 0.8662
+  Test time: 0.0058s
+  Time per row: 0.000000s
+
+Fold 5:
+  Test size: 155014 rows
+  Precision: 0.9285
+  Recall: 0.9166
+  F1-score: 0.8942
+  Accuracy: 0.9166
+  Test time: 0.0085s
+  Time per row: 0.000000s
+
+Fold 6:
+  Test size: 116251 rows
+  Precision: 0.8335
+  Recall: 0.8662
+  F1-score: 0.8078
+  Accuracy: 0.8662
+  Test time: 0.0055s
+  Time per row: 0.000000s
+
+Fold 7:
+  Test size: 177162 rows
+  Precision: 0.9519
+  Recall: 0.9499
+  F1-score: 0.9486
+  Accuracy: 0.9499
+  Test time: 0.0092s
+  Time per row: 0.000000s
+
+Fold 8:
+  Test size: 267852 rows
+  Precision: 0.9807
+  Recall: 0.9835
+  F1-score: 0.9768
+  Accuracy: 0.9835
+  Test time: 0.0149s
+  Time per row: 0.000000s
+
+Fold 9:
+  Test size: 155014 rows
+  Precision: 0.9673
+  Recall: 0.9564
+  F1-score: 0.9544
+  Accuracy: 0.9564
+  Test time: 0.0095s
+  Time per row: 0.000000s
+
+Fold 10:
+  Test size: 267852 rows
+  Precision: 0.9807
+  Recall: 0.9835
+  F1-score: 0.9768
+  Accuracy: 0.9835
+  Test time: 0.0146s
+  Time per row: 0.000000s
+
+Fold 11:
+  Test size: 116251 rows
+  Precision: 0.8335
+  Recall: 0.8662
+  F1-score: 0.8078
+  Accuracy: 0.8662
+  Test time: 0.0065s
+  Time per row: 0.000000s
+
+Fold 12:
+  Test size: 267852 rows
+  Precision: 0.9709
+  Recall: 0.9835
+  F1-score: 0.9767
+  Accuracy: 0.9835
+  Test time: 0.0140s
+  Time per row: 0.000000s
+
+Fold 13:
+  Test size: 177162 rows
+  Precision: 0.8652
+  Recall: 0.9187
+  F1-score: 0.8881
+  Accuracy: 0.9187
+  Test time: 0.0086s
+  Time per row: 0.000000s
+
+Fold 14:
+  Test size: 245828 rows
+  Precision: 0.9712
+  Recall: 0.9750
+  F1-score: 0.9720
+  Accuracy: 0.9750
+  Test time: 0.0095s
+  Time per row: 0.000000s
+
+Fold 15:
+  Test size: 155014 rows
+  Precision: 0.9673
+  Recall: 0.9564
+  F1-score: 0.9544
+  Accuracy: 0.9564
+  Test time: 0.0061s
+  Time per row: 0.000000s
+
+Fold 16:
+  Test size: 245828 rows
+  Precision: 0.9712
+  Recall: 0.9749
+  F1-score: 0.9720
+  Accuracy: 0.9749
+  Test time: 0.0097s
+  Time per row: 0.000000s
+
+Fold 17:
+  Test size: 116251 rows
+  Precision: 0.8335
+  Recall: 0.8662
+  F1-score: 0.8078
+  Accuracy: 0.8662
+  Test time: 0.0046s
+  Time per row: 0.000000s
+
+Fold 18:
+  Test size: 245828 rows
+  Precision: 0.9712
+  Recall: 0.9749
+  F1-score: 0.9720
+  Accuracy: 0.9749
+  Test time: 0.0095s
+  Time per row: 0.000000s
+
+Fold 19:
+  Test size: 267852 rows
+  Precision: 0.9807
+  Recall: 0.9835
+  F1-score: 0.9768
+  Accuracy: 0.9835
+  Test time: 0.0096s
+  Time per row: 0.000000s
+
+Fold 20:
+  Test size: 245828 rows
+  Precision: 0.9712
+  Recall: 0.9749
+  F1-score: 0.9720
+  Accuracy: 0.9749
+  Test time: 0.0126s
+  Time per row: 0.000000s
+
+OVERALL TESTING STATISTICS:
+========================================
+Total tests: 20
+Average test size: 192421.4 rows
+Average test time: 0.0092s
+Std dev test time: 0.0030s
+Average time per row: 0.000000s
+Average F1-score: 0.9259 ± 0.0653
+Average Precision: 0.9342 ± 0.0575
+Average Recall: 0.9426 ± 0.0436
+Average Accuracy: 0.9426 ± 0.0436
