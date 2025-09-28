@@ -1,0 +1,36 @@
+Thank you very much for your suppor, I need a python program to read files:
+
+../Train_01/summary.csv
+
+../Train_50/summary.csv
+
+../Train_50/summary.csv
+
+For columns "train_rows","tune_rows","test_rows", compute average and standard deviation and create a table like this one:
+
+--------------------------------------------------------------------
+       |       |   $D_{train}$ | $D_{tune}$ |   $D_{test}$ |
+         Sample| ----------------------------------------------
+Data % | size  |     Avg±std   | Avg±std     |    Avg±std    |   
+--------------------------------------------------------------------
+1%
+50%
+100%
+
+It is a modification of the next table which you can use as a reference of what I need:
+
+\begin{table}[ht!]
+ \caption{Sample size and maximum and minimum number of examples used for training, tuning and testing models across the 20 repetitions in Test 1,  with respect to the data percentage collected from $\mathcal{D}_{auto}$.}
+ \label{tab:size}
+\begin{tabular}{c|c|cc|cc|cc}
+\toprule
+Data & Sample & \multicolumn{2}{c|}{$\mathcal{D}_{train}$} &\multicolumn{2}{c|}{$\mathcal{D}_{tune}$} &  \multicolumn{2}{c}{$\mathcal{D}_{test}$}  \\ 
+\cmidrule(lr){3-8}
+\% & size & Maximum & Minimum & Maximum & Minimum & Maximum & Minimum \\ 
+\midrule
+1\% & 9,621  & 7563 & 4026  & 3189 &  918 & 3189 &  918   \\  
+50\% & 481,053 & 346033 & 235092 &  132640 & 49391  & 132640 & 49391 \\ 
+100\% & 962,106 & 652234 & 507258  & 227721  & 135168  &  227721  & 135168  \\
+\bottomrule
+\end{tabular}
+\end{table}

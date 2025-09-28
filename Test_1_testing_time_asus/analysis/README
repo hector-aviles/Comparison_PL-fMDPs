@@ -1,0 +1,9 @@
+Rscript count_samples_D.R
+Rscript count_unique_examples.R
+
+# Correr 
+cd  ./analysis
+python3 comparison.py 100
+
+Rscript count_sample_space.R
+Rscript plot.R

@@ -1,0 +1,22 @@
+\begin{table}[htbp!]
+\caption{Mean and standard deviation of training time for each model instance relative to the data percentage used in Test 1 (PL-fMDPs refers to the creation of PL-fMDPs programs, and APs denotes the calculation of their action policies).}
+\label{tab:training_exp1}
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{6}{c}{Training time statistics (in s) per data sample} \\
+\cmidrule(lr){2-7}
+& \multicolumn{2}{c}{1\%} & \multicolumn{2}{c}{50\%} & \multicolumn{2}{c}{100\%} \\
+\cmidrule(lr){2-7}
+Model & Mean & SD & Mean & SD & Mean & SD \\
+\midrule
+PL-fMDPs & 1.85 & 0.05 & 8.30 & 2.21 & 11.31 & 0.82 \\
+APs & N/A & N/A & N/A & N/A & N/A & N/A \\
+CART & 0.0015 & 0.0001 & 0.0456 & 0.0109 & 0.0581 & 0.0146 \\
+MLP & 2.5964 & 1.0281 & 18.7771 & 6.9785 & 28.7305 & 11.2144 \\
+LR & 0.1069 & 0.2085 & 9.7131 & 14.8494 & 25.6243 & 41.2445 \\
+NB & 0.0020 & 0.0005 & 0.0485 & 0.0124 & 0.1027 & 0.0234 \\
+RFs & 0.1328 & 0.0704 & 3.8551 & 2.1552 & 5.9457 & 3.4014 \\
+XGBoost & 0.1670 & 0.0589 & 1.8788 & 0.6798 & 2.9423 & 1.1526 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,44 @@
+\begin{table}[htbp]
+\centering
+\caption{Model Performance Comparison Across Different Training Percentages}
+\label{tab:model_comparison}
+\begin{tabular}{|l|ccc|}
+\hline
+\multicolumn{4}{|c|}{\textbf{Training percentage 1\%}} \\
+\hline
+\textbf{Models} & \textbf{Precision (Avg±std)} & \textbf{Recall (Avg±std)} & \textbf{F1-score (Avg±std)} \\
+\hline
+PL-fMDPs & 0.9342 ± 0.0575 & 0.9426 ± 0.0436 & 0.9259 ± 0.0653 \\
+LR & 0.8266 ± 0.1295 & 0.7799 ± 0.1496 & 0.7896 ± 0.1476 \\
+CART & 0.8391 ± 0.1150 & 0.7952 ± 0.1927 & 0.7997 ± 0.1694 \\
+NB & 0.7392 ± 0.0866 & 0.7930 ± 0.0820 & 0.7580 ± 0.0855 \\
+RFs & 0.7853 ± 0.1833 & 0.6862 ± 0.2455 & 0.7059 ± 0.2220 \\
+XGBoost & 0.8446 ± 0.1008 & 0.7718 ± 0.1739 & 0.7868 ± 0.1488 \\
+MLP & 0.8175 ± 0.1666 & 0.7267 ± 0.2162 & 0.7454 ± 0.2049 \\
+\hline
+\multicolumn{4}{|c|}{\textbf{Training percentage 50\%}} \\
+\hline
+\textbf{Models} & \textbf{Precision (Avg±std)} & \textbf{Recall (Avg±std)} & \textbf{F1-score (Avg±std)} \\
+\hline
+PL-fMDPs & 0.9288 ± 0.0551 & 0.9386 ± 0.0440 & 0.9198 ± 0.0652 \\
+LR & 0.8172 ± 0.1201 & 0.7746 ± 0.1320 & 0.7846 ± 0.1277 \\
+CART & 0.8411 ± 0.1097 & 0.8282 ± 0.1477 & 0.8206 ± 0.1386 \\
+NB & 0.7391 ± 0.0866 & 0.7930 ± 0.0821 & 0.7580 ± 0.0855 \\
+RFs & 0.7839 ± 0.1801 & 0.7141 ± 0.2231 & 0.7246 ± 0.2092 \\
+XGBoost & 0.8085 ± 0.1536 & 0.7445 ± 0.2498 & 0.7452 ± 0.2255 \\
+MLP & 0.7647 ± 0.1837 & 0.5545 ± 0.2872 & 0.5671 ± 0.2859 \\
+\hline
+\multicolumn{4}{|c|}{\textbf{Training percentage 100\%}} \\
+\hline
+\textbf{Models} & \textbf{Precision (Avg±std)} & \textbf{Recall (Avg±std)} & \textbf{F1-score (Avg±std)} \\
+\hline
+PL-fMDPs & 0.9178 ± 0.0731 & 0.9369 ± 0.0437 & 0.9184 ± 0.0653 \\
+LR & 0.8187 ± 0.1116 & 0.7722 ± 0.1509 & 0.7811 ± 0.1389 \\
+CART & 0.8430 ± 0.1070 & 0.8142 ± 0.1679 & 0.8121 ± 0.1508 \\
+NB & 0.7391 ± 0.0866 & 0.7925 ± 0.0822 & 0.7577 ± 0.0856 \\
+RFs & 0.7802 ± 0.1765 & 0.7108 ± 0.2183 & 0.7224 ± 0.2046 \\
+XGBoost & 0.8097 ± 0.1498 & 0.7528 ± 0.2396 & 0.7533 ± 0.2187 \\
+MLP & 0.7375 ± 0.2506 & 0.5326 ± 0.3237 & 0.5532 ± 0.3260 \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,2 @@
+Avg. training time: 28.7305
+Stdev. training time: 11.2144
