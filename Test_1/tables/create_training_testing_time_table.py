@@ -50,11 +50,32 @@ def parse_training_file(file_path, model_name):
         
     return metrics
 
-def parse_testing_file(file_path):
-    """Parse testing_numeralia.txt file and extract testing time metrics"""
+def get_testing_file_path(file_path, model_name):
+    """Get the correct testing file path, using lookup table for PL-fMDP if available"""
+    if model_name == "PL-fMDP":
+        # Try lookup table file first
+        lookup_table_path = file_path.replace("testing_numeralia.txt", "testing_numeralia_lookup_table.txt")
+        if os.path.exists(lookup_table_path):
+            print(f"Using lookup table file: {lookup_table_path}")
+            return lookup_table_path
+        else:
+            print(f"Lookup table file not found, using default: {file_path}")
+            return file_path
+    else:
+        return file_path
+
+def parse_testing_file(file_path, model_name):
+    """Parse testing_numeralia.txt or testing_numeralia_lookup_table.txt file and extract testing time metrics"""
     metrics = {}
     try:
-        with open(file_path, 'r') as f:
+        # Get the correct file path
+        actual_file_path = get_testing_file_path(file_path, model_name)
+        
+        if not os.path.exists(actual_file_path):
+            print(f"Error: Testing file does not exist - {actual_file_path}")
+            return None
+            
+        with open(actual_file_path, 'r') as f:
             content = f.read()
             
         # Extract testing time
@@ -64,12 +85,14 @@ def parse_testing_file(file_path):
         if testing_time_avg_match and testing_time_std_match:
             metrics['testing_time_avg'] = float(testing_time_avg_match.group(1))
             metrics['testing_time_std'] = float(testing_time_std_match.group(1))
+        else:
+            print(f"Warning: Could not extract testing time metrics from {actual_file_path}")
                 
     except FileNotFoundError:
-        print(f"Error: File not found - {file_path}")
+        print(f"Error: File not found - {actual_file_path}")
         return None
     except Exception as e:
-        print(f"Error reading {file_path}: {e}")
+        print(f"Error reading {actual_file_path}: {e}")
         return None
         
     return metrics
@@ -114,18 +137,16 @@ def main():
             training_data.append(metrics)
             print(f"Parsed training: {file_info['path']}")
     
-    # Parse testing files
+    # Parse testing files - REMOVE the file existence check here since we handle it in parse_testing_file
     testing_data = []
     for file_info in testing_files:
-        if not os.path.exists(file_info['path']):
-            print(f"Warning: Testing file does not exist - {file_info['path']}")
-            continue
-            
-        metrics = parse_testing_file(file_info['path'])
+        metrics = parse_testing_file(file_info['path'], file_info['model'])
         if metrics:
             metrics.update(file_info)
             testing_data.append(metrics)
             print(f"Parsed testing: {file_info['path']}")
+        else:
+            print(f"Failed to parse testing file for {file_info['model']} at {file_info['percentage']}%")
     
     # Create DataFrames
     training_df = pd.DataFrame(training_data)

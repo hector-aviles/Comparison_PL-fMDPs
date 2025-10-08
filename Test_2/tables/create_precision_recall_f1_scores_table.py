@@ -53,7 +53,7 @@ def main():
     file_paths = [        
         "../Test_100/models/RF/Results/testing_numeralia.txt",
         "../Test_100/models/XGBoost/Results/testing_numeralia.txt",
-        "../Test_100/models/PL-fMDP/Results/testing_numeralia.txt",
+        "../Test_100/models/PL-fMDP/Results/testing_numeralia_lookup_table.txt",
         "../Test_100/models/CART/Results/testing_numeralia.txt",
         "../Test_100/models/NB/Results/testing_numeralia.txt",
         "../Test_100/models/MLP/Results/testing_numeralia.txt",

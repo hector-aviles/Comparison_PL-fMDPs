@@ -1,0 +1,561 @@
+PL-fMDP Testing Results (Lookup Table):
+==================================================
+
+Fold 1:
+  Test size: 16497 rows
+  Precision: 0.8144
+  Recall: 0.7057
+  F1-score: 0.7460
+  Accuracy: 0.7057
+  Test time: 0.0020s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  91  154  387  136]
+ [  17  227  285  167]
+ [  63 2588 8638  613]
+ [  84  130  231 2686]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.36      0.12      0.18       768
+           1       0.07      0.33      0.12       696
+           2       0.91      0.73      0.81     11902
+           3       0.75      0.86      0.80      3131
+
+    accuracy                           0.71     16497
+   macro avg       0.52      0.51      0.48     16497
+weighted avg       0.81      0.71      0.75     16497
+
+
+Fold 2:
+  Test size: 16496 rows
+  Precision: 0.8128
+  Recall: 0.7027
+  F1-score: 0.7437
+  Accuracy: 0.7027
+  Test time: 0.0018s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[ 101  151  409  107]
+ [  26  244  280  146]
+ [  43 2625 8585  649]
+ [ 112  117  239 2662]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.36      0.13      0.19       768
+           1       0.08      0.35      0.13       696
+           2       0.90      0.72      0.80     11902
+           3       0.75      0.85      0.80      3130
+
+    accuracy                           0.70     16496
+   macro avg       0.52      0.51      0.48     16496
+weighted avg       0.81      0.70      0.74     16496
+
+
+Fold 3:
+  Test size: 16495 rows
+  Precision: 0.8144
+  Recall: 0.6924
+  F1-score: 0.7390
+  Accuracy: 0.6924
+  Test time: 0.0018s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[ 102  158  383  124]
+ [  22  240  297  137]
+ [  60 2713 8548  581]
+ [  81  273  245 2531]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.38      0.13      0.20       767
+           1       0.07      0.34      0.12       696
+           2       0.90      0.72      0.80     11902
+           3       0.75      0.81      0.78      3130
+
+    accuracy                           0.69     16495
+   macro avg       0.53      0.50      0.47     16495
+weighted avg       0.81      0.69      0.74     16495
+
+
+Fold 4:
+  Test size: 16495 rows
+  Precision: 0.8112
+  Recall: 0.6970
+  F1-score: 0.7394
+  Accuracy: 0.6970
+  Test time: 0.0018s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  94  178  367  128]
+ [  20  235  296  145]
+ [  64 2674 8500  664]
+ [  96  118  248 2668]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.34      0.12      0.18       767
+           1       0.07      0.34      0.12       696
+           2       0.90      0.71      0.80     11902
+           3       0.74      0.85      0.79      3130
+
+    accuracy                           0.70     16495
+   macro avg       0.51      0.51      0.47     16495
+weighted avg       0.81      0.70      0.74     16495
+
+
+Fold 5:
+  Test size: 16494 rows
+  Precision: 0.8086
+  Recall: 0.6973
+  F1-score: 0.7391
+  Accuracy: 0.6973
+  Test time: 0.0020s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  84  158  408  117]
+ [  26  207  300  163]
+ [  62 2637 8531  671]
+ [  96  140  214 2680]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.31      0.11      0.16       767
+           1       0.07      0.30      0.11       696
+           2       0.90      0.72      0.80     11901
+           3       0.74      0.86      0.79      3130
+
+    accuracy                           0.70     16494
+   macro avg       0.50      0.49      0.47     16494
+weighted avg       0.81      0.70      0.74     16494
+
+
+Fold 6:
+  Test size: 16493 rows
+  Precision: 0.8088
+  Recall: 0.6994
+  F1-score: 0.7406
+  Accuracy: 0.6994
+  Test time: 0.0017s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[ 106  142  406  113]
+ [  30  201  300  164]
+ [  65 2601 8541  694]
+ [  98  112  232 2688]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.35      0.14      0.20       767
+           1       0.07      0.29      0.11       695
+           2       0.90      0.72      0.80     11901
+           3       0.73      0.86      0.79      3130
+
+    accuracy                           0.70     16493
+   macro avg       0.51      0.50      0.47     16493
+weighted avg       0.81      0.70      0.74     16493
+
+
+Fold 7:
+  Test size: 16492 rows
+  Precision: 0.8163
+  Recall: 0.7044
+  F1-score: 0.7457
+  Accuracy: 0.7044
+  Test time: 0.0016s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[ 103  163  378  122]
+ [  23  243  296  133]
+ [  50 2616 8578  657]
+ [  98  123  216 2693]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.38      0.13      0.20       766
+           1       0.08      0.35      0.13       695
+           2       0.91      0.72      0.80     11901
+           3       0.75      0.86      0.80      3130
+
+    accuracy                           0.70     16492
+   macro avg       0.53      0.52      0.48     16492
+weighted avg       0.82      0.70      0.75     16492
+
+
+Fold 8:
+  Test size: 16491 rows
+  Precision: 0.8144
+  Recall: 0.7000
+  F1-score: 0.7425
+  Accuracy: 0.7000
+  Test time: 0.0017s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[ 115  163  375  113]
+ [  22  216  298  159]
+ [  51 2640 8523  686]
+ [  99  119  223 2689]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.40      0.15      0.22       766
+           1       0.07      0.31      0.11       695
+           2       0.90      0.72      0.80     11900
+           3       0.74      0.86      0.79      3130
+
+    accuracy                           0.70     16491
+   macro avg       0.53      0.51      0.48     16491
+weighted avg       0.81      0.70      0.74     16491
+
+
+Fold 9:
+  Test size: 16491 rows
+  Precision: 0.8145
+  Recall: 0.6952
+  F1-score: 0.7388
+  Accuracy: 0.6952
+  Test time: 0.0015s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[ 110  138  394  124]
+ [  28  236  273  158]
+ [  45 2735 8446  674]
+ [  80  147  231 2672]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.42      0.14      0.21       766
+           1       0.07      0.34      0.12       695
+           2       0.90      0.71      0.80     11900
+           3       0.74      0.85      0.79      3130
+
+    accuracy                           0.70     16491
+   macro avg       0.53      0.51      0.48     16491
+weighted avg       0.81      0.70      0.74     16491
+
+
+Fold 10:
+  Test size: 16491 rows
+  Precision: 0.8131
+  Recall: 0.7038
+  F1-score: 0.7449
+  Accuracy: 0.7038
+  Test time: 0.0016s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  96  159  392  119]
+ [  27  228  278  162]
+ [  52 2579 8631  638]
+ [ 105  138  235 2652]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.34      0.13      0.18       766
+           1       0.07      0.33      0.12       695
+           2       0.91      0.73      0.81     11900
+           3       0.74      0.85      0.79      3130
+
+    accuracy                           0.70     16491
+   macro avg       0.52      0.51      0.48     16491
+weighted avg       0.81      0.70      0.74     16491
+
+
+Fold 11:
+  Test size: 16491 rows
+  Precision: 0.8081
+  Recall: 0.7032
+  F1-score: 0.7424
+  Accuracy: 0.7032
+  Test time: 0.0019s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  77  162  406  121]
+ [  19  222  294  160]
+ [  54 2548 8632  666]
+ [ 107  123  235 2665]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.30      0.10      0.15       766
+           1       0.07      0.32      0.12       695
+           2       0.90      0.73      0.80     11900
+           3       0.74      0.85      0.79      3130
+
+    accuracy                           0.70     16491
+   macro avg       0.50      0.50      0.47     16491
+weighted avg       0.81      0.70      0.74     16491
+
+
+Fold 12:
+  Test size: 16489 rows
+  Precision: 0.8140
+  Recall: 0.7013
+  F1-score: 0.7425
+  Accuracy: 0.7013
+  Test time: 0.0019s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  88  177  379  122]
+ [   8  224  304  158]
+ [  56 2622 8561  660]
+ [  82  139  219 2690]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.38      0.11      0.18       766
+           1       0.07      0.32      0.12       694
+           2       0.90      0.72      0.80     11899
+           3       0.74      0.86      0.80      3130
+
+    accuracy                           0.70     16489
+   macro avg       0.52      0.50      0.47     16489
+weighted avg       0.81      0.70      0.74     16489
+
+
+Fold 13:
+  Test size: 16489 rows
+  Precision: 0.8083
+  Recall: 0.7003
+  F1-score: 0.7331
+  Accuracy: 0.7003
+  Test time: 0.0019s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[   6  167  398  195]
+ [   0  247  273  174]
+ [   0 2615 8545  739]
+ [  10  133  237 2750]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.38      0.01      0.02       766
+           1       0.08      0.36      0.13       694
+           2       0.90      0.72      0.80     11899
+           3       0.71      0.88      0.79      3130
+
+    accuracy                           0.70     16489
+   macro avg       0.52      0.49      0.43     16489
+weighted avg       0.81      0.70      0.73     16489
+
+
+Fold 14:
+  Test size: 16487 rows
+  Precision: 0.8115
+  Recall: 0.6995
+  F1-score: 0.7404
+  Accuracy: 0.6995
+  Test time: 0.0022s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  87  158  399  120]
+ [  25  232  290  147]
+ [  52 2644 8510  693]
+ [  88  122  217 2703]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.35      0.11      0.17       764
+           1       0.07      0.33      0.12       694
+           2       0.90      0.72      0.80     11899
+           3       0.74      0.86      0.80      3130
+
+    accuracy                           0.70     16487
+   macro avg       0.52      0.51      0.47     16487
+weighted avg       0.81      0.70      0.74     16487
+
+
+Fold 15:
+  Test size: 16486 rows
+  Precision: 0.8124
+  Recall: 0.7020
+  F1-score: 0.7421
+  Accuracy: 0.7020
+  Test time: 0.0018s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  78  172  377  137]
+ [   6  242  286  160]
+ [  56 2597 8582  663]
+ [  84  140  235 2671]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.35      0.10      0.16       764
+           1       0.08      0.35      0.13       694
+           2       0.91      0.72      0.80     11898
+           3       0.74      0.85      0.79      3130
+
+    accuracy                           0.70     16486
+   macro avg       0.52      0.51      0.47     16486
+weighted avg       0.81      0.70      0.74     16486
+
+
+Fold 16:
+  Test size: 16486 rows
+  Precision: 0.8119
+  Recall: 0.6987
+  F1-score: 0.7410
+  Accuracy: 0.6987
+  Test time: 0.0018s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  95  155  394  120]
+ [  29  238  261  166]
+ [  61 2665 8531  641]
+ [ 101  127  248 2654]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.33      0.12      0.18       764
+           1       0.07      0.34      0.12       694
+           2       0.90      0.72      0.80     11898
+           3       0.74      0.85      0.79      3130
+
+    accuracy                           0.70     16486
+   macro avg       0.51      0.51      0.47     16486
+weighted avg       0.81      0.70      0.74     16486
+
+
+Fold 17:
+  Test size: 16485 rows
+  Precision: 0.8134
+  Recall: 0.7003
+  F1-score: 0.7424
+  Accuracy: 0.7003
+  Test time: 0.0018s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  98  159  395  112]
+ [  15  224  300  155]
+ [  56 2654 8551  637]
+ [  86  134  237 2672]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.38      0.13      0.19       764
+           1       0.07      0.32      0.12       694
+           2       0.90      0.72      0.80     11898
+           3       0.75      0.85      0.80      3129
+
+    accuracy                           0.70     16485
+   macro avg       0.53      0.51      0.48     16485
+weighted avg       0.81      0.70      0.74     16485
+
+
+Fold 18:
+  Test size: 16484 rows
+  Precision: 0.8112
+  Recall: 0.6835
+  F1-score: 0.7327
+  Accuracy: 0.6835
+  Test time: 0.0016s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  91  166  403  104]
+ [  18  251  289  136]
+ [  58 2776 8480  584]
+ [ 100  347  237 2444]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.34      0.12      0.18       764
+           1       0.07      0.36      0.12       694
+           2       0.90      0.71      0.80     11898
+           3       0.75      0.78      0.76      3128
+
+    accuracy                           0.68     16484
+   macro avg       0.52      0.49      0.46     16484
+weighted avg       0.81      0.68      0.73     16484
+
+
+Fold 19:
+  Test size: 16483 rows
+  Precision: 0.8098
+  Recall: 0.6991
+  F1-score: 0.7396
+  Accuracy: 0.6991
+  Test time: 0.0020s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  81  160  404  119]
+ [  12  239  292  150]
+ [  48 2660 8523  667]
+ [  99  108  241 2680]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.34      0.11      0.16       764
+           1       0.08      0.34      0.12       693
+           2       0.90      0.72      0.80     11898
+           3       0.74      0.86      0.79      3128
+
+    accuracy                           0.70     16483
+   macro avg       0.51      0.51      0.47     16483
+weighted avg       0.81      0.70      0.74     16483
+
+
+Fold 20:
+  Test size: 16483 rows
+  Precision: 0.8119
+  Recall: 0.6995
+  F1-score: 0.7415
+  Accuracy: 0.6995
+  Test time: 0.0019s
+  Time per row: 0.000000s
+  Confusion Matrix:
+[[  99  160  391  114]
+ [  20  225  296  152]
+ [  56 2654 8544  644]
+ [  91  121  254 2662]]
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.37      0.13      0.19       764
+           1       0.07      0.32      0.12       693
+           2       0.90      0.72      0.80     11898
+           3       0.75      0.85      0.79      3128
+
+    accuracy                           0.70     16483
+   macro avg       0.52      0.51      0.48     16483
+weighted avg       0.81      0.70      0.74     16483
+
+
+OVERALL TESTING STATISTICS:
+==================================================
+Total tests: 20
+Average test size: 16489.9 rows
+Average test time: 0.0018s
+Std dev test time: 0.0002s
+Average time per row: 0.000000s
+Average Precision: 0.8120 ± 0.0024
+Average Recall: 0.6993 ± 0.0049
+Average F1: 0.7409 ± 0.0035
+Average Accuracy: 0.6993 ± 0.0049
+
+DRIVER-LEVEL METRICS:
+------------------------------
+Driver 1:
+  Precision: 0.9129 ± 0.0023
+  Recall: 0.7492 ± 0.0044
+  F1: 0.8037 ± 0.0036
+  Accuracy: 0.7492 ± 0.0044
+
+Driver 2:
+  Precision: 0.9069 ± 0.0019
+  Recall: 0.7564 ± 0.0132
+  F1: 0.8096 ± 0.0079
+  Accuracy: 0.7564 ± 0.0132
+
+Driver 3:
+  Precision: 0.9209 ± 0.0038
+  Recall: 0.7021 ± 0.0087
+  F1: 0.7882 ± 0.0059
+  Accuracy: 0.7021 ± 0.0087
+
+Driver 4:
+  Precision: 0.5234 ± 0.0241
+  Recall: 0.5216 ± 0.0046
+  F1: 0.4849 ± 0.0052
+  Accuracy: 0.5216 ± 0.0046
+

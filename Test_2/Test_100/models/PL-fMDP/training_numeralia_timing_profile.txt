@@ -1,0 +1,129 @@
+AP Calculation Timings (Per Model):
+==================================================
+
+Fold 1:
+  Models calculated: 30
+  Total time: 66.6348s
+  Average per model: 2.2212s
+  Std dev per model: 0.5662s
+
+Fold 2:
+  Models calculated: 30
+  Total time: 67.2425s
+  Average per model: 2.2414s
+  Std dev per model: 0.6070s
+
+Fold 3:
+  Models calculated: 30
+  Total time: 60.7856s
+  Average per model: 2.0262s
+  Std dev per model: 0.4858s
+
+Fold 4:
+  Models calculated: 30
+  Total time: 60.8787s
+  Average per model: 2.0293s
+  Std dev per model: 0.4852s
+
+Fold 5:
+  Models calculated: 30
+  Total time: 65.5113s
+  Average per model: 2.1837s
+  Std dev per model: 0.5952s
+
+Fold 6:
+  Models calculated: 30
+  Total time: 65.6773s
+  Average per model: 2.1892s
+  Std dev per model: 0.6011s
+
+Fold 7:
+  Models calculated: 30
+  Total time: 64.2826s
+  Average per model: 2.1428s
+  Std dev per model: 0.5081s
+
+Fold 8:
+  Models calculated: 30
+  Total time: 63.7789s
+  Average per model: 2.1260s
+  Std dev per model: 0.5069s
+
+Fold 9:
+  Models calculated: 30
+  Total time: 76.3768s
+  Average per model: 2.5459s
+  Std dev per model: 0.5147s
+
+Fold 10:
+  Models calculated: 30
+  Total time: 75.6522s
+  Average per model: 2.5217s
+  Std dev per model: 0.5216s
+
+Fold 11:
+  Models calculated: 30
+  Total time: 68.3394s
+  Average per model: 2.2780s
+  Std dev per model: 0.5094s
+
+Fold 12:
+  Models calculated: 30
+  Total time: 68.3853s
+  Average per model: 2.2795s
+  Std dev per model: 0.5289s
+
+Fold 13:
+  Models calculated: 30
+  Total time: 63.9676s
+  Average per model: 2.1323s
+  Std dev per model: 0.5859s
+
+Fold 14:
+  Models calculated: 30
+  Total time: 64.0185s
+  Average per model: 2.1339s
+  Std dev per model: 0.6032s
+
+Fold 15:
+  Models calculated: 30
+  Total time: 70.1566s
+  Average per model: 2.3386s
+  Std dev per model: 0.4801s
+
+Fold 16:
+  Models calculated: 30
+  Total time: 69.3512s
+  Average per model: 2.3117s
+  Std dev per model: 0.4479s
+
+Fold 17:
+  Models calculated: 30
+  Total time: 70.3028s
+  Average per model: 2.3434s
+  Std dev per model: 0.5420s
+
+Fold 18:
+  Models calculated: 30
+  Total time: 70.6277s
+  Average per model: 2.3543s
+  Std dev per model: 0.5551s
+
+Fold 19:
+  Models calculated: 30
+  Total time: 72.9738s
+  Average per model: 2.4325s
+  Std dev per model: 0.4832s
+
+Fold 20:
+  Models calculated: 30
+  Total time: 73.4356s
+  Average per model: 2.4479s
+  Std dev per model: 0.4449s
+
+OVERALL STATISTICS (ALL MODELS):
+========================================
+Total AP models calculated: 600
+Average time per AP model: 2.2640s
+Std dev time per AP model: 0.5425s
+Total computation time: 1358.3791s

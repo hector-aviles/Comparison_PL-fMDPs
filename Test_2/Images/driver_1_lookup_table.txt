@@ -1,0 +1,3 @@
+PL-fMDP (Lookup Table):
+Mean F1 Score: 0.8023616912752005
+F1 Score Std Dev:  0.004548639375950326

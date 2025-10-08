@@ -24,15 +24,14 @@ dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 D <- read.csv("./D_humans.csv")
 dim(D)
 
-# Stratified sampling
-sampling_percentage <- as.numeric(percentage) / 100
-print(paste0("Sampling percentage: ", sampling_percentage))
-stratified_sample <- D %>%
-  group_by(action, driver) %>%
-  sample_frac(sampling_percentage)
-dim(stratified_sample)
+# MODIFICATION: Always use 100% of the data regardless of the percentage parameter
+print(paste0("Using 100% of data for all percentages (ignoring input percentage for sampling)"))
 
-# Write the sampled dataset
+# Use the entire dataset - NO SAMPLING
+stratified_sample <- D  # Use full dataset
+print(paste0("Full dataset size: ", nrow(stratified_sample)))
+
+# Write the sampled dataset (still using the percentage in filename for consistency)
 test_path <- paste0("./Test_", percentage, "/D_humans_", percentage, ".csv")
 write.csv(stratified_sample, test_path, row.names = FALSE)
 
@@ -54,14 +53,16 @@ for (i in 1:num_subsets) {
   subset_path <- paste0(output_dir, "/test_fold_", i, ".csv")
   write.csv(subset_data, subset_path, row.names = FALSE)
   
+  # Print the size of each subset for debugging
+  print(paste0("Subset ", i, " size: ", nrow(subset_data)))
   
   size_dir <- paste0("./Test_", percentage)
   # Record size for the first repetition
   if (i == 1) {
-    size_df <- data.frame(i = i, sample_size= nrow(stratified_sample), test_size=nrow(subset_data))
+    size_df <- data.frame(i = i, sample_size = nrow(stratified_sample), test_size = nrow(subset_data))
     write.csv(size_df, file = file.path(size_dir, "size.csv"), row.names = FALSE)
   } else {
-    size_df <- data.frame(i = i, sample_size= nrow(stratified_sample), test_size=nrow(subset_data))
+    size_df <- data.frame(i = i, sample_size = nrow(stratified_sample), test_size = nrow(subset_data))
     write.table(size_df,
                 file = file.path(size_dir, "size.csv"),
                 append = TRUE,
@@ -69,7 +70,7 @@ for (i in 1:num_subsets) {
                 col.names = FALSE,
                 row.names = FALSE)
   }  
-  
 }
 
 print("All subsets saved successfully!")
+print(paste0("Note: Used 100% of D_humans data for percentage ", percentage, " for consistent comparison"))
