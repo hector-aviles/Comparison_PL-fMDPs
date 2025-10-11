@@ -1,0 +1,926 @@
+####### 1
+
+Prediction time: 0.002614259719848633
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.002167224884033203
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0020623207092285156
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0015583038330078125
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0014309883117675781
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0018835067749023438
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0020453929901123047
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0012850761413574219
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0018053054809570312
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.002750396728515625
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.00888514518737793
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0018038749694824219
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0015549659729003906
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.002820730209350586
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0012862682342529297
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0034246444702148438
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.002568483352661133
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0011737346649169922
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0014057159423828125
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0014300346374511719
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0014882087707519531
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0021615028381347656
+Predicted action: change_to_left
+curr_lane True free_NE False free_NW True free_SW True free_W True free_SE True free_E True
+Waiting for change lane to finish...
+
+####### 2
+
+Prediction time: 0.0014615058898925781
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.001646280288696289
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0019550323486328125
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+
+
+####### 3
+
+Prediction time: 0.001725912094116211
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 4
+
+Prediction time: 0.0019958019256591797
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0033218860626220703
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0022242069244384766
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.001689910888671875
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0013966560363769531
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0017442703247070312
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.001256704330444336
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0015482902526855469
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.001590728759765625
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0013730525970458984
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0022554397583007812
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+
+
+####### 5
+
+Prediction time: 0.0012326240539550781
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0015137195587158203
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0011136531829833984
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0012886524200439453
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0016465187072753906
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0013604164123535156
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.001722574234008789
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0014564990997314453
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.001836538314819336
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0018489360809326172
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0014944076538085938
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0015184879302978516
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0013663768768310547
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.002122640609741211
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0013720989227294922
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.002178192138671875
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+
+####### 6
+
+Prediction time: 0.001705169677734375
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0018591880798339844
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0014758110046386719
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0016450881958007812
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0014240741729736328
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0016543865203857422
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0017085075378417969
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.001552581787109375
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0016887187957763672
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.002936124801635742
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0019249916076660156
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.004718780517578125
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0036325454711914062
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.001575469970703125
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+^CPrediction time: 0.6053850650787354
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+
+####### 7
+
+Prediction time: 0.001705169677734375
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0018591880798339844
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0014758110046386719
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0016450881958007812
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0014240741729736328
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0016543865203857422
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0017085075378417969
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.001552581787109375
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0016887187957763672
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.002936124801635742
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0019249916076660156
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.004718780517578125
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0036325454711914062
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.001575469970703125
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+^CPrediction time: 0.6053850650787354
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+asus@asus-K45VD:~/source_code/self-driving-car-2025/catkin_ws$ rosrun self_driving_car test_AP.py 9 7
+INITIALIZING POLICY...
+Creating ActionPolicy classifier...
+ActionPolicy classifier created successfully
+Publishing policy_started 0
+Publishing policy_started 1
+Prediction time: 0.0015773773193359375
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 8
+
+Prediction time: 0.0020334720611572266
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 9
+
+Prediction time: 0.0020334720611572266
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...^Casus@asus-K45VD:~/source_code/self-driving-car-2025/catkin_ws$ rosrun self_driving_car test_AP.py 9 7         
+INITIALIZING POLICY...
+Creating ActionPolicy classifier...
+ActionPolicy classifier created successfully
+Publishing policy_started 0
+Publishing policy_started 1
+Prediction time: 0.0014801025390625
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 10
+
+Prediction time: 0.0017497539520263672
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 11
+
+Prediction time: 0.0020334720611572266
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...^Casus@asus-K45VD:~/source_code/self-driving-car-2025/catkin_ws$ rosrun self_driving_car test_AP.py 9 7         
+INITIALIZING POLICY...
+Creating ActionPolicy classifier...
+ActionPolicy classifier created successfully
+Publishing policy_started 0
+Publishing policy_started 1
+Prediction time: 0.0014801025390625
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...^Casus@asus-K45VD:~/source_code/self-driving-car-2025/catkin_ws$ rosrun self_driving_car test_AP.py 9 7         
+INITIALIZING POLICY...
+Creating ActionPolicy classifier...
+ActionPolicy classifier created successfully
+Publishing policy_started 0
+Publishing policy_started 1
+Prediction time: 0.0017497539520263672
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...^Casus@asus-K45VD:~/source_code/self-driving-car-2025/catkin_ws$ rosrun self_driving_car test_AP.py 9 7         
+INITIALIZING POLICY...
+Creating ActionPolicy classifier...
+ActionPolicy classifier created successfully
+Publishing policy_started 0
+Publishing policy_started 1
+Prediction time: 0.0038614273071289062
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0015926361083984375
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0015482902526855469
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0033011436462402344
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0018887519836425781
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0012972354888916016
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0016207695007324219
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0013136863708496094
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0014307498931884766
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.001424551010131836
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0028960704803466797
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0011322498321533203
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0022962093353271484
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0020356178283691406
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0010669231414794922
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0016300678253173828
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.002893686294555664
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0024776458740234375
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0016772747039794922
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.001917123794555664
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0011823177337646484
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0023322105407714844
+Predicted action: change_to_left
+curr_lane True free_NE False free_NW True free_SW True free_W True free_SE True free_E True
+Waiting for change lane to finish...
+
+####### 12
+
+Prediction time: 0.0018041133880615234
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 13
+
+Prediction time: 0.0030374526977539062
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 14
+
+Prediction time: 0.001596689224243164
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0020072460174560547
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0013897418975830078
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.002407550811767578
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0029478073120117188
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0016529560089111328
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.002336263656616211
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0015783309936523438
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.001535177230834961
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.001458883285522461
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.002176523208618164
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.001871347427368164
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0016984939575195312
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+
+
+####### 15
+
+Prediction time: 0.0023965835571289062
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 16
+
+Publishing policy_started 0
+Publishing policy_started 1
+Prediction time: 0.0017528533935546875
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0013430118560791016
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0018918514251708984
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+
+
+####### 17
+
+Prediction time: 0.0013904571533203125
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 18
+
+Prediction time: 0.0016527175903320312
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 19
+
+Prediction time: 0.001630544662475586
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 20
+
+Creating ActionPolicy classifier...
+ActionPolicy classifier created successfully
+Publishing policy_started 0
+Publishing policy_started 1
+Prediction time: 0.002601146697998047
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 21
+
+Prediction time: 0.003391742706298828
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.002971172332763672
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0020172595977783203
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0014410018920898438
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0016777515411376953
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0012767314910888672
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0015919208526611328
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0015087127685546875
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0017316341400146484
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0017688274383544922
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.001554250717163086
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0012018680572509766
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.001218557357788086
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0013124942779541016
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0018727779388427734
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.002105712890625
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0018007755279541016
+Predicted action: keep
+curr_lane True free_NE True free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0014383792877197266
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0011658668518066406
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0011899471282958984
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0015423297882080078
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0019783973693847656
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0022330284118652344
+Predicted action: keep
+curr_lane False free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0023665428161621094
+Predicted action: keep
+curr_lane False free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0026900768280029297
+Predicted action: keep
+curr_lane False free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0020003318786621094
+Predicted action: keep
+curr_lane False free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0012981891632080078
+Predicted action: keep
+curr_lane False free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0018305778503417969
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Waiting for change lane to finish...
+
+####### 22
+
+Creating ActionPolicy classifier...
+ActionPolicy classifier created successfully
+Publishing policy_started 0
+Publishing policy_started 1
+Prediction time: 0.0021071434020996094
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0017423629760742188
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0013468265533447266
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0019843578338623047
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0021889209747314453
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0013425350189208984
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0011165142059326172
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0023365020751953125
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0027832984924316406
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.00127410888671875
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.002371549606323242
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0017476081848144531
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.001971721649169922
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.005078792572021484
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0016520023345947266
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0016241073608398438
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0012810230255126953
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0015783309936523438
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0015320777893066406
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0044362545013427734
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.001928091049194336
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0014481544494628906
+Predicted action: keep
+curr_lane False free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.001132965087890625
+Predicted action: keep
+curr_lane False free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0017209053039550781
+Predicted action: keep
+curr_lane False free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0014340877532958984
+Predicted action: keep
+curr_lane False free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0027234554290771484
+Predicted action: keep
+curr_lane False free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.001489400863647461
+Predicted action: keep
+curr_lane False free_NE False free_NW False free_SW False free_W False free_SE True free_E True
+
+
+####### 23
+
+Prediction time: 0.0018222332000732422
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.001577615737915039
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0015187263488769531
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.001123666763305664
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0018877983093261719
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0028634071350097656
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0015468597412109375
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.002060413360595703
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0016756057739257812
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0012364387512207031
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.001135110855102539
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Prediction time: 0.0025224685668945312
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Prediction time: 0.002129077911376953
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Prediction time: 0.0029752254486083984
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE False free_E True
+Prediction time: 0.0023152828216552734
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE False free_E True
+Prediction time: 0.0012025833129882812
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE False free_E True
+Prediction time: 0.0015101432800292969
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0022721290588378906
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+
+
+####### 24
+
+Prediction time: 0.0018527507781982422
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 25
+
+Prediction time: 0.0016560554504394531
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 26
+
+Prediction time: 0.0020380020141601562
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0015056133270263672
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0020873546600341797
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0014412403106689453
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0012862682342529297
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0012052059173583984
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.003034830093383789
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0016453266143798828
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0013322830200195312
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0017635822296142578
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0012309551239013672
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE False free_E False
+Prediction time: 0.0011782646179199219
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.001537322998046875
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.00139617919921875
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0017466545104980469
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.002538442611694336
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.001971006393432617
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0013790130615234375
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.001970052719116211
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.0023915767669677734
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW False free_SW True free_W True free_SE True free_E True
+Waiting for change lane to finish...
+
+####### 27
+
+Publishing policy_started 0
+Publishing policy_started 1
+Prediction time: 0.0016131401062011719
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0011794567108154297
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0017862319946289062
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0020711421966552734
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0012042522430419922
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0015811920166015625
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0027534961700439453
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0023622512817382812
+Predicted action: cruise
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Prediction time: 0.007396221160888672
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.002486705780029297
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0022830963134765625
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.001580953598022461
+Predicted action: keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+
+####### 28
+
+Prediction time: 0.0019533634185791016
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0013189315795898438
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW False free_SW True free_W False free_SE True free_E True
+Waiting for change lane to finish...
+
+####### 29
+
+INITIALIZING POLICY...
+Creating ActionPolicy classifier...
+ActionPolicy classifier created successfully
+Publishing policy_started 0
+Publishing policy_started 1
+Prediction time: 0.002513408660888672
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 30
+
+Creating ActionPolicy classifier...
+ActionPolicy classifier created successfully
+Publishing policy_started 0
+Publishing policy_started 1
+Prediction time: 0.0022170543670654297
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0014684200286865234
+Predicted action: change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W False free_SE True free_E True
+Waiting for change lane to finish...
+

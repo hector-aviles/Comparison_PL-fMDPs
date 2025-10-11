@@ -1,0 +1,323 @@
+####### 1
+
+Prediction time: 0.005179405212402344
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 2
+
+Prediction time: 0.0034050941467285156
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 3
+
+Prediction time: 0.0031557083129882812
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 4
+
+Prediction time: 0.004363059997558594
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 5
+
+Prediction time: 0.003052949905395508
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 6
+
+Prediction time: 0.004648685455322266
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 7
+
+Prediction time: 0.0043048858642578125
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 8
+
+Prediction time: 0.003151416778564453
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 9
+
+Prediction time: 0.0047054290771484375
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 10
+
+Prediction time: 0.004021406173706055
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 11
+
+Prediction time: 0.0029144287109375
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 12
+
+Prediction time: 0.0062520503997802734
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.004048824310302734
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.0023741722106933594
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.0023610591888427734
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.0057621002197265625
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish...
+
+####### 13
+
+Prediction time: 0.004648685455322266
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.0027322769165039062
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.0044214725494384766
+Action (decoded): keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.003225088119506836
+Action (decoded): keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.003958940505981445
+Action (decoded): keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.005717754364013672
+Action (decoded): keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0055921077728271484
+Action (decoded): keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.0027251243591308594
+Action (decoded): keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E False
+Prediction time: 0.002720355987548828
+Action (decoded): keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.008467912673950195
+Action (decoded): keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.00792551040649414
+Action (decoded): keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+Prediction time: 0.008069992065429688
+Action (decoded): keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+^CPrediction time: 0.611175537109375
+Action (decoded): keep
+curr_lane True free_NE False free_NW False free_SW True free_W True free_SE True free_E True
+
+####### 14
+
+Prediction time: 0.00433802604675293
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.00753474235534668
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish...
+
+####### 15
+
+Prediction time: 0.003039836883544922
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 16
+
+Prediction time: 0.010098457336425781
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 17
+
+Prediction time: 0.002680540084838867
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0058672428131103516
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish...
+
+####### 18
+
+Prediction time: 0.006579160690307617
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 19
+
+Prediction time: 0.0025055408477783203
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.006344795227050781
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.005297183990478516
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.009242773056030273
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish...
+
+####### 20
+
+Prediction time: 0.0030629634857177734
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.004067420959472656
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Waiting for change lane to finish...
+
+####### 21
+
+Prediction time: 0.002830028533935547
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 22
+
+Prediction time: 0.0030646324157714844
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 23
+
+Prediction time: 0.005957841873168945
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.00560307502746582
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.005107879638671875
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.007997751235961914
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.007770061492919922
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish...
+
+####### 24
+
+Prediction time: 0.006348371505737305
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.005487918853759766
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.007206439971923828
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish... End
+Prediction time: 0.005570173263549805
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE False free_E False
+Waiting for change lane to finish...
+
+####### 25
+
+Prediction time: 0.006487131118774414
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.005079984664916992
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish...
+
+####### 26
+
+Prediction time: 0.00674891471862793
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 27
+
+Prediction time: 0.0044689178466796875
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 28
+
+Prediction time: 0.002866029739379883
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+
+####### 29
+
+Prediction time: 0.010061502456665039
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish... End
+Prediction time: 0.0025718212127685547
+Action (decoded): change_to_left
+curr_lane True free_NE True free_NW True free_SW True free_W True free_SE True free_E False
+Waiting for change lane to finish...
+
+####### 30
+
+Prediction time: 0.002989530563354492
+Action (decoded): change_to_right
+curr_lane False free_NE True free_NW True free_SW True free_W True free_SE False free_E True
+Waiting for change lane to finish...
+

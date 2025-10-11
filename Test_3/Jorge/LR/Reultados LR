@@ -1,0 +1,44 @@
+######################   
+# Clasificador LR, 6 mundos:
+######################
+
+######################   
+# Conocidos:
+######################
+
+# Mundo 4:
+	Choque: 4
+	No Choque: 14
+	Salio del carril: 12
+
+# Mundo 7:
+	Choque: 4
+	No Choque: 3
+	Salio del carril: 23
+
+# Mundo 15:
+	Choque: 3
+	No Choque: 6
+	Salio del carril: 20
+
+######################   
+# Desconocidos:
+######################
+
+# Mundo 1:
+	Choque: 8
+	No Choque: 13
+	Salio del carril: 9
+
+# Mundo 2:
+	Choque: 4
+	No Choque: 4
+	Salio del carril: 21
+
+# Mundo 3:
+	Choque: 30
+	No Choque: 0
+	Salio del carril: 0
+	
+	
+	

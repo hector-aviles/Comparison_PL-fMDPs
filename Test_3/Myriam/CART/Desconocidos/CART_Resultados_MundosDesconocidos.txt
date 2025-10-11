@@ -1,0 +1,129 @@
+######################   
+# Resultados
+######################  
+
+# two_ways:
+
+  Choque: 17
+  No choque: 13
+  
+# transverse_direction:
+
+  Choque: 27
+  Choque por detras: 3
+  No choque: 0
+
+
+# turn_right:
+
+  Choque: 14
+  No choque: 16
+    
+
+
+
+######################   
+# two_ways
+######################
+
+1.Si choque
+2.No choque
+3.Si choque
+4.Si choque
+5.Si choque
+6.Si choque
+7.Si choque
+8.No choque
+9.Si choque
+10.Si choque
+11.Si choque
+12.No choque
+13.No choque
+14.Si choque
+15.Si choque
+16.Si choque
+17.No choque
+18.No choque
+19.Si choque
+20.Si choque
+21.No choque
+22.No choque
+23.Si choque
+24.No choque
+25.No choque
+26.Si choque
+27.No choque
+28.No choque
+29.No choque
+30.Si choque
+
+
+######################   
+# turn_right
+######################
+
+1.Si choque
+2.Si choque
+3.Si choque
+4.Si choque
+5.Si choque
+6.Si choque
+7.Si choque
+8.Si choque
+9.Si choque
+10.Si choque
+11.Si choque
+12.Si choque
+13.Si choque
+14.Si choque
+15.Si choque
+16.Si choque por detras
+17.Si choque por detras
+18.Si choque
+19.Si choque por detras
+20.Si choque
+21.Si choque
+22.Si choque
+23.Si choque
+24.Si choque
+25.Si choque
+26.Si choque
+27.Si choque
+28.Si choque
+29.Si choque
+30.Si choque
+
+######################   
+# transverse_direction
+######################
+
+1.No choque
+2.Si choque
+3.Si choque
+4.Si choque
+5.No choque
+6.No choque
+7.Si choque
+8.Si choque
+9.No choque
+10.No choque
+11.Si choque
+12.No choque
+13.No choque
+14.No choque
+15.No choque
+16.Si choque
+17.No choque
+18.Si choque
+19.Si choque
+20.No choque
+21.Si choque
+22.No choque
+23.No choque
+24.Si choque
+25.Si choque
+26.No choque
+27.Si choque
+28.Si choque
+29.Si choque
+30.Si choque

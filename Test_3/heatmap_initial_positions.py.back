@@ -1,0 +1,95 @@
+##########################################################################
+# Python3
+# https://www.geodose.com/2018/01/creating-heatmap-in-python-from-scratch.html
+#####
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+import matplotlib.cm as cm
+from scipy.ndimage import gaussian_filter
+from matplotlib import rc
+import matplotlib as mpl
+mpl.rcParams.update({
+    "text.usetex": False,         # Don't use full LaTeX
+    "mathtext.fontset": "cm",     # Use Computer Modern
+    "mathtext.rm": "serif",       # Ensure serif for Roman
+    "font.family": "serif"
+})
+
+
+# Read the CSV file
+data = pd.read_csv('experiments_Inteligencia_Artificial.csv', usecols=['iteration', "av_pos.x","av_pos.y",'car1_pos.x', 'car1_pos.y', 'car2_pos.x', 'car2_pos.y','car3_pos.x', 'car3_pos.y', 'car4_pos.x', 'car4_pos.y', 'car5_pos.x', 'car5_pos.y', 'car6_pos.x', 'car6_pos.y', 'car7_pos.x', 'car7_pos.y','car8_pos.x', 'car8_pos.y', 'car9_pos.x', 'car9_pos.y', 'car10_pos.x', 'car10_pos.y'], low_memory=False)
+
+condition = (data['iteration'] == 10)
+filtered_data = data[condition]
+#filtered_data = filtered_data[(filtered_data != 0).all(axis=1)]
+
+x = filtered_data['av_pos.x'].tolist() + filtered_data['av_pos.x'].tolist() + filtered_data['car1_pos.x'].tolist() + filtered_data['car2_pos.x'].tolist() + filtered_data['car3_pos.x'].tolist() + filtered_data['car4_pos.x'].tolist() + filtered_data['car5_pos.x'].tolist() + filtered_data['car6_pos.x'].tolist() + filtered_data['car7_pos.x'].tolist() + filtered_data['car8_pos.x'].tolist() + filtered_data['car9_pos.x'].tolist() + filtered_data['car10_pos.x'].tolist()
+
+y = filtered_data['av_pos.y'].tolist() + filtered_data['av_pos.y'].tolist() + filtered_data['car1_pos.y'].tolist() + filtered_data['car2_pos.y'].tolist() + filtered_data['car3_pos.y'].tolist() + filtered_data['car4_pos.y'].tolist() + filtered_data['car5_pos.y'].tolist() + filtered_data['car6_pos.y'].tolist() + filtered_data['car7_pos.y'].tolist() + filtered_data['car8_pos.y'].tolist() + filtered_data['car9_pos.y'].tolist() + filtered_data['car10_pos.y'].tolist()
+
+x = np.array(x)
+y = np.array(y)
+
+#len(x)
+#len(y)
+
+# Find indices where either array is equal to 0
+zero_indices = np.logical_or(x == 0, y == 0)
+
+# Remove corresponding elements from both arrays
+x = x[~zero_indices]
+y = y[~zero_indices]
+
+###############################################
+# Opción 2 - Sí jala
+# https://stackoverflow.com/questions/2369492/generate-a-heatmap-using-a-scatter-data-set
+
+def myplot(x, y, s, bins=1000):
+   heatmap, xedges, yedges = np.histogram2d(x, y, bins=bins, range=[[0, 130], [-3.5, 3.5]])  # Added x-axis range
+   heatmap = gaussian_filter(heatmap, sigma=s)
+   max_value = np.max(heatmap)
+   print(max_value)
+   extent = [xedges[0], xedges[-1], yedges[0], yedges[-1]]
+   return heatmap.T, extent
+
+fig, ax = plt.subplots()
+
+plt.rcParams['text.usetex'] = False
+plt.ylim(-3.5, 3.5)
+plt.xlim(0, 130)  # Added x-axis limits
+s = 2
+
+img, extent = myplot(x, y, s)
+
+# Use 'viridis' colormap for better contrast and set vmax to 4
+im = ax.imshow(img, extent=extent, origin='lower', cmap='viridis', interpolation='nearest', aspect=10, vmax=4, label='Spatial distribution ')
+
+plt.axhline(y=0, color='white', linestyle='dashed', linewidth= 3, label='Lane marking')
+
+plt.text(2, 0.13, 'Lane marking', dict(size=10), color = 'white')
+
+mpl.rcParams.update({
+    "mathtext.fontset": "cm",
+    "font.family": "serif",
+    "font.serif": ["Computer Modern Roman"],
+})
+
+# Increased font sizes for x and y labels
+plt.xlabel(r'$\it{x}$-coordinate (m)', fontsize=12)  # Increased from 9 to 12
+plt.ylabel(r'$\it{y}$-coordinate (m)', fontsize=12)  # Increased from 9 to 12
+
+ax.set_ylim([-2.5, 2.5])
+ax.set_xlim([0, 130])  # Ensure x-axis limits are set
+
+# Add color bar only to the second subplot
+cax = fig.add_axes([0.92, 0.40, 0.02, 0.2])  # Adjust the position of the color bar
+myticks = [0, 2, 4]  # Set ticks from 0 to 4
+cbar = fig.colorbar(im, cax=cax, ticks=myticks)
+cbar.set_label('Frequency', fontsize=14)
+
+plt.savefig("initial_positions.pdf", bbox_inches='tight', pad_inches=0)
+
+plt.show()
