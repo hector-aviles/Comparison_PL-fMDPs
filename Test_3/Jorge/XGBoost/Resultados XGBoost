@@ -1,0 +1,41 @@
+######################   
+# Clasificador XGBoost, 6 mundos:
+######################
+
+######################   
+# Conocidos:
+######################
+
+# Mundo 4:
+	Choque: 0
+	No Choque: 20
+	Salio del carril: 10
+
+# Mundo 7:
+	Choque: 9
+	No Choque: 8
+	Salio del carril: 13
+
+# Mundo 15:
+	Choque: 10
+	No Choque: 4
+	Salio del carril: 16
+
+######################   
+# Desconocidos:
+######################
+
+# Mundo 1:
+	Choque: 4
+	No Choque: 13
+	Salio del carril: 13
+
+# Mundo 2:
+	Choque: 5
+	No Choque: 25
+	Salio del carril: 0
+
+# Mundo 3:
+	Choque: 30
+	No Choque: 0
+	Salio del carril: 0

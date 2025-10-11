@@ -1,0 +1,233 @@
+##########################################################################
+# Python3
+#####
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+import matplotlib.cm as cm
+from scipy.ndimage import gaussian_filter
+from matplotlib import rc
+import matplotlib as mpl
+import matplotlib.colors as mcolors
+
+mpl.rcParams.update({
+    "text.usetex": False,
+    "mathtext.fontset": "cm",
+    "mathtext.rm": "serif",
+    "font.family": "serif"
+})
+
+# Read the CSV file
+print("Reading CSV file...")
+data = pd.read_csv('experiments_Inteligencia_Artificial.csv', usecols=['iteration', "av_pos.x","av_pos.y",'car1_pos.x', 'car1_pos.y', 'car2_pos.x', 'car2_pos.y','car3_pos.x', 'car3_pos.y', 'car4_pos.x', 'car4_pos.y'], low_memory=False)
+
+print(f"Total rows in CSV: {len(data)}")
+print(f"Columns: {data.columns.tolist()}")
+
+condition = (data['iteration'] == 10)
+filtered_data = data[condition]
+print(f"Rows with iteration == 10: {len(filtered_data)}")
+
+# Debug: Check if we have any data at all
+if len(filtered_data) == 0:
+    print("WARNING: No data found for iteration == 10!")
+else:
+    print("Sample of filtered data:")
+    print(filtered_data[['av_pos.x', 'av_pos.y', 'car1_pos.x', 'car1_pos.y']].head())
+
+# Separate data for different vehicle types
+av_x = filtered_data['av_pos.x'].tolist()
+av_y = filtered_data['av_pos.y'].tolist()
+
+# Other vehicles (all cars except AV)
+other_x = (filtered_data['car1_pos.x'].tolist() + filtered_data['car2_pos.x'].tolist() + 
+           filtered_data['car3_pos.x'].tolist() + filtered_data['car4_pos.x'].tolist())
+
+other_y = (filtered_data['car1_pos.y'].tolist() + filtered_data['car2_pos.y'].tolist() + 
+           filtered_data['car3_pos.y'].tolist() + filtered_data['car4_pos.y'].tolist())
+
+print(f"\nRaw data counts:")
+print(f"AV positions: {len(av_x)}")
+print(f"Other vehicles positions: {len(other_x)}")
+
+# Convert to arrays
+av_x = np.array(av_x)
+av_y = np.array(av_y)
+other_x = np.array(other_x)
+other_y = np.array(other_y)
+
+print(f"\nBefore removing zeros:")
+print(f"AV - any zeros in x: {np.any(av_x == 0)}, any zeros in y: {np.any(av_y == 0)}")
+print(f"Other - any zeros in x: {np.any(other_x == 0)}, any zeros in y: {np.any(other_y == 0)}")
+print(f"AV x range: {np.min(av_x):.2f} - {np.max(av_x):.2f}")
+print(f"AV y range: {np.min(av_y):.2f} - {np.max(av_y):.2f}")
+print(f"Other x range: {np.min(other_x):.2f} - {np.max(other_x):.2f}")
+print(f"Other y range: {np.min(other_y):.2f} - {np.max(other_y):.2f}")
+
+# Remove zeros for each dataset separately
+av_mask = ~np.logical_or(av_x == 0, av_y == 0)
+other_mask = ~np.logical_or(other_x == 0, other_y == 0)
+
+print(f"\nZero removal:")
+print(f"AV - removing {np.sum(~av_mask)} zero positions")
+print(f"Other - removing {np.sum(~other_mask)} zero positions")
+
+av_x = av_x[av_mask]
+av_y = av_y[av_mask]
+other_x = other_x[other_mask]
+other_y = other_y[other_mask]
+
+print(f"\nAfter removing zeros:")
+print(f"AV positions remaining: {len(av_x)}")
+print(f"Other vehicles positions remaining: {len(other_x)}")
+print(f"AV x range: {np.min(av_x):.2f} - {np.max(av_x):.2f}")
+print(f"AV y range: {np.min(av_y):.2f} - {np.max(av_y):.2f}")
+print(f"Other x range: {np.min(other_x):.2f} - {np.max(other_x):.2f}")
+print(f"Other y range: {np.min(other_y):.2f} - {np.max(other_y):.2f}")
+
+# Check if we have any valid data left
+if len(av_x) == 0:
+    print("WARNING: No valid AV data after zero removal!")
+if len(other_x) == 0:
+    print("WARNING: No valid other vehicles data after zero removal!")
+
+def myplot(x, y, s, bins=1000):
+   heatmap, xedges, yedges = np.histogram2d(x, y, bins=bins, range=[[0, 130], [-3.5, 3.5]])
+   heatmap = gaussian_filter(heatmap, sigma=s)
+   extent = [xedges[0], xedges[-1], yedges[0], yedges[-1]]
+   return heatmap.T, extent
+
+# Create individual heatmaps for each vehicle type
+print(f"\nCreating heatmaps...")
+img_other, extent = myplot(other_x, other_y, s=2)
+img_av, extent = myplot(av_x, av_y, s=2)
+
+print(f"\nHeatmap statistics:")
+print(f"AV frequency range: {np.min(img_av):.4f} - {np.max(img_av):.4f}")
+print(f"Other vehicles frequency range: {np.min(img_other):.4f} - {np.max(img_other):.4f}")
+print(f"AV non-zero pixels: {np.sum(img_av > 0)}")
+print(f"Other non-zero pixels: {np.sum(img_other > 0)}")
+
+# Check if other vehicles heatmap has any significant values
+if np.max(img_other) < 0.1:
+    print("WARNING: Other vehicles heatmap has very low values!")
+    print("This could mean:")
+    print("1. Other vehicles are not present in the data")
+    print("2. Other vehicles are outside the range [0,130] x [-3.5,3.5]")
+    print("3. Other vehicles have mostly zero coordinates")
+
+# Create separate plots to debug each vehicle type
+fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(18, 5))
+
+# Plot 1: AV only
+im1 = ax1.imshow(img_av, extent=extent, origin='lower', cmap='Reds', 
+                interpolation='nearest', aspect=10, vmax=max(1, np.max(img_av)))
+ax1.set_title('Autonomous Vehicle Only', fontsize=12)
+ax1.axhline(y=0, color='black', linestyle='-', linewidth=2)
+ax1.grid(True, alpha=0.3)
+ax1.set_xlabel('x-coordinate (m)')
+ax1.set_ylabel('y-coordinate (m)')
+
+# Plot 2: Other vehicles only
+im2 = ax2.imshow(img_other, extent=extent, origin='lower', cmap='Blues', 
+                interpolation='nearest', aspect=10, vmax=max(1, np.max(img_other)))
+ax2.set_title('Other Vehicles Only', fontsize=12)
+ax2.axhline(y=0, color='black', linestyle='-', linewidth=2)
+ax2.grid(True, alpha=0.3)
+ax2.set_xlabel('x-coordinate (m)')
+ax2.set_ylabel('y-coordinate (m)')
+
+# Plot 3: Combined
+im3 = ax3.imshow(img_av, extent=extent, origin='lower', cmap='Reds', 
+                interpolation='nearest', aspect=10, vmax=max(1, np.max(img_av)), alpha=0.7)
+im4 = ax3.imshow(img_other, extent=extent, origin='lower', cmap='Blues', 
+                interpolation='nearest', aspect=10, vmax=max(1, np.max(img_other)), alpha=0.7)
+ax3.set_title('Combined (AV + Other Vehicles)', fontsize=12)
+ax3.axhline(y=0, color='black', linestyle='-', linewidth=2)
+ax3.grid(True, alpha=0.3)
+ax3.set_xlabel('x-coordinate (m)')
+ax3.set_ylabel('y-coordinate (m)')
+
+plt.tight_layout()
+plt.savefig("debug_positions.png", bbox_inches='tight', pad_inches=0, dpi=300)
+plt.show()
+
+# Now create the final combined plot
+print(f"\nCreating final combined plot...")
+fig, ax = plt.subplots(figsize=(12, 6))
+
+plt.rcParams['text.usetex'] = False
+plt.ylim(-3.5, 3.5)
+plt.xlim(0, 130)
+
+# Create highly saturated custom colormaps
+colors_red = ['#FFE6E6', '#FF9999', '#FF4D4D', '#CC0000', '#990000', '#660000']
+cmap_red = mcolors.LinearSegmentedColormap.from_list('saturated_red', colors_red, N=256)
+
+colors_blue = ['#E6F3FF', '#99D6FF', '#4DB8FF', '#0080FF', '#0066CC', '#004C99']
+cmap_blue = mcolors.LinearSegmentedColormap.from_list('saturated_blue', colors_blue, N=256)
+
+# Use individual vmax for each dataset to maximize contrast
+vmax_av = max(0.1, np.max(img_av)) * 1.2
+vmax_other = max(0.1, np.max(img_other)) * 1.2
+
+print(f"Using vmax_av: {vmax_av:.4f}, vmax_other: {vmax_other:.4f}")
+
+# Plot other vehicles first (as base layer)
+if np.max(img_other) > 0:
+    im_other = ax.imshow(img_other, extent=extent, origin='lower', cmap=cmap_blue, 
+                        interpolation='nearest', aspect=10, vmax=vmax_other, alpha=0.9)
+    print("Other vehicles plotted successfully")
+else:
+    print("WARNING: Other vehicles heatmap is empty, skipping plot")
+
+# Plot AV on top
+if np.max(img_av) > 0:
+    im_av = ax.imshow(img_av, extent=extent, origin='lower', cmap=cmap_red, 
+                     interpolation='nearest', aspect=10, vmax=vmax_av, alpha=0.9)
+    print("AV plotted successfully")
+else:
+    print("WARNING: AV heatmap is empty, skipping plot")
+
+# Enhanced background elements
+plt.axhline(y=0, color='black', linestyle='-', linewidth=4)
+plt.axhline(y=-1.75, color='darkgray', linestyle='--', linewidth=2, alpha=0.9)
+plt.axhline(y=1.75, color='darkgray', linestyle='--', linewidth=2, alpha=0.9)
+
+plt.text(5, 0.25, 'Center Line', dict(size=10, weight='bold'), color='black',
+         bbox=dict(boxstyle="round,pad=0.3", facecolor="white", alpha=0.9))
+
+plt.xlabel(r'$\it{x}$-coordinate (m)', fontsize=12)
+plt.ylabel(r'$\it{y}$-coordinate (m)', fontsize=12)
+ax.set_ylim([-2.5, 2.5])
+ax.set_xlim([0, 130])
+ax.grid(True, alpha=0.3)
+
+# Add colorbars only if we have data
+if np.max(img_av) > 0:
+    cax1 = fig.add_axes([0.92, 0.60, 0.02, 0.25])
+    cbar1 = fig.colorbar(im_av, cax=cax1)
+    cbar1.set_label('AV Frequency', fontsize=11)
+
+if np.max(img_other) > 0:
+    cax2 = fig.add_axes([0.92, 0.25, 0.02, 0.25])
+    cbar2 = fig.colorbar(im_other, cax=cax2)
+    cbar2.set_label('Other Vehicles Frequency', fontsize=11)
+
+# Add legend
+from matplotlib.patches import Patch
+legend_elements = []
+if np.max(img_av) > 0:
+    legend_elements.append(Patch(facecolor='#CC0000', alpha=0.9, label='Autonomous Vehicle'))
+if np.max(img_other) > 0:
+    legend_elements.append(Patch(facecolor='#0080FF', alpha=0.9, label='Other Vehicles'))
+    
+if legend_elements:
+    ax.legend(handles=legend_elements, loc='upper right', framealpha=0.9)
+
+plt.savefig("initial_positions_final.pdf", bbox_inches='tight', pad_inches=0, dpi=300)
+plt.show()
+
+print("\nDebugging complete!")

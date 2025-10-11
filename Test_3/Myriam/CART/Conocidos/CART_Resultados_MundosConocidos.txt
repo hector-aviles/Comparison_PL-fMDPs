@@ -1,0 +1,125 @@
+######################   
+# Resultados
+######################  
+
+# Mundo 4:
+
+  Choque:1
+  No choque: 29
+  
+# Mundo 7:
+
+  Choque:1
+  No choque:29
+
+# Mundo 15:
+
+  Choque: 0
+  No choque: 28
+  Salir del carril: 2
+    
+######################   
+# Mundo 4
+######################
+
+1.No choque
+2.No choque
+3.No choque
+4.No choque
+5.No choque
+6.No choque
+7.No choque
+8.No choque
+9.No choque
+10.No choque
+11.No choque
+12.No choque
+13.No choque
+14.No choque
+15.No choque
+16.No choque 
+17.No choque
+18.Si choque
+19.No choque
+20.No choque
+21.No choque
+22.No choque
+23.No choque
+24.No choque
+25.No choque
+26.No choque
+27.No choque
+28.No choque
+29.No choque
+30.No choque
+
+
+######################   
+# Mundo 7
+######################
+
+1.No choque
+2.No choque
+3.No choque
+4.No choque
+5.No choque
+6.No choque
+7.No choque
+8.No choque
+9.No choque
+10.No choque
+11.No choque
+12.No choque
+13.No choque
+14.Si choque
+15.No choque
+16.No choque
+17.No choque
+18.No choque
+19.No choque
+20.No choque
+21.No choque
+22.No choque
+23.No choque
+24.No choque
+25.No choque
+26.No choque
+27.No choque
+28.No choque
+29.No choque
+30.No choque
+
+######################   
+# Mundo 15
+######################
+
+1.No choque
+2.No choque
+3.No choque
+4.No choque
+5.No choque
+6.No choque
+7.No choque
+8.No choque
+9.No choque
+10.No choque
+11.No choque
+12.No choque
+13.No choque
+14.No choque
+15.No choque
+16.No choque
+17.No choque
+18.No choque
+19.El coche no realizo la accion esperada (change_to_right)
+20.No choque
+21.No choque
+22.El coche no realizo la accion esperada (change_to_right)
+23.No choque
+24.No choque
+25.No choque
+26.No choque
+27.No choque
+28.No choque
+29.No choque
+30.No choque
