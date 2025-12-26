@@ -29,3 +29,4 @@ ap*.csv
 *.pyc
 __pycache__/
 
+Test_1/Train_full/training_datasets/*.csv
