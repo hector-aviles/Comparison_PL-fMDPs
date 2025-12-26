@@ -1,0 +1,22 @@
+PL-fMDP SINGLE-DATASET TEST RESULTS
+==================================================
+
+Dataset: ./complete_DB_discrete.csv
+Subset: latent_collision == False
+Model: ./Train_full/PL-fMDP/APClassifier_full_0_1_0_0001_lookup_table.py
+
+Class distribution (after subsetting):
+  change_to_left: 40308
+  change_to_right: 39814
+  cruise: 617930
+  keep: 496558
+  swerve_left: 2883
+  swerve_right: 1681
+
+Rows tested: 1199174
+Precision: 0.9492
+Recall: 0.9360
+F1-score: 0.9381
+Accuracy: 0.9360
+Total test time: 0.0618s
+Time per row: 0.000000s

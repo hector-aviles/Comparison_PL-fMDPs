@@ -190,28 +190,10 @@ adjust_values <- function(freq) {
    return(freq)
 }
 
-pause = function(){
-   while (TRUE) {
-      input <- readline(prompt="An error occurred: Press CTRL-C key to continue (any subsequent code in the script was ignored)")
-   }    
-}
-options(error=pause)
-
-args <- commandArgs(trailingOnly = TRUE)
-
-datafile <- "./train_fold_1.csv"
-output <- "./pl_mdp_1.pl"
-gamma <- 0.9
-epsilon <- 0.1
-
-if (length(args) >= 2) {
-   datafile <- args[1]
-   output <- args[2]
-}
-if (length(args) >= 4) {
-   gamma <- as.numeric(args[3])
-   epsilon <- as.numeric(args[4])
-}
+datafile <- "./Train_full/training_datasets/train_full.csv"
+output <- "./Train_full/PL-fMDP/pl_mdp.pl"
+gamma <- 0.1
+epsilon <- 0.0001
 
 print(paste("datafile:", datafile))
 print(paste("output:", output))
@@ -221,6 +203,10 @@ print(paste("epsilon:", epsilon))
 df <- read.table(datafile, header=TRUE, sep=",")
 dim(df)
 names(df)
+df <- subset(df, select = -latent_collision)
+dim(df)
+names(df)
+
 
 bl_nep <- data.frame(from = c("free_NE_prime", "free_NE_prime", "free_NE_prime", "free_NE_prime", "free_NE_prime", "free_NE_prime", "free_NE_prime", "free_NE_prime", "free_NE_prime", "free_NE_prime", "free_NE_prime", "free_NE_prime", "free_NE_prime"), to = c("free_NE", "free_NW", "free_E", "free_SE", "free_W", "free_SW", "curr_lane", "free_NW_prime", "free_E_prime", "free_SE_prime", "free_W_prime", "free_SW_prime", "curr_lane_prime"))
 bl_nwp <- data.frame(from = c("free_NW_prime", "free_NW_prime", "free_NW_prime", "free_NW_prime", "free_NW_prime", "free_NW_prime", "free_NW_prime", "free_NW_prime", "free_NW_prime", "free_NW_prime", "free_NW_prime", "free_NW_prime", "free_NW_prime"), to = c("free_NE", "free_NW", "free_E", "free_SE", "free_W", "free_SW", "curr_lane", "free_NE_prime", "free_E_prime", "free_SE_prime", "free_W_prime", "free_SW_prime", "curr_lane_prime"))
@@ -237,25 +223,6 @@ bl_w <- data.frame(from = c("free_W", "free_W", "free_W", "free_W", "free_W", "f
 bl_sw <- data.frame(from = c("free_SW", "free_SW", "free_SW", "free_SW", "free_SW", "free_SW"), to = c("free_NE", "free_NW", "free_W", "free_E", "free_SE", "curr_lane"))
 bl_cl <- data.frame(from = c("curr_lane", "curr_lane", "curr_lane", "curr_lane", "curr_lane", "curr_lane"), to = c("free_NE", "free_NW", "free_W", "free_E", "free_SE", "free_SW"))
 bl <- rbind(bl_nep, bl_nwp, bl_ep, bl_sep, bl_wp, bl_swp, bl_clp, bl_ne, bl_nw, bl_e, bl_se, bl_w, bl_sw, bl_cl)
-
-condition1 <- str_detect(df$action, '^cruise$')
-df1 <- subset(df, condition1)
-df1 <- subset(df1, select=-c(action))
-df1 <- df1[complete.cases(df1), ]
-df1 <- correct_unique(df1)
-df_factor <- as.data.frame(lapply(df1, factor))
-network_structure <- hc(df_factor, whitelist = NULL, blacklist = bl, score = "bic", debug = FALSE, restart = 0, perturb = 1, max.iter = Inf, maxp = Inf, optimized = TRUE)
-model_filename <- paste(output, "_cruise.dot", sep = "", collapse = "")
-write.dot(network_structure, file = model_filename)
-model_filename <- paste(output, "_cruise.png", sep = "", collapse = "")
-png(model_filename)
-plot(network_structure)
-dev.off()
-cmd <- paste("dot -Tps ", output, "_cruise.dot -o ", output, ".ps", sep = "", collapse = "")
-system(cmd, intern = TRUE)
-bn_fit <- bn.fit(network_structure, data = df_factor, method = "mle")
-model_filename <- paste(output, "_cruise.net", sep = "", collapse = "")
-write.net(model_filename, bn_fit)
 
 file <- file(output, "w")
 writeLines("%%%%%%%%%%%%%%%%%%%%%%%%%%", con = file)  
@@ -275,6 +242,8 @@ writeLines("action(cruise).", con = file)
 writeLines("action(keep).", con = file)
 writeLines("action(change_to_left).", con = file)
 writeLines("action(change_to_right).", con = file)
+writeLines("action(swerve_left).", con = file)
+writeLines("action(swerve_right).", con = file)
 writeLines("\n%%%%%%%%%%%%%%%%%%%%%%%%%%", con = file)  
 writeLines("% Utilities", con = file)  
 writeLines("%%%%%%%%%%%%%%%%%%%%%%%%%%\n", con = file)  
@@ -284,6 +253,8 @@ writeLines("utility(move_to_right, 30.0).", con = file)
 writeLines("utility(rearEnd_crash, -200.0).", con = file)
 writeLines("utility(sideSwipe_crash, -150.0).", con = file)
 writeLines("utility(run_off_road, -200.0).\n", con = file)
+writeLines("utility(swerve_left, -25.0).", con = file)
+writeLines("utility(swerve_right, -25.0).\n", con = file)
 writeLines("move_ahead_right :- curr_lane(0), free_NE(0), cruise.", con = file)
 writeLines("move_ahead_left :- not(curr_lane(0)), free_NW(0), (not(free_NE(0)); not(free_E(0))), cruise.", con = file)
 writeLines("move_to_right :- not(curr_lane(0)), free_NE(0), free_E(0), (free_NW(0); not(free_NW(0))), change_to_right.", con = file)
@@ -297,6 +268,25 @@ writeLines("run_off_road :- not(curr_lane(0)), change_to_left.", con = file)
 writeLines("run_off_road :- curr_lane(0), change_to_right.", con = file)
 close(file)
 
+
+condition1 <- str_detect(df$action, '^cruise$')
+df1 <- subset(df, condition1)
+df1 <- subset(df1, select=-c(action))
+df1 <- df1[complete.cases(df1), ]
+df1 <- correct_unique(df1)
+df_factor <- as.data.frame(lapply(df1, factor))
+network_structure <- hc(df_factor, whitelist = NULL, blacklist = bl, score = "bic", debug = FALSE, restart = 0, perturb = 1, max.iter = Inf, maxp = Inf, optimized = TRUE)
+model_filename <- paste(output, "_cruise.dot", sep = "", collapse = "")
+write.dot(network_structure, file = model_filename)
+model_filename <- paste(output, "_cruise.png", sep = "", collapse = "")
+png(model_filename)
+plot(network_structure)
+dev.off()
+cmd <- paste("dot -Tps ", output, "_cruise.dot -o ", output, ".ps", sep = "", collapse = "")
+system(cmd, intern = TRUE)
+bn_fit <- bn.fit(network_structure, data = df_factor, method = "mle")
+model_filename <- paste(output, "_cruise.net", sep = "", collapse = "")
+write.net(model_filename, bn_fit)
 action_str <- "cruise"
 get_BN(bn_fit, action_str, output)
 
@@ -363,4 +353,45 @@ write.net(model_filename, bn_fit)
 action_str <- "change_to_right"
 get_BN(bn_fit, action_str, output)
 
-options(error=NULL)
+condition1 <- str_detect(df$action, '^swerve_left$')
+df1 <- subset(df, condition1)
+df1 <- subset(df1, select=-c(action))
+df1 <- df1[complete.cases(df1), ]
+df1 <- correct_unique(df1)
+df_factor <- as.data.frame(lapply(df1, factor))
+network_structure <- hc(df_factor, whitelist = NULL, blacklist = bl, score = "bic", debug = FALSE, restart = 0, perturb = 1, max.iter = Inf, maxp = Inf, optimized = TRUE)
+model_filename <- paste(output, "_swerve_left.dot", sep = "", collapse = "")
+write.dot(network_structure, file = model_filename)
+model_filename <- paste(output, "_swerve_left.png", sep = "", collapse = "")
+png(model_filename)
+plot(network_structure)
+dev.off()
+cmd <- paste("dot -Tps ", output, "_swerve_left.dot -o ", output, ".ps", sep = "", collapse = "")
+system(cmd, intern = TRUE)
+bn_fit <- bn.fit(network_structure, data = df_factor, method = "mle")
+model_filename <- paste(output, "_swerve_left.net", sep = "", collapse = "")
+write.net(model_filename, bn_fit)
+action_str <- "swerve_left"
+get_BN(bn_fit, action_str, output)
+
+condition1 <- str_detect(df$action, '^swerve_right$')
+df1 <- subset(df, condition1)
+df1 <- subset(df1, select=-c(action))
+df1 <- df1[complete.cases(df1), ]
+df1 <- correct_unique(df1)
+df_factor <- as.data.frame(lapply(df1, factor))
+network_structure <- hc(df_factor, whitelist = NULL, blacklist = bl, score = "bic", debug = FALSE, restart = 0, perturb = 1, max.iter = Inf, maxp = Inf, optimized = TRUE)
+model_filename <- paste(output, "_swerve_right.dot", sep = "", collapse = "")
+write.dot(network_structure, file = model_filename)
+model_filename <- paste(output, "_swerve_right.png", sep = "", collapse = "")
+png(model_filename)
+plot(network_structure)
+dev.off()
+cmd <- paste("dot -Tps ", output, "_swerve_right.dot -o ", output, ".ps", sep = "", collapse = "")
+system(cmd, intern = TRUE)
+bn_fit <- bn.fit(network_structure, data = df_factor, method = "mle")
+model_filename <- paste(output, "_swerve_right.net", sep = "", collapse = "")
+write.net(model_filename, bn_fit)
+action_str <- "swerve_right"
+get_BN(bn_fit, action_str, output)
+

@@ -13,6 +13,7 @@ validation_fold_*.csv
 *.dot
 *.ap
 *.net
+*.png
 
 
 # APClassifier-related files

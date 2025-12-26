@@ -69,4 +69,11 @@ python3 test_XGBoost.py 01
 python3 test_XGBoost.py 50
 python3 test_XGBoost.py 100
 
+########################################3
 
+Full
+
+Rscript ./create_dataset_full.R 123
+Rscript learning_pl-fmdps_v4_full.R ./Train_full/training_datasets/train_full.csv ./Train_full/PL-fMDP/pl_mdp.pl 
+python3 calculate_AP_lookup_table_full.py 
+python3 test_APs_lookup_table_full.py

@@ -1,0 +1,9 @@
+AP Calculation Timings (Single Model):
+==================================================
+
+FULL DATASET RESULTS:
+========================================
+Models calculated: 1
+Total computation time: 12.3303s
+Average time per model: 12.3303s
+Std dev time per model: 0.0000s
