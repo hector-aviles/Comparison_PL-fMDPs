@@ -135,7 +135,7 @@ correct_unique <- function(df) {
         df$free_E[1] <- "False"
         df$free_E_prime[1] <- "False"
      } else {
-        df$free_E[1] <- "True"
+        df$free_E[1] == "True"
         df$free_E_prime[1] <- "True"
      } 
    }
@@ -144,7 +144,7 @@ correct_unique <- function(df) {
         df$free_SE[1] <- "False"
         df$free_SE_prime[1] <- "False"
      } else {
-        df$free_SE[1] <- "True"
+        df$free_SE[1] == "True"
         df$free_SE_prime[1] <- "True"
      } 
    }
@@ -153,8 +153,8 @@ correct_unique <- function(df) {
         df$free_W[1] <- "False"
         df$free_W_prime[1] <- "False"
      } else {
-        df$free_W[1] <- "True"
-        df$free_W_prime[1] <- "True"
+        df$free_W[1] == "True"
+        df$free_W_prime[1] == "True"
      } 
    }
    if (length(unique(df$free_SW)) == 1) {
@@ -162,8 +162,8 @@ correct_unique <- function(df) {
         df$free_SW[1] <- "False"
         df$free_SW_prime[1] <- "False"
      } else {
-        df$free_SW[1] <- "True"
-        df$free_SW_prime[1] <- "True"
+        df$free_SW[1] == "True"
+        df$free_SW_prime[1] == "True"
      } 
    }
    if (length(unique(df$curr_lane)) == 1) {
@@ -171,8 +171,8 @@ correct_unique <- function(df) {
         df$curr_lane[1] <- "False"
         df$curr_lane_prime[1] <- "False"
      } else {
-        df$curr_lane[1] <- "True"
-        df$curr_lane_prime[1] <- "True"
+        df$curr_lane[1] == "True"
+        df$curr_lane_prime[1] == "True"
      } 
    }
    return(df)

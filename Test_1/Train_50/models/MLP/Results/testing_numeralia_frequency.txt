@@ -1,0 +1,34 @@
+MLP Testing Results by Frequency Range
+============================================================
+
+Source file: ./analysis/count_sample_space_auto.csv
+Total samples: 512
+Input features: curr_lane, free_E, free_NE, free_NW, free_SE, free_SW, free_W
+Output: action
+
+Frequency Range Distribution (based on 'count' column):
+  High (>2000): 48 samples
+  Low (0-4): 370 samples
+  Medium (5-100): 59 samples
+  Medium-High (101-2000): 35 samples
+
+============================================================
+
+
+============================================================
+OVERALL TESTING STATISTICS BY FREQUENCY RANGE
+============================================================
+
+Model Loading Summary:
+  Total models found: 20
+  Successfully loaded: 20
+  Failed to load: 0
+
+
+High (>2000): No results available
+
+Low (0-4): No results available
+
+Medium (5-100): No results available
+
+Medium-High (101-2000): No results available

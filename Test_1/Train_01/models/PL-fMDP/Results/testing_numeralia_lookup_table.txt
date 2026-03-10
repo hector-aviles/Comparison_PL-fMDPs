@@ -7,7 +7,7 @@ Fold 1:
   Recall: 0.9499
   F1-score: 0.9486
   Accuracy: 0.9499
-  Test time: 0.0106s
+  Test time: 0.0206s
   Time per row: 0.000000s
 
 Fold 2:
@@ -16,7 +16,7 @@ Fold 2:
   Recall: 0.9564
   F1-score: 0.9544
   Accuracy: 0.9564
-  Test time: 0.0075s
+  Test time: 0.0108s
   Time per row: 0.000000s
 
 Fold 3:
@@ -25,7 +25,7 @@ Fold 3:
   Recall: 0.9499
   F1-score: 0.9486
   Accuracy: 0.9499
-  Test time: 0.0081s
+  Test time: 0.0137s
   Time per row: 0.000000s
 
 Fold 4:
@@ -34,7 +34,7 @@ Fold 4:
   Recall: 0.8662
   F1-score: 0.8078
   Accuracy: 0.8662
-  Test time: 0.0058s
+  Test time: 0.0116s
   Time per row: 0.000000s
 
 Fold 5:
@@ -43,7 +43,7 @@ Fold 5:
   Recall: 0.9166
   F1-score: 0.8942
   Accuracy: 0.9166
-  Test time: 0.0085s
+  Test time: 0.0124s
   Time per row: 0.000000s
 
 Fold 6:
@@ -52,7 +52,7 @@ Fold 6:
   Recall: 0.8662
   F1-score: 0.8078
   Accuracy: 0.8662
-  Test time: 0.0055s
+  Test time: 0.0142s
   Time per row: 0.000000s
 
 Fold 7:
@@ -61,7 +61,7 @@ Fold 7:
   Recall: 0.9499
   F1-score: 0.9486
   Accuracy: 0.9499
-  Test time: 0.0092s
+  Test time: 0.0139s
   Time per row: 0.000000s
 
 Fold 8:
@@ -70,7 +70,7 @@ Fold 8:
   Recall: 0.9835
   F1-score: 0.9768
   Accuracy: 0.9835
-  Test time: 0.0149s
+  Test time: 0.0406s
   Time per row: 0.000000s
 
 Fold 9:
@@ -79,7 +79,7 @@ Fold 9:
   Recall: 0.9564
   F1-score: 0.9544
   Accuracy: 0.9564
-  Test time: 0.0095s
+  Test time: 0.0085s
   Time per row: 0.000000s
 
 Fold 10:
@@ -88,7 +88,7 @@ Fold 10:
   Recall: 0.9835
   F1-score: 0.9768
   Accuracy: 0.9835
-  Test time: 0.0146s
+  Test time: 0.0205s
   Time per row: 0.000000s
 
 Fold 11:
@@ -97,7 +97,7 @@ Fold 11:
   Recall: 0.8662
   F1-score: 0.8078
   Accuracy: 0.8662
-  Test time: 0.0065s
+  Test time: 0.0113s
   Time per row: 0.000000s
 
 Fold 12:
@@ -106,7 +106,7 @@ Fold 12:
   Recall: 0.9835
   F1-score: 0.9767
   Accuracy: 0.9835
-  Test time: 0.0140s
+  Test time: 0.0199s
   Time per row: 0.000000s
 
 Fold 13:
@@ -115,7 +115,7 @@ Fold 13:
   Recall: 0.9187
   F1-score: 0.8881
   Accuracy: 0.9187
-  Test time: 0.0086s
+  Test time: 0.0134s
   Time per row: 0.000000s
 
 Fold 14:
@@ -124,7 +124,7 @@ Fold 14:
   Recall: 0.9750
   F1-score: 0.9720
   Accuracy: 0.9750
-  Test time: 0.0095s
+  Test time: 0.0133s
   Time per row: 0.000000s
 
 Fold 15:
@@ -133,7 +133,7 @@ Fold 15:
   Recall: 0.9564
   F1-score: 0.9544
   Accuracy: 0.9564
-  Test time: 0.0061s
+  Test time: 0.0092s
   Time per row: 0.000000s
 
 Fold 16:
@@ -142,7 +142,7 @@ Fold 16:
   Recall: 0.9749
   F1-score: 0.9720
   Accuracy: 0.9749
-  Test time: 0.0097s
+  Test time: 0.0142s
   Time per row: 0.000000s
 
 Fold 17:
@@ -151,7 +151,7 @@ Fold 17:
   Recall: 0.8662
   F1-score: 0.8078
   Accuracy: 0.8662
-  Test time: 0.0046s
+  Test time: 0.0099s
   Time per row: 0.000000s
 
 Fold 18:
@@ -160,7 +160,7 @@ Fold 18:
   Recall: 0.9749
   F1-score: 0.9720
   Accuracy: 0.9749
-  Test time: 0.0095s
+  Test time: 0.0267s
   Time per row: 0.000000s
 
 Fold 19:
@@ -169,7 +169,7 @@ Fold 19:
   Recall: 0.9835
   F1-score: 0.9768
   Accuracy: 0.9835
-  Test time: 0.0096s
+  Test time: 0.0200s
   Time per row: 0.000000s
 
 Fold 20:
@@ -178,15 +178,15 @@ Fold 20:
   Recall: 0.9749
   F1-score: 0.9720
   Accuracy: 0.9749
-  Test time: 0.0126s
+  Test time: 0.0140s
   Time per row: 0.000000s
 
 OVERALL TESTING STATISTICS:
 ========================================
 Total tests: 20
 Average test size: 192421.4 rows
-Average test time: 0.0092s
-Std dev test time: 0.0030s
+Average test time: 0.0159s
+Std dev test time: 0.0074s
 Average time per row: 0.000000s
 Average F1-score: 0.9259 ± 0.0653
 Average Precision: 0.9342 ± 0.0575

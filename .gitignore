@@ -1,6 +1,7 @@
 train_fold_*.csv
 test_fold_*.csv
 validation_fold_*.csv
+*.csv
 
 *.mlp
 *.nb

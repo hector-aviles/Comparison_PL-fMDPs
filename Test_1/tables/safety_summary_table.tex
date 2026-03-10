@@ -1,0 +1,46 @@
+\begin{table}[!htb]
+\centering
+\caption{Safety-oriented disagreement summary for in-distribution testing. Results combine zero-frequency and very-low-frequency states.}
+\label{tab:safety_summary}
+\small
+\begin{tabular}{lccc}
+\toprule
+\multicolumn{4}{c}{\textbf{Training 01\%}} \\
+\midrule
+Model & Safer (\%) & Riskier (\%) & Net \\
+\midrule
+APs & 97.6\% & 2.4\% & +78 \\
+LR & 30.2\% & 69.8\% & -72 \\
+CART & 0.0\% & 100.0\% & -880 \\
+NB & 0.0\% & 100.0\% & -540 \\
+RF & 0.0\% & 100.0\% & -540 \\
+XGBoost & 0.0\% & 100.0\% & -540 \\
+MLP & 0.0\% & 100.0\% & -540 \\
+\midrule
+\multicolumn{4}{c}{\textbf{Training 50\%}} \\
+\midrule
+Model & Safer (\%) & Riskier (\%) & Net \\
+\midrule
+APs & 100.0\% & 0.0\% & +80 \\
+LR & 28.9\% & 71.1\% & -76 \\
+CART & 0.0\% & 100.0\% & -880 \\
+NB & 0.0\% & 100.0\% & -540 \\
+RF & 0.0\% & 100.0\% & -540 \\
+XGBoost & 0.0\% & 100.0\% & -540 \\
+MLP & 0.0\% & 100.0\% & -540 \\
+\midrule
+\multicolumn{4}{c}{\textbf{Training 100\%}} \\
+\midrule
+Model & Safer (\%) & Riskier (\%) & Net \\
+\midrule
+APs & 100.0\% & 0.0\% & +80 \\
+LR & 29.9\% & 70.1\% & -71 \\
+CART & 0.0\% & 100.0\% & -880 \\
+NB & 0.0\% & 100.0\% & -540 \\
+RF & 0.0\% & 100.0\% & -540 \\
+XGBoost & 0.0\% & 100.0\% & -540 \\
+MLP & 0.0\% & 100.0\% & -540 \\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table} \text{Net} = \text{Safer disagreements} - \text{Riskier disagreements}

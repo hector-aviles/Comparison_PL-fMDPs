@@ -69,11 +69,64 @@ python3 test_XGBoost.py 01
 python3 test_XGBoost.py 50
 python3 test_XGBoost.py 100
 
-########################################3
+##################################################################
 
-Full
+test_APs_lookup_table_frequency.py is used to explore detailed results taking into account the frequency
 
-Rscript ./create_dataset_full.R 123
-Rscript learning_pl-fmdps_v4_full.R ./Train_full/training_datasets/train_full.csv ./Train_full/PL-fMDP/pl_mdp.pl 
-python3 calculate_AP_lookup_table_full.py 
-python3 test_APs_lookup_table_full.py
+python3 test_APs_lookup_table_frequency.py 01
+python3 test_CART_frequency.py 01
+
+###################################################################
+
+To achieve compatibility new vs. old python3 and sklearn:
+
+sudo apt update
+
+sudo apt install -y build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev curl git \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
+libffi-dev liblzma-dev
+
+curl https://pyenv.run | bash
+
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+
+source ~/.bashrc
+
+pyenv install 3.8.18
+
+pyenv virtualenv 3.8.18 sklearn_old
+pyenv activate sklearn_old
+
+pip install scikit-learn==0.24.2 joblib pandas numpy
+pip install xgboost
+
+python test_APs_lookup_table_frequency.py 01
+python test_APs_lookup_table_frequency.py 50
+python test_APs_lookup_table_frequency.py 100
+
+python test_CART_frequency.py 01
+python test_CART_frequency.py 50
+python test_CART_frequency.py 100
+
+python test_MLP_frequency.py 01
+python test_MLP_frequency.py 50
+python test_MLP_frequency.py 100
+
+python test_LR_frequency.py 01
+python test_LR_frequency.py 50
+python test_LR_frequency.py 100
+
+python3 test_NB_frequency.py 01
+python3 test_NB_frequency.py 50
+python3 test_NB_frequency.py 100
+
+python3 test_RF_frequency.py 01
+python3 test_RF_frequency.py 50
+python3 test_RF_frequency.py 100
+
+python3 test_XGBoost_frequency.py 01
+python3 test_XGBoost_frequency.py 50
+python3 test_XGBoost_frequency.py 100
