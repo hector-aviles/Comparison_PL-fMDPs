@@ -88,17 +88,14 @@ def parse_metrics_file(filepath, model_name):
     
     return result
 
-def format_percentage(safer, riskier):
-    """Format safer and riskier as percentages"""
+def calculate_net_percentage(safer, riskier):
+    """Calculate net percentage as Safer% - Riskier%"""
     total = safer + riskier
     if total == 0:
-        safer_pct = 0.0
-        riskier_pct = 0.0
-    else:
-        safer_pct = (safer / total * 100)
-        riskier_pct = (riskier / total * 100)
-    
-    return safer_pct, riskier_pct
+        return 0.0
+    safer_pct = (safer / total * 100)
+    riskier_pct = (riskier / total * 100)
+    return safer_pct - riskier_pct
 
 def main():
     percentages = ['01', '50', '100']
@@ -140,7 +137,7 @@ def main():
     latex_output = []
     latex_output.append("\\begin{table}[!htb]")
     latex_output.append("\\centering")
-    latex_output.append("\\caption{Safety-oriented disagreement summary for in-distribution testing. Results combine zero-frequency and very-low-frequency states.}")
+    latex_output.append("\\caption{Safety-oriented disagreement summary for in-distribution testing. Results combine zero-frequency and very-low-frequency states. Net (\\%) = Safer (\\%) - Riskier (\\%).}")
     latex_output.append("\\label{tab:safety_summary}")
     latex_output.append("\\small")
     latex_output.append("\\begin{tabular}{lccc}")
@@ -149,7 +146,7 @@ def main():
     for pct in percentages:
         latex_output.append(f"\\multicolumn{{4}}{{c}}{{\\textbf{{Training {pct}\\%}}}} \\\\")
         latex_output.append("\\midrule")
-        latex_output.append("Model & Safer (\\%) & Riskier (\\%) & Net \\\\")
+        latex_output.append("Model & Safer (\\%) & Riskier (\\%) & Net (\\%) \\\\")
         latex_output.append("\\midrule")
         
         for display_name, _, _ in models:
@@ -157,9 +154,15 @@ def main():
                 r = all_results[pct][display_name]
                 
                 # Calculate percentages
-                safer_pct, riskier_pct = format_percentage(r['low_safer'], r['low_riskier'])
+                total = r['low_safer'] + r['low_riskier']
+                if total > 0:
+                    safer_pct = (r['low_safer'] / total * 100)
+                    riskier_pct = (r['low_riskier'] / total * 100)
+                    net_pct = safer_pct - riskier_pct
+                else:
+                    safer_pct = riskier_pct = net_pct = 0.0
                 
-                row = f"{display_name} & {safer_pct:.1f}\\% & {riskier_pct:.1f}\\% & {r['low_net']:+d} \\\\"
+                row = f"{display_name} & {safer_pct:.1f}\\% & {riskier_pct:.1f}\\% & {net_pct:+.1f}\\% \\\\"
                 latex_output.append(row)
             else:
                 # Placeholder for missing data
@@ -168,8 +171,8 @@ def main():
         latex_output.append("\\midrule")
     
     latex_output.append("\\bottomrule")
-    latex_output.append("\\end{tabular}")
-    latex_output.append("\\end{table} \\text{Net} = \\text{Safer disagreements} - \\text{Riskier disagreements}")
+    latex_output.append("\\end{tabular}\\\\\text{Net (%)} = \text{Safer (%)} - \text{Riskier (%) }")
+    latex_output.append("\\end{table}")
     
     # Write LaTeX table to file
     with open("safety_summary_table.tex", "w", encoding='utf-8') as f:
@@ -181,7 +184,14 @@ def main():
         for display_name, _, _ in models:
             if display_name in all_results[pct]:
                 r = all_results[pct][display_name]
-                safer_pct, riskier_pct = format_percentage(r['low_safer'], r['low_riskier'])
+                total = r['low_safer'] + r['low_riskier']
+                if total > 0:
+                    safer_pct = (r['low_safer'] / total * 100)
+                    riskier_pct = (r['low_riskier'] / total * 100)
+                    net_pct = safer_pct - riskier_pct
+                else:
+                    safer_pct = riskier_pct = net_pct = 0.0
+                
                 csv_rows.append({
                     'percentage': pct,
                     'model': display_name,
@@ -189,7 +199,7 @@ def main():
                     'riskier_count': r['low_riskier'],
                     'safer_pct': f"{safer_pct:.1f}",
                     'riskier_pct': f"{riskier_pct:.1f}",
-                    'net': r['low_net']
+                    'net_pct': f"{net_pct:+.1f}"
                 })
     
     df = pd.DataFrame(csv_rows)
@@ -202,17 +212,23 @@ def main():
     
     for pct in percentages:
         print(f"\nTraining {pct}%:")
-        print("-"*60)
-        print(f"{'Model':<10} {'Safer':>10} {'Riskier':>10} {'Net':>10}")
-        print("-"*60)
+        print("-"*70)
+        print(f"{'Model':<10} {'Safer%':>8} {'Riskier%':>10} {'Net%':>8}")
+        print("-"*70)
         
         for display_name, _, _ in models:
             if display_name in all_results[pct]:
                 r = all_results[pct][display_name]
-                safer_pct, riskier_pct = format_percentage(r['low_safer'], r['low_riskier'])
-                print(f"{display_name:<10} {safer_pct:>9.1f}% {riskier_pct:>9.1f}% {r['low_net']:+10d}")
+                total = r['low_safer'] + r['low_riskier']
+                if total > 0:
+                    safer_pct = (r['low_safer'] / total * 100)
+                    riskier_pct = (r['low_riskier'] / total * 100)
+                    net_pct = safer_pct - riskier_pct
+                    print(f"{display_name:<10} {safer_pct:>7.1f}% {riskier_pct:>9.1f}% {net_pct:>+7.1f}%")
+                else:
+                    print(f"{display_name:<10} {'---':>7} {'---':>9} {'---':>7}")
             else:
-                print(f"{display_name:<10} {'---':>9} {'---':>9} {'---':>10}")
+                print(f"{display_name:<10} {'---':>7} {'---':>9} {'---':>7}")
     
     print("\n" + "="*80)
     print(f"LaTeX table saved to: safety_summary_table.tex")
