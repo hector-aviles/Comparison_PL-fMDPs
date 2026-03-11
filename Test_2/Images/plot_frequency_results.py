@@ -7,13 +7,13 @@ import numpy as np
 # CONFIGURATION
 # ==============================
 
-train_dirs = ["Train_01", "Train_50", "Train_100"]
+Test_dirs = ["Test_01", "Test_50", "Test_100"]
 
 # Map directory names to display titles
 title_map = {
-    "Train_01": "Training percentage 1%",
-    "Train_50": "Training percentage 50%",
-    "Train_100": "Training percentage 100%"
+    "Test_01": "Training percentage 1%",
+    "Test_50": "Training percentage 50%",
+    "Test_100": "Training percentage 100%"
 }
 
 models = {
@@ -87,7 +87,7 @@ def parse_frequency_file(filepath):
 # PLOTTING
 # ==============================
 
-for train in train_dirs:
+for train in Test_dirs:
 
     plt.figure(figsize=(7,5))
 

@@ -1,0 +1,29 @@
+# Execute the following instructions:
+# pyenv virtualenv 3.8.18 sklearn_old
+pyenv activate sklearn_old
+
+python3 test_APs_lookup_table_frequency.py 01
+python3 test_CART_frequency.py 01
+python3 test_NB_frequency.py 01
+python3 test_MLP_frequency.py 01
+python3 test_RF_frequency.py 01
+python3 test_LR_frequency.py 01
+python3 test_XGBoost_frequency.py 01
+
+python3 test_APs_lookup_table_frequency.py 50
+python3 test_CART_frequency.py 50
+python3 test_NB_frequency.py 50
+python3 test_MLP_frequency.py 50
+python3 test_RF_frequency.py 50
+python3 test_LR_frequency.py 50
+python3 test_XGBoost_frequency.py 50
+
+python3 test_APs_lookup_table_frequency.py 100
+python3 test_CART_frequency.py 100
+python3 test_NB_frequency.py 100
+python3 test_MLP_frequency.py 100
+python3 test_RF_frequency.py 100
+python3 test_LR_frequency.py 100
+python3 test_XGBoost_frequency.py 100
+
+

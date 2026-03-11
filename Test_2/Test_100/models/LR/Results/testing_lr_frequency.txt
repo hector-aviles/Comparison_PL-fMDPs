@@ -1,14 +1,15 @@
-CART Testing Results by Frequency Range
+Logistic Regression (LR) Testing Results by Frequency Range
 ================================================================================
 
 Source file: ./analysis/count_sample_space_auto_with_safe.csv
+Safe examples source: ./analysis/no_crashes.csv
 Total rows tested: 512
-Training percentage: 01%
+Training percentage: 100%
 
 NOTE: All rows in the CSV are evaluated (one per unique state-action combo).
 'count' is used only to assign frequency ranges.
 
-Input features: curr_lane, free_NE, free_NW, free_E, free_W, free_SE, free_SW
+Input features: curr_lane, free_E, free_NE, free_NW, free_SE, free_SW, free_W
 Output: action
 
 Frequency Range Distribution (based on 'count' column):
@@ -23,21 +24,21 @@ Frequency Range Distribution (based on 'count' column):
 Fold 1 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.5320
-Recall: 0.4792
-F1-score: 0.4826
-Accuracy: 0.4792
+Precision: 0.7639
+Recall: 0.7292
+F1-score: 0.7396
+Accuracy: 0.7292
 Test time: 0.0002s
-Time per row: 0.000005s
+Time per row: 0.000004s
 
 
 Fold 1 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.1798
-Recall: 0.2000
-F1-score: 0.1679
-Accuracy: 0.2000
+Precision: 0.1564
+Recall: 0.1838
+F1-score: 0.1414
+Accuracy: 0.1838
 Test time: 0.0002s
 Time per row: 0.000001s
 
@@ -45,43 +46,43 @@ Time per row: 0.000001s
 Fold 1 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3511
-Recall: 0.3220
-F1-score: 0.2991
-Accuracy: 0.3220
+Precision: 0.3035
+Recall: 0.2542
+F1-score: 0.2624
+Accuracy: 0.2542
 Test time: 0.0001s
-Time per row: 0.000003s
+Time per row: 0.000002s
 
 
 Fold 1 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.5666
-Recall: 0.3429
-F1-score: 0.2899
-Accuracy: 0.3429
+Precision: 0.3636
+Recall: 0.2857
+F1-score: 0.2876
+Accuracy: 0.2857
 Test time: 0.0002s
-Time per row: 0.000005s
+Time per row: 0.000004s
 
 
 Fold 2 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.5320
-Recall: 0.4792
-F1-score: 0.4826
-Accuracy: 0.4792
+Precision: 0.7658
+Recall: 0.7500
+F1-score: 0.7468
+Accuracy: 0.7500
 Test time: 0.0002s
-Time per row: 0.000004s
+Time per row: 0.000003s
 
 
 Fold 2 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.1798
-Recall: 0.2000
-F1-score: 0.1679
-Accuracy: 0.2000
+Precision: 0.1367
+Recall: 0.1703
+F1-score: 0.1279
+Accuracy: 0.1703
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -89,10 +90,10 @@ Time per row: 0.000000s
 Fold 2 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3511
-Recall: 0.3220
-F1-score: 0.2991
-Accuracy: 0.3220
+Precision: 0.3427
+Recall: 0.2712
+F1-score: 0.2638
+Accuracy: 0.2712
 Test time: 0.0001s
 Time per row: 0.000002s
 
@@ -100,10 +101,10 @@ Time per row: 0.000002s
 Fold 2 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.5666
-Recall: 0.3429
-F1-score: 0.2899
-Accuracy: 0.3429
+Precision: 0.5795
+Recall: 0.3714
+F1-score: 0.3079
+Accuracy: 0.3714
 Test time: 0.0001s
 Time per row: 0.000004s
 
@@ -111,32 +112,32 @@ Time per row: 0.000004s
 Fold 3 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4468
-Recall: 0.4583
-F1-score: 0.3931
-Accuracy: 0.4583
-Test time: 0.0002s
+Precision: 0.6870
+Recall: 0.6458
+F1-score: 0.6250
+Accuracy: 0.6458
+Test time: 0.0001s
 Time per row: 0.000003s
 
 
 Fold 3 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.1591
-Recall: 0.2135
-F1-score: 0.1799
-Accuracy: 0.2135
+Precision: 0.0944
+Recall: 0.1973
+F1-score: 0.1206
+Accuracy: 0.1973
 Test time: 0.0002s
-Time per row: 0.000001s
+Time per row: 0.000000s
 
 
 Fold 3 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3011
-Recall: 0.2881
-F1-score: 0.2351
-Accuracy: 0.2881
+Precision: 0.2316
+Recall: 0.2373
+F1-score: 0.1868
+Accuracy: 0.2373
 Test time: 0.0001s
 Time per row: 0.000002s
 
@@ -144,9 +145,9 @@ Time per row: 0.000002s
 Fold 3 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.1931
+Precision: 0.1295
 Recall: 0.2857
-F1-score: 0.1934
+F1-score: 0.1773
 Accuracy: 0.2857
 Test time: 0.0001s
 Time per row: 0.000004s
@@ -155,21 +156,21 @@ Time per row: 0.000004s
 Fold 4 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.2989
-Recall: 0.1875
-F1-score: 0.2151
-Accuracy: 0.1875
+Precision: 0.7292
+Recall: 0.7292
+F1-score: 0.7292
+Accuracy: 0.7292
 Test time: 0.0002s
-Time per row: 0.000004s
+Time per row: 0.000003s
 
 
 Fold 4 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.2679
-Recall: 0.2568
-F1-score: 0.2527
-Accuracy: 0.2568
+Precision: 0.0895
+Recall: 0.1838
+F1-score: 0.1189
+Accuracy: 0.1838
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -177,32 +178,32 @@ Time per row: 0.000000s
 Fold 4 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3215
-Recall: 0.2373
-F1-score: 0.2509
-Accuracy: 0.2373
-Test time: 0.0002s
-Time per row: 0.000003s
+Precision: 0.1071
+Recall: 0.1864
+F1-score: 0.1337
+Accuracy: 0.1864
+Test time: 0.0001s
+Time per row: 0.000002s
 
 
 Fold 4 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.3548
-Recall: 0.2857
-F1-score: 0.3035
-Accuracy: 0.2857
-Test time: 0.0002s
-Time per row: 0.000005s
+Precision: 0.3719
+Recall: 0.4000
+F1-score: 0.2974
+Accuracy: 0.4000
+Test time: 0.0001s
+Time per row: 0.000004s
 
 
 Fold 5 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.3156
-Recall: 0.2917
-F1-score: 0.3004
-Accuracy: 0.2917
+Precision: 0.7441
+Recall: 0.7083
+F1-score: 0.7210
+Accuracy: 0.7083
 Test time: 0.0002s
 Time per row: 0.000003s
 
@@ -210,10 +211,10 @@ Time per row: 0.000003s
 Fold 5 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.2773
-Recall: 0.2405
-F1-score: 0.2168
-Accuracy: 0.2405
+Precision: 0.1285
+Recall: 0.1649
+F1-score: 0.1282
+Accuracy: 0.1649
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -221,43 +222,43 @@ Time per row: 0.000000s
 Fold 5 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3222
-Recall: 0.2881
-F1-score: 0.2676
-Accuracy: 0.2881
-Test time: 0.0002s
-Time per row: 0.000003s
+Precision: 0.3450
+Recall: 0.2712
+F1-score: 0.2735
+Accuracy: 0.2712
+Test time: 0.0001s
+Time per row: 0.000002s
 
 
 Fold 5 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.3009
-Recall: 0.2286
-F1-score: 0.2240
-Accuracy: 0.2286
-Test time: 0.0002s
+Precision: 0.5236
+Recall: 0.4857
+F1-score: 0.4691
+Accuracy: 0.4857
+Test time: 0.0001s
 Time per row: 0.000004s
 
 
 Fold 6 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.3156
-Recall: 0.2917
-F1-score: 0.3004
-Accuracy: 0.2917
-Test time: 0.0002s
-Time per row: 0.000004s
+Precision: 0.7404
+Recall: 0.7292
+F1-score: 0.7185
+Accuracy: 0.7292
+Test time: 0.0001s
+Time per row: 0.000003s
 
 
 Fold 6 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.2773
-Recall: 0.2405
-F1-score: 0.2168
-Accuracy: 0.2405
+Precision: 0.1043
+Recall: 0.1676
+F1-score: 0.1196
+Accuracy: 0.1676
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -265,43 +266,43 @@ Time per row: 0.000000s
 Fold 6 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3222
-Recall: 0.2881
-F1-score: 0.2676
-Accuracy: 0.2881
-Test time: 0.0002s
-Time per row: 0.000003s
+Precision: 0.3309
+Recall: 0.2712
+F1-score: 0.2593
+Accuracy: 0.2712
+Test time: 0.0001s
+Time per row: 0.000002s
 
 
 Fold 6 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.3009
-Recall: 0.2286
-F1-score: 0.2240
-Accuracy: 0.2286
-Test time: 0.0002s
+Precision: 0.6215
+Recall: 0.4286
+F1-score: 0.3446
+Accuracy: 0.4286
+Test time: 0.0001s
 Time per row: 0.000004s
 
 
 Fold 7 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4468
-Recall: 0.4583
-F1-score: 0.3931
-Accuracy: 0.4583
+Precision: 0.7450
+Recall: 0.7292
+F1-score: 0.7314
+Accuracy: 0.7292
 Test time: 0.0002s
-Time per row: 0.000004s
+Time per row: 0.000003s
 
 
 Fold 7 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.1591
-Recall: 0.2135
-F1-score: 0.1799
-Accuracy: 0.2135
+Precision: 0.1364
+Recall: 0.1730
+F1-score: 0.1254
+Accuracy: 0.1730
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -309,21 +310,21 @@ Time per row: 0.000000s
 Fold 7 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3011
-Recall: 0.2881
-F1-score: 0.2351
-Accuracy: 0.2881
+Precision: 0.2838
+Recall: 0.2542
+F1-score: 0.2502
+Accuracy: 0.2542
 Test time: 0.0001s
-Time per row: 0.000003s
+Time per row: 0.000002s
 
 
 Fold 7 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.1931
-Recall: 0.2857
-F1-score: 0.1934
-Accuracy: 0.2857
+Precision: 0.4327
+Recall: 0.4000
+F1-score: 0.3318
+Accuracy: 0.4000
 Test time: 0.0001s
 Time per row: 0.000004s
 
@@ -331,21 +332,21 @@ Time per row: 0.000004s
 Fold 8 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4468
-Recall: 0.4583
-F1-score: 0.3931
-Accuracy: 0.4583
+Precision: 0.7174
+Recall: 0.7083
+F1-score: 0.6952
+Accuracy: 0.7083
 Test time: 0.0002s
-Time per row: 0.000004s
+Time per row: 0.000003s
 
 
 Fold 8 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.1591
-Recall: 0.2135
-F1-score: 0.1799
-Accuracy: 0.2135
+Precision: 0.1620
+Recall: 0.1892
+F1-score: 0.1339
+Accuracy: 0.1892
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -353,21 +354,21 @@ Time per row: 0.000000s
 Fold 8 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3011
-Recall: 0.2881
-F1-score: 0.2351
-Accuracy: 0.2881
+Precision: 0.2871
+Recall: 0.2542
+F1-score: 0.2485
+Accuracy: 0.2542
 Test time: 0.0001s
-Time per row: 0.000003s
+Time per row: 0.000002s
 
 
 Fold 8 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.1931
-Recall: 0.2857
-F1-score: 0.1934
-Accuracy: 0.2857
+Precision: 0.3123
+Recall: 0.2571
+F1-score: 0.2123
+Accuracy: 0.2571
 Test time: 0.0001s
 Time per row: 0.000004s
 
@@ -375,21 +376,21 @@ Time per row: 0.000004s
 Fold 9 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4139
-Recall: 0.3750
-F1-score: 0.3889
-Accuracy: 0.3750
-Test time: 0.0002s
-Time per row: 0.000004s
+Precision: 0.7121
+Recall: 0.6667
+F1-score: 0.6806
+Accuracy: 0.6667
+Test time: 0.0001s
+Time per row: 0.000003s
 
 
 Fold 9 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.2307
-Recall: 0.2270
-F1-score: 0.2051
-Accuracy: 0.2270
+Precision: 0.1319
+Recall: 0.1622
+F1-score: 0.1233
+Accuracy: 0.1622
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -397,21 +398,21 @@ Time per row: 0.000000s
 Fold 9 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3258
-Recall: 0.2712
-F1-score: 0.2625
-Accuracy: 0.2712
-Test time: 0.0002s
-Time per row: 0.000003s
+Precision: 0.3334
+Recall: 0.3051
+F1-score: 0.3000
+Accuracy: 0.3051
+Test time: 0.0001s
+Time per row: 0.000002s
 
 
 Fold 9 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.3327
-Recall: 0.2857
-F1-score: 0.2835
-Accuracy: 0.2857
+Precision: 0.5529
+Recall: 0.5143
+F1-score: 0.5060
+Accuracy: 0.5143
 Test time: 0.0001s
 Time per row: 0.000004s
 
@@ -419,21 +420,21 @@ Time per row: 0.000004s
 Fold 10 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4139
-Recall: 0.3750
-F1-score: 0.3889
-Accuracy: 0.3750
+Precision: 0.7314
+Recall: 0.7083
+F1-score: 0.6985
+Accuracy: 0.7083
 Test time: 0.0002s
-Time per row: 0.000004s
+Time per row: 0.000003s
 
 
 Fold 10 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.2307
-Recall: 0.2270
-F1-score: 0.2051
-Accuracy: 0.2270
+Precision: 0.1192
+Recall: 0.1676
+F1-score: 0.1131
+Accuracy: 0.1676
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -441,10 +442,10 @@ Time per row: 0.000000s
 Fold 10 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3258
-Recall: 0.2712
-F1-score: 0.2625
-Accuracy: 0.2712
+Precision: 0.3772
+Recall: 0.2881
+F1-score: 0.2794
+Accuracy: 0.2881
 Test time: 0.0001s
 Time per row: 0.000002s
 
@@ -452,10 +453,10 @@ Time per row: 0.000002s
 Fold 10 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.3327
-Recall: 0.2857
-F1-score: 0.2835
-Accuracy: 0.2857
+Precision: 0.6169
+Recall: 0.4286
+F1-score: 0.3460
+Accuracy: 0.4286
 Test time: 0.0001s
 Time per row: 0.000004s
 
@@ -463,21 +464,21 @@ Time per row: 0.000004s
 Fold 11 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.1927
-Recall: 0.2083
-F1-score: 0.1848
-Accuracy: 0.2083
+Precision: 0.7607
+Recall: 0.6667
+F1-score: 0.6850
+Accuracy: 0.6667
 Test time: 0.0002s
-Time per row: 0.000004s
+Time per row: 0.000003s
 
 
 Fold 11 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.2907
-Recall: 0.2568
-F1-score: 0.2287
-Accuracy: 0.2568
+Precision: 0.1557
+Recall: 0.1703
+F1-score: 0.1423
+Accuracy: 0.1703
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -485,9 +486,9 @@ Time per row: 0.000000s
 Fold 11 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.2500
+Precision: 0.2748
 Recall: 0.2542
-F1-score: 0.2318
+F1-score: 0.2505
 Accuracy: 0.2542
 Test time: 0.0001s
 Time per row: 0.000002s
@@ -496,10 +497,10 @@ Time per row: 0.000002s
 Fold 11 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.3030
-Recall: 0.2286
-F1-score: 0.2218
-Accuracy: 0.2286
+Precision: 0.5538
+Recall: 0.5143
+F1-score: 0.5103
+Accuracy: 0.5143
 Test time: 0.0001s
 Time per row: 0.000004s
 
@@ -507,21 +508,21 @@ Time per row: 0.000004s
 Fold 12 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4201
-Recall: 0.3542
-F1-score: 0.3433
-Accuracy: 0.3542
-Test time: 0.0002s
-Time per row: 0.000004s
+Precision: 0.6073
+Recall: 0.6042
+F1-score: 0.6032
+Accuracy: 0.6042
+Test time: 0.0001s
+Time per row: 0.000003s
 
 
 Fold 12 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.1617
-Recall: 0.2189
-F1-score: 0.1800
-Accuracy: 0.2189
+Precision: 0.1770
+Recall: 0.1865
+F1-score: 0.1488
+Accuracy: 0.1865
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -529,43 +530,43 @@ Time per row: 0.000000s
 Fold 12 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3579
-Recall: 0.3729
-F1-score: 0.3376
-Accuracy: 0.3729
-Test time: 0.0002s
-Time per row: 0.000003s
+Precision: 0.2772
+Recall: 0.2542
+F1-score: 0.2411
+Accuracy: 0.2542
+Test time: 0.0001s
+Time per row: 0.000002s
 
 
 Fold 12 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.2000
-Recall: 0.2286
-F1-score: 0.1905
-Accuracy: 0.2286
-Test time: 0.0002s
+Precision: 0.3957
+Recall: 0.4286
+F1-score: 0.3671
+Accuracy: 0.4286
+Test time: 0.0001s
 Time per row: 0.000004s
 
 
 Fold 13 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4489
-Recall: 0.5000
-F1-score: 0.4042
-Accuracy: 0.5000
+Precision: 0.7077
+Recall: 0.6875
+F1-score: 0.6892
+Accuracy: 0.6875
 Test time: 0.0002s
-Time per row: 0.000004s
+Time per row: 0.000003s
 
 
 Fold 13 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.0963
-Recall: 0.2081
-F1-score: 0.1230
-Accuracy: 0.2081
+Precision: 0.1564
+Recall: 0.1811
+F1-score: 0.1383
+Accuracy: 0.1811
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -573,21 +574,21 @@ Time per row: 0.000000s
 Fold 13 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.1397
-Recall: 0.2712
-F1-score: 0.1820
-Accuracy: 0.2712
+Precision: 0.2844
+Recall: 0.2373
+F1-score: 0.2264
+Accuracy: 0.2373
 Test time: 0.0001s
-Time per row: 0.000003s
+Time per row: 0.000002s
 
 
 Fold 13 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.1946
-Recall: 0.3143
-F1-score: 0.1986
-Accuracy: 0.3143
+Precision: 0.4444
+Recall: 0.4000
+F1-score: 0.3751
+Accuracy: 0.4000
 Test time: 0.0001s
 Time per row: 0.000004s
 
@@ -595,21 +596,21 @@ Time per row: 0.000004s
 Fold 14 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4489
-Recall: 0.5000
-F1-score: 0.4042
-Accuracy: 0.5000
-Test time: 0.0002s
-Time per row: 0.000004s
+Precision: 0.7818
+Recall: 0.7708
+F1-score: 0.7608
+Accuracy: 0.7708
+Test time: 0.0001s
+Time per row: 0.000003s
 
 
 Fold 14 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.0963
-Recall: 0.2081
-F1-score: 0.1230
-Accuracy: 0.2081
+Precision: 0.1161
+Recall: 0.1838
+F1-score: 0.1292
+Accuracy: 0.1838
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -617,10 +618,10 @@ Time per row: 0.000000s
 Fold 14 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.1397
-Recall: 0.2712
-F1-score: 0.1820
-Accuracy: 0.2712
+Precision: 0.1428
+Recall: 0.1864
+F1-score: 0.1473
+Accuracy: 0.1864
 Test time: 0.0001s
 Time per row: 0.000002s
 
@@ -628,10 +629,10 @@ Time per row: 0.000002s
 Fold 14 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.1946
-Recall: 0.3143
-F1-score: 0.1986
-Accuracy: 0.3143
+Precision: 0.5245
+Recall: 0.3429
+F1-score: 0.2589
+Accuracy: 0.3429
 Test time: 0.0001s
 Time per row: 0.000004s
 
@@ -639,87 +640,87 @@ Time per row: 0.000004s
 Fold 15 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4232
-Recall: 0.3750
-F1-score: 0.3923
-Accuracy: 0.3750
-Test time: 0.0002s
-Time per row: 0.000004s
+Precision: 0.7371
+Recall: 0.6875
+F1-score: 0.7021
+Accuracy: 0.6875
+Test time: 0.0001s
+Time per row: 0.000003s
 
 
 Fold 15 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.2311
-Recall: 0.2270
-F1-score: 0.2117
-Accuracy: 0.2270
+Precision: 0.1370
+Recall: 0.1595
+F1-score: 0.1365
+Accuracy: 0.1595
 Test time: 0.0002s
-Time per row: 0.000001s
+Time per row: 0.000000s
 
 
 Fold 15 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3291
-Recall: 0.2712
-F1-score: 0.2644
-Accuracy: 0.2712
-Test time: 0.0002s
-Time per row: 0.000003s
+Precision: 0.4094
+Recall: 0.3220
+F1-score: 0.3212
+Accuracy: 0.3220
+Test time: 0.0001s
+Time per row: 0.000002s
 
 
 Fold 15 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.3327
-Recall: 0.2857
-F1-score: 0.2835
-Accuracy: 0.2857
-Test time: 0.0002s
+Precision: 0.4778
+Recall: 0.4857
+F1-score: 0.4677
+Accuracy: 0.4857
+Test time: 0.0001s
 Time per row: 0.000004s
 
 
 Fold 16 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4340
-Recall: 0.3750
-F1-score: 0.3960
-Accuracy: 0.3750
+Precision: 0.5887
+Recall: 0.6458
+F1-score: 0.5833
+Accuracy: 0.6458
 Test time: 0.0002s
-Time per row: 0.000004s
+Time per row: 0.000003s
 
 
 Fold 16 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.2366
-Recall: 0.2297
-F1-score: 0.2139
-Accuracy: 0.2297
+Precision: 0.1380
+Recall: 0.1811
+F1-score: 0.1303
+Accuracy: 0.1811
 Test time: 0.0002s
-Time per row: 0.000001s
+Time per row: 0.000000s
 
 
 Fold 16 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3139
-Recall: 0.2542
-F1-score: 0.2482
-Accuracy: 0.2542
-Test time: 0.0002s
-Time per row: 0.000003s
+Precision: 0.1904
+Recall: 0.2712
+F1-score: 0.2004
+Accuracy: 0.2712
+Test time: 0.0001s
+Time per row: 0.000002s
 
 
 Fold 16 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.3117
-Recall: 0.2857
-F1-score: 0.2810
-Accuracy: 0.2857
+Precision: 0.3118
+Recall: 0.4000
+F1-score: 0.2937
+Accuracy: 0.4000
 Test time: 0.0001s
 Time per row: 0.000004s
 
@@ -727,21 +728,21 @@ Time per row: 0.000004s
 Fold 17 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.3758
-Recall: 0.3333
-F1-score: 0.3334
-Accuracy: 0.3333
+Precision: 0.7500
+Recall: 0.7083
+F1-score: 0.7188
+Accuracy: 0.7083
 Test time: 0.0002s
-Time per row: 0.000004s
+Time per row: 0.000003s
 
 
 Fold 17 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.2444
-Recall: 0.2378
-F1-score: 0.2128
-Accuracy: 0.2378
+Precision: 0.1503
+Recall: 0.1676
+F1-score: 0.1417
+Accuracy: 0.1676
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -749,43 +750,43 @@ Time per row: 0.000000s
 Fold 17 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3040
-Recall: 0.2542
-F1-score: 0.2430
-Accuracy: 0.2542
-Test time: 0.0002s
-Time per row: 0.000003s
+Precision: 0.3564
+Recall: 0.2712
+F1-score: 0.2648
+Accuracy: 0.2712
+Test time: 0.0001s
+Time per row: 0.000002s
 
 
 Fold 17 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.2908
-Recall: 0.2571
-F1-score: 0.2456
-Accuracy: 0.2571
-Test time: 0.0002s
+Precision: 0.4924
+Recall: 0.4571
+F1-score: 0.4364
+Accuracy: 0.4571
+Test time: 0.0001s
 Time per row: 0.000004s
 
 
 Fold 18 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4489
-Recall: 0.5000
-F1-score: 0.4042
-Accuracy: 0.5000
-Test time: 0.0002s
-Time per row: 0.000004s
+Precision: 0.7677
+Recall: 0.7500
+F1-score: 0.7475
+Accuracy: 0.7500
+Test time: 0.0001s
+Time per row: 0.000003s
 
 
 Fold 18 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.0963
-Recall: 0.2081
-F1-score: 0.1230
-Accuracy: 0.2081
+Precision: 0.1217
+Recall: 0.1676
+F1-score: 0.1242
+Accuracy: 0.1676
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -793,43 +794,43 @@ Time per row: 0.000000s
 Fold 18 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.1397
+Precision: 0.3337
 Recall: 0.2712
-F1-score: 0.1820
+F1-score: 0.2394
 Accuracy: 0.2712
 Test time: 0.0001s
-Time per row: 0.000003s
+Time per row: 0.000002s
 
 
 Fold 18 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.1946
-Recall: 0.3143
-F1-score: 0.1986
-Accuracy: 0.3143
-Test time: 0.0001s
+Precision: 0.4778
+Recall: 0.4000
+F1-score: 0.3530
+Accuracy: 0.4000
+Test time: 0.0002s
 Time per row: 0.000004s
 
 
 Fold 19 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.4270
-Recall: 0.3542
-F1-score: 0.3765
-Accuracy: 0.3542
-Test time: 0.0002s
+Precision: 0.7690
+Recall: 0.7083
+F1-score: 0.7068
+Accuracy: 0.7083
+Test time: 0.0001s
 Time per row: 0.000003s
 
 
 Fold 19 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.2315
-Recall: 0.2297
-F1-score: 0.2151
-Accuracy: 0.2297
+Precision: 0.1385
+Recall: 0.1703
+F1-score: 0.1216
+Accuracy: 0.1703
 Test time: 0.0002s
 Time per row: 0.000000s
 
@@ -837,21 +838,21 @@ Time per row: 0.000000s
 Fold 19 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3370
-Recall: 0.2712
-F1-score: 0.2729
-Accuracy: 0.2712
-Test time: 0.0002s
-Time per row: 0.000003s
+Precision: 0.1669
+Recall: 0.2373
+F1-score: 0.1921
+Accuracy: 0.2373
+Test time: 0.0001s
+Time per row: 0.000002s
 
 
 Fold 19 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.2978
-Recall: 0.2857
-F1-score: 0.2876
-Accuracy: 0.2857
+Precision: 0.5500
+Recall: 0.4857
+F1-score: 0.4386
+Accuracy: 0.4857
 Test time: 0.0001s
 Time per row: 0.000004s
 
@@ -859,10 +860,10 @@ Time per row: 0.000004s
 Fold 20 - High (>2000):
 ----------------------------------------
 Test size: 48 rows
-Precision: 0.3938
-Recall: 0.3542
-F1-score: 0.3706
-Accuracy: 0.3542
+Precision: 0.7452
+Recall: 0.6667
+F1-score: 0.6660
+Accuracy: 0.6667
 Test time: 0.0002s
 Time per row: 0.000003s
 
@@ -870,32 +871,32 @@ Time per row: 0.000003s
 Fold 20 - Low (0-4):
 ----------------------------------------
 Test size: 370 rows
-Precision: 0.2489
-Recall: 0.2324
-F1-score: 0.2090
-Accuracy: 0.2324
+Precision: 0.1466
+Recall: 0.1730
+F1-score: 0.1328
+Accuracy: 0.1730
 Test time: 0.0002s
-Time per row: 0.000001s
+Time per row: 0.000000s
 
 
 Fold 20 - Medium (5-100):
 ----------------------------------------
 Test size: 59 rows
-Precision: 0.3069
+Precision: 0.2768
 Recall: 0.2542
-F1-score: 0.2447
+F1-score: 0.2234
 Accuracy: 0.2542
-Test time: 0.0001s
+Test time: 0.0002s
 Time per row: 0.000003s
 
 
 Fold 20 - Medium-High (101-2000):
 ----------------------------------------
 Test size: 35 rows
-Precision: 0.3327
-Recall: 0.2857
-F1-score: 0.2835
-Accuracy: 0.2857
+Precision: 0.5107
+Recall: 0.4857
+F1-score: 0.4527
+Accuracy: 0.4857
 Test time: 0.0001s
 Time per row: 0.000004s
 
@@ -910,11 +911,11 @@ High (>2000):
  Total samples tested: 960
  Average test size per fold: 48.0
  Average test time: 0.0002s ± 0.0000s
- Average time per row: 0.000004s
- F1-score: 0.3674 ± 0.0734
- Precision: 0.4088 ± 0.0789
- Recall: 0.3854 ± 0.0938
- Accuracy: 0.3854 ± 0.0938
+ Average time per row: 0.000003s
+ F1-score: 0.6974 ± 0.0476
+ Precision: 0.7276 ± 0.0502
+ Recall: 0.7000 ± 0.0413
+ Accuracy: 0.7000 ± 0.0413
 ------------------------------------------------------------
 
 Low (0-4):
@@ -924,10 +925,10 @@ Low (0-4):
  Average test size per fold: 370.0
  Average test time: 0.0002s ± 0.0000s
  Average time per row: 0.000000s
- F1-score: 0.1906 ± 0.0361
- Precision: 0.2027 ± 0.0623
- Recall: 0.2245 ± 0.0167
- Accuracy: 0.2245 ± 0.0167
+ F1-score: 0.1299 ± 0.0094
+ Precision: 0.1348 ± 0.0226
+ Recall: 0.1750 ± 0.0101
+ Accuracy: 0.1750 ± 0.0101
 ------------------------------------------------------------
 
 Medium (5-100):
@@ -935,12 +936,12 @@ Medium (5-100):
  Valid folds: 20/20 (folds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
  Total samples tested: 1,180
  Average test size per fold: 59.0
- Average test time: 0.0002s ± 0.0000s
- Average time per row: 0.000003s
- F1-score: 0.2502 ± 0.0391
- Precision: 0.2921 ± 0.0696
- Recall: 0.2805 ± 0.0304
- Accuracy: 0.2805 ± 0.0304
+ Average test time: 0.0001s ± 0.0000s
+ Average time per row: 0.000002s
+ F1-score: 0.2382 ± 0.0471
+ Precision: 0.2828 ± 0.0798
+ Recall: 0.2576 ± 0.0323
+ Accuracy: 0.2576 ± 0.0323
 ------------------------------------------------------------
 
 Medium-High (101-2000):
@@ -950,10 +951,10 @@ Medium-High (101-2000):
  Average test size per fold: 35.0
  Average test time: 0.0001s ± 0.0000s
  Average time per row: 0.000004s
- F1-score: 0.2434 ± 0.0431
- Precision: 0.2994 ± 0.1094
- Recall: 0.2829 ± 0.0346
- Accuracy: 0.2829 ± 0.0346
+ F1-score: 0.3617 ± 0.0949
+ Precision: 0.4622 ± 0.1210
+ Recall: 0.4129 ± 0.0756
+ Accuracy: 0.4129 ± 0.0756
 ------------------------------------------------------------
 
 
@@ -966,75 +967,75 @@ Total samples tested: 10,240
 Avg test size per fold (approx): 128.0
 Avg test time per fold: 0.0002s ± 0.0000s
 Avg time per row: 0.000001s
-Global F1-score: 0.2629 ± 0.0815
-Global Precision: 0.3007 ± 0.1090
-Global Recall: 0.2933 ± 0.0782
-Global Accuracy: 0.2933 ± 0.0782
+Global F1-score: 0.3568 ± 0.2219
+Global Precision: 0.4018 ± 0.2349
+Global Recall: 0.3864 ± 0.2065
+Global Accuracy: 0.3864 ± 0.2065
 
 ==========================================================================================
 SAFETY & DISAGREEMENT ANALYSIS (finer bins)
 ==========================================================================================
 
 High (>2000):
- Total samples: 960
- Total disagreements: 960 (100.0%)
- CART Safer: 0 (0.0%)
- CART Riskier: 540 (56.2%)
- Net safety improvement: -540
+ Total samples: 288
+ Total disagreements: 288 (100.0%)
+ LR Safer: 53 (18.4%)
+ LR Riskier: 124 (43.1%)
+ Net safety improvement: -71
 
 Low (5-100):
- Total samples: 1,180
- Total disagreements: 1,180 (100.0%)
- CART Safer: 0 (0.0%)
- CART Riskier: 460 (39.0%)
- Net safety improvement: -460
+ Total samples: 876
+ Total disagreements: 876 (100.0%)
+ LR Safer: 551 (62.9%)
+ LR Riskier: 138 (15.8%)
+ Net safety improvement: +413
 
 Medium (101-2000):
- Total samples: 700
- Total disagreements: 700 (100.0%)
- CART Safer: 0 (0.0%)
- CART Riskier: 280 (40.0%)
- Net safety improvement: -280
+ Total samples: 411
+ Total disagreements: 411 (100.0%)
+ LR Safer: 239 (58.2%)
+ LR Riskier: 93 (22.6%)
+ Net safety improvement: +146
 
 Very Low (1-4):
- Total samples: 1,180
- Total disagreements: 1,180 (100.0%)
- CART Safer: 0 (0.0%)
- CART Riskier: 720 (61.0%)
- Net safety improvement: -720
+ Total samples: 992
+ Total disagreements: 992 (100.0%)
+ LR Safer: 549 (55.3%)
+ LR Riskier: 131 (13.2%)
+ Net safety improvement: +418
 
 Safety Confusion Matrix:
-Dataset Safe   CART Safe: 0   CART Unsafe: 720
-Dataset Unsafe CART Safe: 0   CART Unsafe: 460
+Dataset Safe   LR Safe: 268   LR Unsafe: 131
+Dataset Unsafe LR Safe: 549   LR Unsafe: 44
 
 By dataset action:
-  change_to_left: total 60   Safer 0   Riskier 0
-  change_to_right: total 440   Safer 0   Riskier 140
-  cruise: total 320   Safer 0   Riskier 220
-  keep: total 360   Safer 0   Riskier 360
+  change_to_left: total 56   Safer 51   Riskier 0
+  change_to_right: total 417   Safer 335   Riskier 10
+  cruise: total 212   Safer 163   Riskier 2
+  keep: total 307   Safer 0   Riskier 119
 
 Zero (0):
- Total samples: 6,220
- Total disagreements: 6,220 (100.0%)
- CART Safer: 0 (0.0%)
- CART Riskier: 2,480 (39.9%)
- Net safety improvement: -2480
+ Total samples: 5,113
+ Total disagreements: 5,113 (100.0%)
+ LR Safer: 3,133 (61.3%)
+ LR Riskier: 239 (4.7%)
+ Net safety improvement: +2894
 
 Safety Confusion Matrix:
-Dataset Safe   CART Safe: 0   CART Unsafe: 2,480
-Dataset Unsafe CART Safe: 0   CART Unsafe: 3,740
+Dataset Safe   LR Safe: 1,092   LR Unsafe: 239
+Dataset Unsafe LR Safe: 3,133   LR Unsafe: 649
 
 By dataset action:
-  change_to_left: total 1,900   Safer 0   Riskier 200
-  change_to_right: total 1,500   Safer 0   Riskier 40
-  cruise: total 1,280   Safer 0   Riskier 700
-  keep: total 1,540   Safer 0   Riskier 1,540
+  change_to_left: total 1,822   Safer 1,461   Riskier 3
+  change_to_right: total 1,480   Safer 1,167   Riskier 17
+  cruise: total 609   Safer 505   Riskier 10
+  keep: total 1,202   Safer 0   Riskier 209
 
 ==========================================================================================
 GLOBAL SAFETY SUMMARY
 ==========================================================================================
 
-Total disagreements: 10,240
-CART Safer: 0 (0.0%)
-CART Riskier: 4,480 (43.8%)
-Net: -4480
+Total disagreements: 7,680
+LR Safer: 4,525 (58.9%)
+LR Riskier: 725 (9.4%)
+Net: +3800

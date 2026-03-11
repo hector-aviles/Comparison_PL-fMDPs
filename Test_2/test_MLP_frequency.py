@@ -10,21 +10,21 @@ import numpy as np
 import statistics
 import pickle
 
-def load_cart_model(model_file):
+def load_mlp_model(model_file):
     """
-    Load CART model from .cart / .pkl / .joblib file.
+    Load MLP model from .mlp / .pkl / .joblib file.
     Tries joblib first, then pickle.
     """
     try:
         model = joblib.load(model_file)
-        print(f"Loaded CART model (joblib) from {model_file}", flush=True)
+        print(f"Loaded MLP model (joblib) from {model_file}", flush=True)
         return model
     except Exception as e1:
         print(f"joblib failed for {model_file}: {str(e1)}", flush=True)
         try:
             with open(model_file, "rb") as f:
                 model = pickle.load(f)
-            print(f"Loaded CART model (pickle) from {model_file}", flush=True)
+            print(f"Loaded MLP model (pickle) from {model_file}", flush=True)
             return model
         except Exception as e2:
             print(f"Failed to load {model_file}: {str(e2)}", flush=True)
@@ -41,7 +41,7 @@ def get_frequency_range(count):
         return "High (>2000)"
 
 def extract_fold_number(filename):
-    match = re.search(r'(?i)CART[_fold]*(\d+)\.(cart|pkl|joblib)', filename)
+    match = re.search(r'(?i)MLP[_fold]*(\d+)\.(mlp|pkl|joblib)', filename)
     if match:
         return int(match.group(1))
     return None
@@ -87,10 +87,10 @@ def main(percentage):
         sys.exit(1)
 
     # Paths
-    cart_path = f"./Train_{percentage}/models/CART/"
+    mlp_path = f"./Test_{percentage}/models/MLP/"
     analysis_file = "./analysis/count_sample_space_auto_with_safe.csv"
     safe_file = "./analysis/no_crashes.csv"
-    numeralia = os.path.join(cart_path, "Results", "testing_cart_frequency.txt")
+    numeralia = os.path.join(mlp_path, "Results", "testing_mlp_frequency.txt")
     os.makedirs(os.path.dirname(numeralia), exist_ok=True)
 
     if not os.path.exists(analysis_file):
@@ -132,20 +132,20 @@ def main(percentage):
     encoder.classes_ = np.array(known_classes)
 
     # Model discovery
-    all_files = os.listdir(cart_path)
+    all_files = os.listdir(mlp_path)
     model_files = []
     for filename in all_files:
-        if filename.lower().endswith('.cart'):
+        if filename.lower().endswith('.mlp'):
             fold_num = extract_fold_number(filename)
             if fold_num is not None:
                 model_files.append((fold_num, filename))
     model_files.sort()
 
     if len(model_files) == 0:
-        print(f"No .cart files found in {cart_path}", flush=True)
+        print(f"No .mlp files found in {mlp_path}", flush=True)
         sys.exit(1)
 
-    print(f"Found {len(model_files)} CART files (folds: {[n for n,_ in model_files]})", flush=True)
+    print(f"Found {len(model_files)} MLP files (folds: {[n for n,_ in model_files]})", flush=True)
 
     # Performance results
     results = {fr: {'precisions': [], 'recalls': [], 'f1_scores': [],
@@ -173,7 +173,7 @@ def main(percentage):
 
     # Write header
     with open(numeralia, "w", encoding="utf-8") as file:
-        file.write("CART Testing Results by Frequency Range\n")
+        file.write("MLP Testing Results by Frequency Range\n")
         file.write("=" * 80 + "\n\n")
         file.write(f"Source file: {analysis_file}\n")
         file.write(f"Total rows tested: {len(full_data)}\n")
@@ -193,9 +193,9 @@ def main(percentage):
         print(f"\n{'='*70}", flush=True)
         print(f"Processing Fold {fold_num} → {model_filename}", flush=True)
 
-        model_file = os.path.join(cart_path, model_filename)
-        cart_model = load_cart_model(model_file)
-        if cart_model is None:
+        model_file = os.path.join(mlp_path, model_filename)
+        mlp_model = load_mlp_model(model_file)
+        if mlp_model is None:
             continue
 
         fold_has_data = False
@@ -212,7 +212,7 @@ def main(percentage):
 
             try:
                 start_time = time.time()
-                y_pred = cart_model.predict(X_test)
+                y_pred = mlp_model.predict(X_test)
                 end_time = time.time()
                 y_pred_encoded = y_pred.astype(int)
                 test_time = end_time - start_time
@@ -251,7 +251,7 @@ def main(percentage):
                 continue
 
         # ── Safety & disagreement analysis ────────────────────────────────
-        y_pred_all = cart_model.predict(full_data[feature_columns].values.astype(float))
+        y_pred_all = mlp_model.predict(full_data[feature_columns].values.astype(float))
         for i, idx in enumerate(full_data.index):
             row = full_data.loc[idx]
             true_action = row[target_col]
@@ -264,7 +264,7 @@ def main(percentage):
             state_row = row[feature_columns]
 
             ds_safe = check_action_safety(true_action, state_row, feature_columns, safe_lookup)
-            cart_safe = check_action_safety(pred_action, state_row, feature_columns, safe_lookup)
+            mlp_safe = check_action_safety(pred_action, state_row, feature_columns, safe_lookup)
 
             disagreement_safety[cat]['total_disagreements'] += 1
             disagreement_safety[cat]['total_samples'] += 1
@@ -272,11 +272,11 @@ def main(percentage):
 
             global_disagreement['total_disagreements'] += 1
 
-            if ds_safe and cart_safe:
+            if ds_safe and mlp_safe:
                 k = 'dsafe_asafe'
-            elif ds_safe and not cart_safe:
+            elif ds_safe and not mlp_safe:
                 k = 'dsafe_aunsafe'
-            elif not ds_safe and cart_safe:
+            elif not ds_safe and mlp_safe:
                 k = 'dunsafe_asafe'
             else:
                 k = 'dunsafe_aunsafe'
@@ -392,14 +392,14 @@ def main(percentage):
                 continue
 
             net = s['dunsafe_asafe'] - s['dsafe_aunsafe']
-            f.write(f" CART Safer: {s['dunsafe_asafe']:,} ({s['dunsafe_asafe']/td*100:.1f}%)\n")
-            f.write(f" CART Riskier: {s['dsafe_aunsafe']:,} ({s['dsafe_aunsafe']/td*100:.1f}%)\n")
+            f.write(f" MLP Safer: {s['dunsafe_asafe']:,} ({s['dunsafe_asafe']/td*100:.1f}%)\n")
+            f.write(f" MLP Riskier: {s['dsafe_aunsafe']:,} ({s['dsafe_aunsafe']/td*100:.1f}%)\n")
             f.write(f" Net safety improvement: {net:+d}\n")
 
             if cat in ["Zero (0)", "Very Low (1-4)"]:
                 f.write("\nSafety Confusion Matrix:\n")
-                f.write(f"Dataset Safe   CART Safe: {s['dsafe_asafe']:,}   CART Unsafe: {s['dsafe_aunsafe']:,}\n")
-                f.write(f"Dataset Unsafe CART Safe: {s['dunsafe_asafe']:,}   CART Unsafe: {s['dunsafe_aunsafe']:,}\n\n")
+                f.write(f"Dataset Safe   MLP Safe: {s['dsafe_asafe']:,}   MLP Unsafe: {s['dsafe_aunsafe']:,}\n")
+                f.write(f"Dataset Unsafe MLP Safe: {s['dunsafe_asafe']:,}   MLP Unsafe: {s['dunsafe_aunsafe']:,}\n\n")
 
                 f.write("By dataset action:\n")
                 for a in known_classes:
@@ -416,8 +416,8 @@ def main(percentage):
         if gt > 0:
             net_g = global_disagreement['dunsafe_asafe'] - global_disagreement['dsafe_aunsafe']
             f.write(f"Total disagreements: {gt:,}\n")
-            f.write(f"CART Safer: {global_disagreement['dunsafe_asafe']:,} ({global_disagreement['dunsafe_asafe']/gt*100:.1f}%)\n")
-            f.write(f"CART Riskier: {global_disagreement['dsafe_aunsafe']:,} ({global_disagreement['dsafe_aunsafe']/gt*100:.1f}%)\n")
+            f.write(f"MLP Safer: {global_disagreement['dunsafe_asafe']:,} ({global_disagreement['dunsafe_asafe']/gt*100:.1f}%)\n")
+            f.write(f"MLP Riskier: {global_disagreement['dsafe_aunsafe']:,} ({global_disagreement['dsafe_aunsafe']/gt*100:.1f}%)\n")
             f.write(f"Net: {net_g:+d}\n")
         else:
             f.write("No disagreements found.\n")
@@ -426,7 +426,7 @@ def main(percentage):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python3 test_cart_frequency.py <percentage>")
+        print("Usage: python3 test_mlp_frequency.py <percentage>")
         sys.exit(1)
     percentage = sys.argv[1]
     main(percentage)

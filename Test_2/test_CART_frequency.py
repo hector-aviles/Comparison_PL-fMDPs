@@ -87,7 +87,7 @@ def main(percentage):
         sys.exit(1)
 
     # Paths
-    cart_path = f"./Train_{percentage}/models/CART/"
+    cart_path = f"./Test_{percentage}/models/CART/"
     analysis_file = "./analysis/count_sample_space_auto_with_safe.csv"
     safe_file = "./analysis/no_crashes.csv"
     numeralia = os.path.join(cart_path, "Results", "testing_cart_frequency.txt")

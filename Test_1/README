@@ -97,7 +97,7 @@ source ~/.bashrc
 
 pyenv install 3.8.18
 
-pyenv virtualenv 3.8.18 sklearn_old
+# pyenv virtualenv 3.8.18 sklearn_old
 pyenv activate sklearn_old
 
 pip install scikit-learn==0.24.2 joblib pandas numpy
